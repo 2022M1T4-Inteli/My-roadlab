@@ -14,7 +14,6 @@
 
 📜 My Roadlab (até então) é um projeto de jogo indie que simula um ambiente virtual para a apresentação dos cursos da grande área da computação, disponibilizados pelo Instituto de Tecnologia e Liderança (Inteli), bem como suas áreas de atuação. O jogo visa direcionar novos alunos e estudantes do primeiro ano da instituição para uma escolha consciente de curso com base no entendimento dos termos atuais do mercado e perfil de trabalho.
 
-
 💡 Nosso projeto ajuda estudantes a decidirem os seus cursos de graduação com base nos seus interesses, habilidades e aptidões.
 
 ## 🛠 Estrutura de pastas
@@ -86,7 +85,7 @@ Descreva como instalar todas as dependências para desenvolvimento e como rodar 
 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
--<a href="https://godotengine.org/download">GODOT</a>
+-<a href="https://godotengine.org/download"> GODOT</a>
 
 ```sh
 make install
