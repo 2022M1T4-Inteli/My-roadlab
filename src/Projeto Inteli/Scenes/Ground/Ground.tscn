@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Ground" type="StaticBody2D" groups=["Ground"]]
+collision_layer = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Ground"]]
+scale = Vector2( 30, 1 )
+shape = SubResource( 1 )
