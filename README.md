@@ -16,6 +16,11 @@
 
 💡 Nosso projeto ajuda estudantes a decidirem os seus cursos de graduação com base nos seus interesses, habilidades e aptidões.
 
+<p align="center">
+<a href= "https://github.com/2022M1T4/Projeto3"><img src="https://github.com/2022M1T4/Projeto3/blob/main/imagens/game_prototype.png?raw=true" alt="inteli roadlab" border="0"></a>
+<p align="center">inteli roadlab - protótipo inicial</p>
+</p>
+
 ## 🛠 Estrutura de pastas
 
 - Raiz<br><br>
@@ -46,28 +51,29 @@ E, também, 4 subpastas que se organizam da seguinte forma:
 
 ## 🛠 Instalação
 
-<b>Android:</b>
+<b>Android (não disponível):</b>
 
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
+Faça o download do arquivo "inteli_roadlab.apk" no seu celular, execute o arquivo e siga as instruções de seu telefone.
 
 ```sh
-Coloque código do prompt de comnando se for necessário
+Assim que disponível, os binários serão disponibilizados nesse mesmo repositório.
 ```
 
 <b>Windows:</b>
 
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
+Não há instalação, apenas executável. Baixe os arquivos disponíveis em https://github.com/2022M1T4/Projeto3/tree/main/execut%C3%A1veis/Windows e execute "ProjetoInteli.exe" como qualquer outro programa.
 
 ```sh
-Coloque código do prompt de comnando se for necessário
+Observe que é necessário que o arquivo "ProjetoInteli.pck" esteja no mesmo diretório que "ProjetoInteli.exe".
 ```
 
 <b>HTML:</b>
 
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
+Não há instalação! Baixe os arquivos disponíveis em https://github.com/2022M1T4/Projeto3/tree/main/execut%C3%A1veis/HTML e execute-o como uma página da web (através de algum navegador).
+
+```sh
+Dependendo de suas configurações de firewall, talvez seja necessário instaurar um web service como xampp ou wampp para que o jogo rode localmente.
+```
 
 ## 📈 Exemplo de uso
 
@@ -97,8 +103,8 @@ Coloque código do prompt de comnando se for necessário
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.0.1 - 07/02/2022
-    * Trabalho em andamento
+* 0.0.1-alpha - 19/02/2022
+    * Lançamento da primeira versão do jogo.
 
 ## 📋 Licença/License
 
