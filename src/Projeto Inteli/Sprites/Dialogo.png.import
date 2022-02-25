@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlaceHolder.png-c06b3e25dedc354fd97b25bb4f013926.stex"
+path="res://.import/Dialogo.png-86d61fa35d5a7a87430b6f8a2e30812e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlaceHolder.png"
-dest_files=[ "res://.import/PlaceHolder.png-c06b3e25dedc354fd97b25bb4f013926.stex" ]
+source_file="res://Sprites/Dialogo.png"
+dest_files=[ "res://.import/Dialogo.png-86d61fa35d5a7a87430b6f8a2e30812e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
