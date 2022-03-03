@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Elevador.png-c95a5fa412b61406460449ebd62ccbe0.stex"
+path="res://.import/OlhoParado.png-522a5e3466941dab056910a289ff089e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Elevador.png"
-dest_files=[ "res://.import/Elevador.png-c95a5fa412b61406460449ebd62ccbe0.stex" ]
+source_file="res://Sprites/NPC's/OlhoParado.png"
+dest_files=[ "res://.import/OlhoParado.png-522a5e3466941dab056910a289ff089e.stex" ]
 
 [params]
 

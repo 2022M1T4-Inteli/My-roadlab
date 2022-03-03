@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Personagem.png-e9098f98e216b60271d34deb9ccb053f.stex"
+path="res://.import/CenarioBancada.png-b495b07196a632f37e6b6404359e149f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Personagem.png"
-dest_files=[ "res://.import/Personagem.png-e9098f98e216b60271d34deb9ccb053f.stex" ]
+source_file="res://Sprites/Cenário/CenarioBancada.png"
+dest_files=[ "res://.import/CenarioBancada.png-b495b07196a632f37e6b6404359e149f.stex" ]
 
 [params]
 

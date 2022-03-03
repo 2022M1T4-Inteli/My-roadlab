@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cen1.png-2a9a1fb41106372ef6cba40274848ee9.stex"
+path="res://.import/Dialogo.png-f3f2551b5f217e4c99932e22624f2f83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cen1.png"
-dest_files=[ "res://.import/Cen1.png-2a9a1fb41106372ef6cba40274848ee9.stex" ]
+source_file="res://Sprites/NPC's/Dialogo.png"
+dest_files=[ "res://.import/Dialogo.png-f3f2551b5f217e4c99932e22624f2f83.stex" ]
 
 [params]
 

@@ -13,7 +13,6 @@ func _ready():
 	$DialogueBox.visible = false
 	$SpriteProx.visible = false
 	$DialogueBox/Sprite.frame = 0
-	
 
 func _process(delta):
 	#Iniciando função
@@ -34,9 +33,10 @@ func load_dialog():
 	else:
 		dialogIndex = 0
 		$DialogueBox/RichTextLabel.bbcode_text = dialog[dialogIndex]
+		#Acessando variavel do node "Player" e alterando seus valores
+		get_node("/root/Level/Player").canWalk = true
 		$Button.visible = true
 		$DialogueBox.visible = false
-	
 
 func _physics_process(delta):
 	#Definindo quando deve ser feita a transição entre o botão(E) e a caixa de dialogo
@@ -45,10 +45,11 @@ func _physics_process(delta):
 		if $Button.visible == true:
 			$Button.visible = false
 			$DialogueBox.visible = true
+			#Acessando variaveis do node "Player", e alterando seus valores
+			get_node("/root/Level/Player").canWalk = false
+			get_node("/root/Level/Player").stateMachine.travel("Idle")
+			#Inciando função da caixa de dialogo
 			load_dialog()
-		else:
-			$Button.visible = true
-			$DialogueBox.visible = false
 
 #Checando se o jogador entrou na área e definindo o que deve ser visivel
 func _on_NPC_body_entered(body):

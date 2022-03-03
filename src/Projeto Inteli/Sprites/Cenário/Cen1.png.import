@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OlhoParadoInRange.png-04e85dbb4410f84dbf82ce42ce11c8f6.stex"
+path="res://.import/Cen1.png-18651effbdde40a1acd936fae23500df.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/OlhoParadoInRange.png"
-dest_files=[ "res://.import/OlhoParadoInRange.png-04e85dbb4410f84dbf82ce42ce11c8f6.stex" ]
+source_file="res://Sprites/Cenário/Cen1.png"
+dest_files=[ "res://.import/Cen1.png-18651effbdde40a1acd936fae23500df.stex" ]
 
 [params]
 

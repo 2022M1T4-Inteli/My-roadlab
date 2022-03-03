@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Cenários/Cenário 1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/NPC/NPC.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/DialogueBox/DialogueBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://unknown (3).png" type="Texture" id=6]
+[ext_resource path="res://unknown (2).png" type="Texture" id=7]
+[ext_resource path="res://unknown.png" type="Texture" id=8]
+[ext_resource path="res://unknown (1).png" type="Texture" id=9]
+[ext_resource path="res://Minecraftia-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
 
 [node name="Level" type="Node2D"]
 
@@ -14,14 +21,69 @@ position = Vector2( 160, 90 )
 [node name="Ground" parent="." instance=ExtResource( 1 )]
 position = Vector2( 154, 154 )
 
-[node name="NPC" parent="." instance=ExtResource( 4 )]
-position = Vector2( 217, 131 )
-
-[node name="DialogueBox" parent="NPC" instance=ExtResource( 5 )]
-margin_left = -164.0
-margin_top = 12.0
-margin_right = 56.0
-margin_bottom = 41.0
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 10, 131 )
+
+[node name="Seleção de Personagem" type="Control" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+
+[node name="ColorRect" type="ColorRect" parent="Seleção de Personagem"]
+anchor_left = 0.54375
+anchor_right = 0.54375
+margin_left = -213.0
+margin_top = -22.0
+margin_right = 195.0
+margin_bottom = 207.0
+color = Color( 0.0196078, 0.2, 0.25098, 1 )
+
+[node name="VBPersonagens" type="VBoxContainer" parent="Seleção de Personagem"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Seleção de Personagem/VBPersonagens"]
+margin_top = 52.0
+margin_right = 320.0
+margin_bottom = 127.0
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
+margin_left = 10.0
+margin_right = 82.0
+margin_bottom = 75.0
+texture_normal = ExtResource( 8 )
+
+[node name="TextureButton2" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
+margin_left = 86.0
+margin_right = 158.0
+margin_bottom = 75.0
+texture_normal = ExtResource( 7 )
+
+[node name="TextureButton3" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
+margin_left = 162.0
+margin_right = 234.0
+margin_bottom = 75.0
+texture_normal = ExtResource( 9 )
+
+[node name="TextureButton4" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
+margin_left = 238.0
+margin_right = 310.0
+margin_bottom = 75.0
+texture_normal = ExtResource( 6 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Seleção de Personagem"]
+margin_left = 31.0
+margin_top = 13.0
+margin_right = 289.0
+margin_bottom = 38.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Selecione seu personagem"
+text = "Selecione seu personagem"
+scroll_active = false
+
+[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton" to="Player" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton2" to="Player" method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton3" to="Player" method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton4" to="Player" method="_on_TextureButton4_pressed"]
