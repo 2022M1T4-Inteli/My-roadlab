@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/unknown (2).png-613e587b50a8b2e123d998d02664ade4.stex"
+path="res://.import/ElevadorAbrindo.png-eec3100c78189628d931cb64b572fe9a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://unknown (2).png"
-dest_files=[ "res://.import/unknown (2).png-613e587b50a8b2e123d998d02664ade4.stex" ]
+source_file="res://Sprites/Elevador/ElevadorAbrindo.png"
+dest_files=[ "res://.import/ElevadorAbrindo.png-eec3100c78189628d931cb64b572fe9a.stex" ]
 
 [params]
 

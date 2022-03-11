@@ -95,6 +95,7 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="NPC" type="Area2D"]
+scale = Vector2( 2, 2 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

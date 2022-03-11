@@ -3,11 +3,14 @@
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Cenários/Cenário 1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://unknown (3).png" type="Texture" id=6]
-[ext_resource path="res://unknown (2).png" type="Texture" id=7]
-[ext_resource path="res://unknown.png" type="Texture" id=8]
-[ext_resource path="res://unknown (1).png" type="Texture" id=9]
-[ext_resource path="res://Minecraftia-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Sprites/Seleção de Personagem/selecao.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Seleção de Personagem.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/NPC's/Dialogo.png" type="Texture" id=6]
+[ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=1]
 outline_color = Color( 0, 0, 0, 1 )
@@ -16,74 +19,132 @@ font_data = ExtResource( 10 )
 [node name="Level" type="Node2D"]
 
 [node name="Cenário 1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 160, 90 )
+position = Vector2( 320, 180 )
 
 [node name="Ground" parent="." instance=ExtResource( 1 )]
-position = Vector2( 154, 154 )
+position = Vector2( 319, 298 )
+scale = Vector2( 2, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 10, 131 )
+position = Vector2( 21, 262 )
+
+[node name="DialogueBox" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="DialogueBox"]
+position = Vector2( 320, 179 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
+anchor_left = 0.521
+anchor_top = 1.0
+anchor_right = 0.523
+anchor_bottom = 1.069
+margin_left = -165.44
+margin_top = -59.0
+margin_right = 202.28
+margin_bottom = -36.84
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox"]
+anchor_left = 0.5
+anchor_top = 1.381
+anchor_right = 0.5
+anchor_bottom = 1.381
+margin_left = -153.0
+margin_top = -197.16
+margin_right = 217.0
+margin_bottom = -149.16
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Seleção de Personagem" type="Control" parent="."]
-margin_right = 320.0
-margin_bottom = 180.0
+margin_left = 160.0
+margin_top = 92.0
+margin_right = 480.0
+margin_bottom = 272.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ColorRect" type="ColorRect" parent="Seleção de Personagem"]
-anchor_left = 0.54375
-anchor_right = 0.54375
-margin_left = -213.0
-margin_top = -22.0
-margin_right = 195.0
-margin_bottom = 207.0
-color = Color( 0.0196078, 0.2, 0.25098, 1 )
-
-[node name="VBPersonagens" type="VBoxContainer" parent="Seleção de Personagem"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Seleção de Personagem/VBPersonagens"]
-margin_top = 52.0
-margin_right = 320.0
-margin_bottom = 127.0
-alignment = 1
-
-[node name="TextureButton" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
-margin_left = 10.0
-margin_right = 82.0
-margin_bottom = 75.0
-texture_normal = ExtResource( 8 )
-
-[node name="TextureButton2" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
-margin_left = 86.0
-margin_right = 158.0
-margin_bottom = 75.0
-texture_normal = ExtResource( 7 )
-
-[node name="TextureButton3" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
-margin_left = 162.0
-margin_right = 234.0
-margin_bottom = 75.0
-texture_normal = ExtResource( 9 )
-
-[node name="TextureButton4" type="TextureButton" parent="Seleção de Personagem/VBPersonagens/HBoxContainer"]
-margin_left = 238.0
-margin_right = 310.0
-margin_bottom = 75.0
-texture_normal = ExtResource( 6 )
+[node name="Sprite" type="Sprite" parent="Seleção de Personagem"]
+position = Vector2( 160, 89 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+hframes = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Seleção de Personagem"]
-margin_left = 31.0
-margin_top = 13.0
-margin_right = 289.0
-margin_bottom = 38.0
+margin_left = 29.0
+margin_top = -54.0
+margin_right = 287.0
+margin_bottom = -29.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "Selecione seu personagem"
 text = "Selecione seu personagem"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton" to="Player" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton2" to="Player" method="_on_TextureButton2_pressed"]
-[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton3" to="Player" method="_on_TextureButton3_pressed"]
-[connection signal="pressed" from="Seleção de Personagem/VBPersonagens/HBoxContainer/TextureButton4" to="Player" method="_on_TextureButton4_pressed"]
+[node name="Op1" type="Button" parent="Seleção de Personagem"]
+show_behind_parent = true
+margin_left = -119.0
+margin_top = 26.0
+margin_right = 6.0
+margin_bottom = 151.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Op2" type="Button" parent="Seleção de Personagem"]
+show_behind_parent = true
+margin_left = 25.0
+margin_top = 26.0
+margin_right = 150.0
+margin_bottom = 151.0
+
+[node name="Op3" type="Button" parent="Seleção de Personagem"]
+show_behind_parent = true
+margin_left = 169.0
+margin_top = 26.0
+margin_right = 296.0
+margin_bottom = 151.0
+
+[node name="Op4" type="Button" parent="Seleção de Personagem"]
+show_behind_parent = true
+margin_left = 313.0
+margin_top = 26.0
+margin_right = 439.0
+margin_bottom = 151.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_entered"]
+[connection signal="mouse_exited" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_exited"]
+[connection signal="pressed" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_pressed"]
+[connection signal="mouse_entered" from="Seleção de Personagem/Op2" to="Seleção de Personagem" method="_on_Op2_mouse_entered"]
+[connection signal="mouse_exited" from="Seleção de Personagem/Op2" to="Seleção de Personagem" method="_on_Op2_mouse_exited"]
+[connection signal="pressed" from="Seleção de Personagem/Op2" to="Seleção de Personagem" method="_on_Op2_pressed"]
+[connection signal="mouse_entered" from="Seleção de Personagem/Op3" to="Seleção de Personagem" method="_on_Op3_mouse_entered"]
+[connection signal="mouse_exited" from="Seleção de Personagem/Op3" to="Seleção de Personagem" method="_on_Op3_mouse_exited"]
+[connection signal="pressed" from="Seleção de Personagem/Op3" to="Seleção de Personagem" method="_on_Op3_pressed"]
+[connection signal="mouse_entered" from="Seleção de Personagem/Op4" to="Seleção de Personagem" method="_on_Op4_mouse_entered"]
+[connection signal="mouse_exited" from="Seleção de Personagem/Op4" to="Seleção de Personagem" method="_on_Op4_mouse_exited"]
+[connection signal="pressed" from="Seleção de Personagem/Op4" to="Seleção de Personagem" method="_on_Op4_pressed"]
