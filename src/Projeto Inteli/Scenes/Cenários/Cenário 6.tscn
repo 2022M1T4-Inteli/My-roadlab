@@ -1,16 +1,13 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Sprites/Elevador/elevadorandar.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/NPC/NPC.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Elevador/ElevadorAbrindo.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Elevador.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sprites/Cenário/CenarioObj.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Cenário/CenarioFundo.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Cenário/CenarioBancada.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Elevador/00.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Elevador/05.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Elevador.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Cenário/CenarioFundo.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Elevador/elevadorandar.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Elevador/ElevadorAbrindo.png" type="Texture" id=6]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=23]
 resource_name = "Abrindo"
 length = 0.55
 step = 0.05
@@ -27,7 +24,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3, 1 ), Vector2( 4, 1 ), Vector2( 5, 1 ), Vector2( 6, 1 ), Vector2( 7, 1 ), Vector2( 8, 1 ), Vector2( 9, 1 ), Vector2( 10, 1 ), Vector2( 11, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=24]
 resource_name = "Abrir"
 length = 0.001
 step = 0.2
@@ -44,7 +41,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=25]
 resource_name = "Fechar"
 length = 0.55
 step = 0.05
@@ -61,7 +58,7 @@ tracks/0/keys = {
 "values": [ Vector2( 11, 1 ), Vector2( 10, 1 ), Vector2( 9, 1 ), Vector2( 8, 1 ), Vector2( 7, 1 ), Vector2( 6, 1 ), Vector2( 5, 1 ), Vector2( 4, 1 ), Vector2( 3, 1 ), Vector2( 2, 1 ), Vector2( 1, 1 ), Vector2( 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=26]
 resource_name = "Idle"
 length = 0.001
 step = 0.2
@@ -78,7 +75,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=27]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame_coords")
@@ -120,7 +117,7 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id=3]
+[sub_resource type="AnimationNodeStateMachine" id=28]
 states/Abrindo/node = SubResource( 12 )
 states/Abrindo/position = Vector2( 336, 20.9794 )
 states/Abrir/node = SubResource( 18 )
@@ -133,64 +130,55 @@ transitions = [ "Abrindo", "Fechar", SubResource( 15 ), "Fechar", "Abrindo", Sub
 start_node = "Idle"
 graph_offset = Vector2( -99, -17 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=29]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 33, 27.5 )
 
-[node name="Cenário 1" type="Sprite"]
+[node name="Cenário 6" type="Sprite"]
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
-
-[node name="NPC" parent="." instance=ExtResource( 2 )]
-position = Vector2( 94, 82 )
-
-[node name="CenarioBancada" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-
-[node name="CenarioObj" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 
 [node name="Elevador" type="Area2D" parent="."]
 scale = Vector2( 2, 2 )
-script = ExtResource( 4 )
-playerPath = "/root/Level/Player"
-chooseFloor = [ " 1", " 2", " 3", " 4", " 5" ]
-chooseAnim = [ 1, 2, 3, 4, 5 ]
+script = ExtResource( 3 )
+playerPath = "/root/Level 5/Player"
+chooseFloor = [ "", " 1", " 2", " 3", " 4" ]
+chooseAnim = [ 0, 1, 2, 3, 4 ]
+animDefault = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Elevador"]
 root_node = NodePath("../ElevadorSprite")
-anims/Abrindo = SubResource( 10 )
-anims/Abrir = SubResource( 2 )
-anims/Fechar = SubResource( 13 )
-anims/Idle = SubResource( 1 )
-anims/RESET = SubResource( 11 )
+anims/Abrindo = SubResource( 23 )
+anims/Abrir = SubResource( 24 )
+anims/Fechar = SubResource( 25 )
+anims/Idle = SubResource( 26 )
+anims/RESET = SubResource( 27 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Elevador"]
-tree_root = SubResource( 3 )
+tree_root = SubResource( 28 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 4 )
+parameters/playback = SubResource( 29 )
 
 [node name="ElevadorSprite" type="Sprite" parent="Elevador"]
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 hframes = 12
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Elevador"]
 position = Vector2( 126, 25.5 )
-shape = SubResource( 9 )
+shape = SubResource( 30 )
 
-[node name="Button" parent="Elevador" instance=ExtResource( 5 )]
+[node name="Button" parent="Elevador" instance=ExtResource( 2 )]
 position = Vector2( 128, 15 )
 
 [node name="FloorIndicator" type="Sprite" parent="Elevador"]
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 hframes = 6
+frame = 5
 
 [node name="ElevadorInterface0" type="Control" parent="Elevador"]
 margin_left = -160.0
@@ -203,7 +191,7 @@ __meta__ = {
 
 [node name="Botoes" type="Sprite" parent="Elevador/ElevadorInterface0"]
 position = Vector2( 160, 89 )
-texture = ExtResource( 9 )
+texture = ExtResource( 1 )
 hframes = 6
 
 [node name="ButtonFechar" type="Button" parent="Elevador/ElevadorInterface0"]
@@ -217,29 +205,29 @@ __meta__ = {
 
 [node name="ButtonAndar1" type="Button" parent="Elevador/ElevadorInterface0"]
 show_behind_parent = true
-margin_left = 164.0
-margin_top = 112.5
-margin_right = 184.0
-margin_bottom = 132.5
+margin_left = 136.0
+margin_top = 113.0
+margin_right = 156.0
+margin_bottom = 133.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonAndar2" type="Button" parent="Elevador/ElevadorInterface0"]
 show_behind_parent = true
-margin_left = 136.0
-margin_top = 81.0
-margin_right = 156.0
-margin_bottom = 101.0
+margin_left = 164.0
+margin_top = 113.0
+margin_right = 184.0
+margin_bottom = 133.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonAndar3" type="Button" parent="Elevador/ElevadorInterface0"]
 show_behind_parent = true
-margin_left = 164.0
+margin_left = 136.0
 margin_top = 81.0
-margin_right = 184.0
+margin_right = 156.0
 margin_bottom = 101.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -247,19 +235,19 @@ __meta__ = {
 
 [node name="ButtonAndar4" type="Button" parent="Elevador/ElevadorInterface0"]
 show_behind_parent = true
-margin_left = 136.0
-margin_top = 48.5
-margin_right = 156.0
-margin_bottom = 68.5
+margin_left = 164.0
+margin_top = 81.0
+margin_right = 184.0
+margin_bottom = 101.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonAndar5" type="Button" parent="Elevador/ElevadorInterface0"]
 show_behind_parent = true
-margin_left = 164.0
+margin_left = 136.0
 margin_top = 49.0
-margin_right = 184.0
+margin_right = 156.0
 margin_bottom = 69.0
 __meta__ = {
 "_edit_use_anchors_": false
