@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Elevador.gd" type="Script" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://Sprites/Elevador/elevadorandar.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Elevador/ElevadorAbrindo.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Elevador/02.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/CompEng.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/antena.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Cenários/Moeda.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 45.5, 31.5 )
 
 [sub_resource type="Animation" id=23]
 resource_name = "Abrindo"
@@ -135,11 +141,28 @@ graph_offset = Vector2( -99, -17 )
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 33, 27.5 )
 
-[node name="Cenário 3" type="Sprite"]
+[node name="Cenário 3" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
+
+[node name="SatelliteTaskArea" type="Area2D" parent="."]
+position = Vector2( 87, 75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SatelliteTaskArea"]
+position = Vector2( 12.5, 0 )
+shape = SubResource( 31 )
+
+[node name="Sprite" type="Sprite" parent="SatelliteTaskArea"]
+position = Vector2( 0, -24 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Button" parent="SatelliteTaskArea" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
 
 [node name="Elevador" type="Area2D" parent="."]
 scale = Vector2( 2, 2 )
@@ -181,6 +204,7 @@ hframes = 6
 frame = 2
 
 [node name="ElevadorInterface0" type="Control" parent="Elevador"]
+visible = false
 margin_left = -160.0
 margin_top = -89.0
 margin_right = 160.0
@@ -253,6 +277,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Moeda" parent="." instance=ExtResource( 9 )]
+margin_left = -320.0
+margin_top = -180.0
+margin_right = -280.0
+margin_bottom = -140.0
+
+[connection signal="body_entered" from="SatelliteTaskArea" to="." method="_on_SatelliteTaskArea_body_entered"]
+[connection signal="body_exited" from="SatelliteTaskArea" to="." method="_on_SatelliteTaskArea_body_exited"]
 [connection signal="body_entered" from="Elevador" to="Elevador" method="_on_Elevador_body_entered"]
 [connection signal="body_exited" from="Elevador" to="Elevador" method="_on_Elevador_body_exited"]
 [connection signal="pressed" from="Elevador/ElevadorInterface0/ButtonFechar" to="Elevador" method="_on_ButtonFechar_pressed"]

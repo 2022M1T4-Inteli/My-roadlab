@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Cenários/Cenário 6.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 10 )
 
 [node name="Level 5" type="Node2D"]
 
@@ -12,6 +15,16 @@ position = Vector2( 320, 180 )
 [node name="Ground" parent="." instance=ExtResource( 1 )]
 position = Vector2( 319, 298 )
 scale = Vector2( 2, 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" groups=["Ground"]]
+position = Vector2( -174.5, -49 )
+scale = Vector2( 1, 30 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=["Ground"]]
+position = Vector2( 175.5, -30 )
+scale = Vector2( 1, 30 )
+shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 571, 263 )

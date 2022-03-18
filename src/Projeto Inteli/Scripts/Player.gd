@@ -26,12 +26,14 @@ func _ready():
 	#Definindo animação inicial do jogador
 	stateMachine.travel("idle")
 
+
 func _process(delta):
 	#Definindo qual sprite deve ser utilizada
-	characterSprite.set_texture(charactersSpriteArray[sprNumber])
+	characterSprite.set_texture(charactersSpriteArray[Global.sprNumber])
 
 	if !canWalk:
 		stateMachine.travel("idle")
+
 
 #Função para movimentar o personagem
 func movement(var vel):
@@ -50,6 +52,7 @@ func movement(var vel):
 	
 	#Movendo o personagem
 	move_and_slide(vel)
+
 
 func _physics_process(delta):
 	#Declaração de variavel interna

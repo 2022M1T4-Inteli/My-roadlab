@@ -6,7 +6,7 @@ var fineshed = true
 var dialogIndex = -1
 
 #Variavel pública que pode ser acessada em outros scripts
-export var dialog = ['Nossos serviços de internet das coisas foi desconectado em razão da mudança de banda programada. Sintonize o canal correto para fazer nossos sistemas inteligentes voltarem a funcionar como deveriam. A cidade encontra-se paralizada em virtude disso, e todos os sensores interromperam a sua transmissão de dados.']
+export var dialog = ['Olá, seja bem-vindo(a) ao mundo das Indústrias Sun. Dirija-se aos andares\n 1 e 2 e realize os minijogos de Ciência da Computação e Engenharia de Computação, respectivamente.']
 
 func _ready():
 	# Definindo o que deve ser visivel ao iniciar o jogo e iniciando função

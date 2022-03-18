@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Teste.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/download.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 15 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Computer Task" type="Node2D"]
+
+[node name="KinematicBody2D" type="Area2D" parent="."]
+position = Vector2( 64, 50 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+socketName = "Processador"
+socketPos = Vector2( 615, 23 )
+defaultPosition = Vector2( 64, 50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 2 )
+
+[node name="KinematicBody2D2" type="Area2D" parent="."]
+position = Vector2( 64, 50 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+defaultPosition = Vector2( 64, 100 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D2"]
+texture = ExtResource( 2 )
+
+[node name="Computer" type="Node2D" parent="."]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Computer" groups=["Processador"]]
+position = Vector2( 615, 23 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/KinematicBody2D" groups=["Processador"]]
+shape = SubResource( 2 )
+
+[node name="Components" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_mouse_exited"]
+[connection signal="body_entered" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_mouse_exited"]

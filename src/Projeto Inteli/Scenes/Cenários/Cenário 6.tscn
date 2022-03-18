@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Sprites/Elevador/05.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/Cenário/CenarioFundo.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Elevador/elevadorandar.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Elevador/ElevadorAbrindo.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Cenários/Moeda.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=23]
 resource_name = "Abrindo"
@@ -252,6 +253,12 @@ margin_bottom = 69.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Moeda" parent="." instance=ExtResource( 7 )]
+margin_left = -320.0
+margin_top = -180.0
+margin_right = -280.0
+margin_bottom = -140.0
 
 [connection signal="body_entered" from="Elevador" to="Elevador" method="_on_Elevador_body_entered"]
 [connection signal="body_exited" from="Elevador" to="Elevador" method="_on_Elevador_body_exited"]

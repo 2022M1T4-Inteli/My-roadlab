@@ -11,8 +11,13 @@ config_version=4
 [application]
 
 config/name="Projeto Inteli"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="res://Scenes/Cenários/Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+AudioStreamPlayer2d="*res://Scenes/Audio/AudioStreamPlayer2D.tscn"
 
 [display]
 

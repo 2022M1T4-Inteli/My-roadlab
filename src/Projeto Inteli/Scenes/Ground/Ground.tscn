@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 10 )
 
 [node name="Ground" type="StaticBody2D" groups=["Ground"]]
 collision_layer = 9

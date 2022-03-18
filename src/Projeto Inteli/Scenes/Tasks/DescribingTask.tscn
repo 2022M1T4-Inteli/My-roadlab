@@ -1,0 +1,1062 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/DescribingTask.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/SatelliteTask/TASKCOMPLETA.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/TryAgainButton.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Cenário/task_moldura.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Cenário/task2.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=6]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="ButtonGroup" id=4]
+
+[sub_resource type="DynamicFont" id=7]
+size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 8
+font_data = ExtResource( 1 )
+
+[node name="DescribingTask" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButtonUnfinineshed" type="Button" parent="Control"]
+show_behind_parent = true
+margin_left = 501.0
+margin_top = 21.0
+margin_right = 523.0
+margin_bottom = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button_submit" type="Button" parent="."]
+margin_left = 449.0
+margin_top = 281.0
+margin_right = 519.0
+margin_bottom = 319.0
+custom_fonts/font = SubResource( 6 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TaskTotal" type="Sprite" parent="."]
+position = Vector2( 320, 180 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="TaskTotal"]
+margin_left = 135.0
+margin_top = 109.0
+margin_right = 195.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 9 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskMoldura" type="Sprite" parent="."]
+position = Vector2( 500, 184 )
+texture = ExtResource( 5 )
+
+[node name="status_1" type="ColorRect" parent="."]
+margin_left = 488.0
+margin_top = 118.0
+margin_right = 516.0
+margin_bottom = 146.0
+rect_pivot_offset = Vector2( 24, 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_reponse" type="Label" parent="."]
+margin_left = 194.0
+margin_top = 281.0
+margin_right = 423.0
+margin_bottom = 320.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="status_2" type="ColorRect" parent="."]
+margin_left = 488.0
+margin_top = 152.0
+margin_right = 516.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 32, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="status_3" type="ColorRect" parent="."]
+margin_left = 488.0
+margin_top = 186.0
+margin_right = 516.0
+margin_bottom = 214.0
+rect_pivot_offset = Vector2( 32, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="status_4" type="ColorRect" parent="."]
+margin_left = 488.0
+margin_top = 220.0
+margin_right = 516.0
+margin_bottom = 248.0
+rect_pivot_offset = Vector2( 32, 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Node2D" parent="."]
+position = Vector2( 160, 105 )
+
+[node name="A0" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 254.0
+margin_top = 14.0
+margin_right = 274.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A9" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 229.0
+margin_top = 14.0
+margin_right = 249.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A8" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 204.0
+margin_top = 14.0
+margin_right = 224.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A7" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 179.0
+margin_top = 14.0
+margin_right = 199.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A6" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 154.0
+margin_top = 14.0
+margin_right = 174.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A5" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 129.0
+margin_top = 14.0
+margin_right = 149.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A4" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 104.0
+margin_top = 14.0
+margin_right = 124.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A3" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 79.0
+margin_top = 14.0
+margin_right = 99.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A2" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 54.0
+margin_top = 14.0
+margin_right = 74.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A1" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 29.0
+margin_top = 14.0
+margin_right = 49.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B1" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 29.0
+margin_top = 39.0
+margin_right = 49.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B2" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 54.0
+margin_top = 39.0
+margin_right = 74.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B3" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 79.0
+margin_top = 39.0
+margin_right = 99.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B4" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 104.0
+margin_top = 39.0
+margin_right = 124.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B5" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 129.0
+margin_top = 39.0
+margin_right = 149.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B6" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 154.0
+margin_top = 39.0
+margin_right = 174.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B7" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 179.0
+margin_top = 39.0
+margin_right = 199.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B8" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 204.0
+margin_top = 39.0
+margin_right = 224.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B9" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 229.0
+margin_top = 39.0
+margin_right = 249.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B0" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 254.0
+margin_top = 39.0
+margin_right = 274.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C1" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 29.0
+margin_top = 64.0
+margin_right = 49.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C2" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 54.0
+margin_top = 64.0
+margin_right = 74.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C3" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 79.0
+margin_top = 64.0
+margin_right = 99.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C4" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 104.0
+margin_top = 64.0
+margin_right = 124.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C5" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 129.0
+margin_top = 64.0
+margin_right = 149.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C6" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 154.0
+margin_top = 64.0
+margin_right = 174.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C7" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 179.0
+margin_top = 64.0
+margin_right = 199.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C8" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 204.0
+margin_top = 64.0
+margin_right = 224.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C9" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 229.0
+margin_top = 64.0
+margin_right = 249.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C0" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 254.0
+margin_top = 64.0
+margin_right = 274.0
+margin_bottom = 84.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D1" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 29.0
+margin_top = 89.0
+margin_right = 49.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D2" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 54.0
+margin_top = 89.0
+margin_right = 74.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D3" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 79.0
+margin_top = 89.0
+margin_right = 99.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D4" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 104.0
+margin_top = 89.0
+margin_right = 124.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D5" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 129.0
+margin_top = 89.0
+margin_right = 149.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D6" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 154.0
+margin_top = 89.0
+margin_right = 174.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D7" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 179.0
+margin_top = 89.0
+margin_right = 199.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D8" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 204.0
+margin_top = 89.0
+margin_right = 224.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D9" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 229.0
+margin_top = 89.0
+margin_right = 249.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D0" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 254.0
+margin_top = 89.0
+margin_right = 274.0
+margin_bottom = 109.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E1" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 29.0
+margin_top = 114.0
+margin_right = 49.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E2" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 54.0
+margin_top = 114.0
+margin_right = 74.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E3" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 79.0
+margin_top = 114.0
+margin_right = 99.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E4" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 104.0
+margin_top = 114.0
+margin_right = 124.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E5" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 129.0
+margin_top = 114.0
+margin_right = 149.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E6" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 154.0
+margin_top = 114.0
+margin_right = 174.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E7" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 179.0
+margin_top = 114.0
+margin_right = 199.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E8" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 204.0
+margin_top = 114.0
+margin_right = 224.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E9" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 229.0
+margin_top = 114.0
+margin_right = 249.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="E0" type="Button" parent="Panel" groups=["keyboard_group"]]
+margin_left = 254.0
+margin_top = 114.0
+margin_right = 274.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 8, 16 )
+group = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_tip2" type="Label" parent="Panel"]
+margin_left = 8.0
+margin_top = 9.0
+margin_right = 40.0
+margin_bottom = 41.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "A"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip7" type="Label" parent="Panel"]
+margin_left = 24.0
+margin_top = 124.0
+margin_right = 56.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip8" type="Label" parent="Panel"]
+margin_left = 48.0
+margin_top = 124.0
+margin_right = 80.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip9" type="Label" parent="Panel"]
+margin_left = 73.0
+margin_top = 124.0
+margin_right = 105.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip10" type="Label" parent="Panel"]
+margin_left = 98.0
+margin_top = 124.0
+margin_right = 130.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip11" type="Label" parent="Panel"]
+margin_left = 123.0
+margin_top = 124.0
+margin_right = 155.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip12" type="Label" parent="Panel"]
+margin_left = 148.0
+margin_top = 124.0
+margin_right = 180.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "6"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip13" type="Label" parent="Panel"]
+margin_left = 173.0
+margin_top = 124.0
+margin_right = 205.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "7"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip14" type="Label" parent="Panel"]
+margin_left = 199.0
+margin_top = 124.0
+margin_right = 231.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "8"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip15" type="Label" parent="Panel"]
+margin_left = 223.0
+margin_top = 124.0
+margin_right = 255.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "9"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip16" type="Label" parent="Panel"]
+margin_left = 249.0
+margin_top = 124.0
+margin_right = 281.0
+margin_bottom = 156.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip3" type="Label" parent="Panel"]
+margin_left = 8.0
+margin_top = 33.0
+margin_right = 40.0
+margin_bottom = 65.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "B"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip4" type="Label" parent="Panel"]
+margin_left = 8.0
+margin_top = 58.0
+margin_right = 40.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "C"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip5" type="Label" parent="Panel"]
+margin_left = 8.0
+margin_top = 83.0
+margin_right = 40.0
+margin_bottom = 115.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "D"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip6" type="Label" parent="Panel"]
+margin_left = 8.0
+margin_top = 108.0
+margin_right = 40.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+text = "E"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "ddd"
+}
+
+[node name="label_tip" type="Label" parent="."]
+margin_left = 150.0
+margin_top = 34.0
+margin_right = 469.0
+margin_bottom = 87.0
+rect_pivot_offset = Vector2( 200, 72 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TaskFineshed" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task_finished" type="Sprite" parent="TaskFineshed"]
+position = Vector2( 321, 180.25 )
+scale = Vector2( 1, 0.995833 )
+texture = ExtResource( 3 )
+
+[node name="Earned_score" type="RichTextLabel" parent="TaskFineshed"]
+margin_left = 229.0
+margin_top = 203.0
+margin_right = 481.0
+margin_bottom = 218.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 0.286275, 0.85098, 0.231373, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+text = "+100 pontos
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score_congratulations_message" type="RichTextLabel" parent="TaskFineshed"]
+margin_left = 229.0
+margin_top = 154.0
+margin_right = 481.0
+margin_bottom = 195.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 1, 0.898039, 0.141176, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+text = "Parabéns! Você completou mais uma tarefa. 
+A inasão foi impedida com sucesso."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TaskFineshed"]
+show_behind_parent = true
+margin_left = 474.0
+margin_top = 137.0
+margin_right = 496.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskRetry" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TaskRetry"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="TaskRetry"]
+margin_left = 276.0
+margin_top = 195.0
+margin_right = 364.0
+margin_bottom = 209.0
+custom_fonts/font = SubResource( 8 )
+text = "Tentar Novamente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score_congratulations_message" type="RichTextLabel" parent="TaskRetry"]
+margin_left = 204.0
+margin_top = 148.0
+margin_right = 438.0
+margin_bottom = 190.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 1, 0.898039, 0.141176, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+text = "Você falhou. Tente novamente para impedir a
+ invasão e a descriptografia dos dados pelos hackers"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgainButton" type="Button" parent="TaskRetry"]
+show_behind_parent = true
+margin_left = 271.0
+margin_top = 188.0
+margin_right = 369.0
+margin_bottom = 219.0
+
+[node name="Close Button" type="Button" parent="TaskRetry"]
+show_behind_parent = true
+margin_left = 472.0
+margin_top = 136.0
+margin_right = 495.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/CloseButtonUnfinineshed" to="." method="_on_CloseButtonUnfinineshed_pressed"]
+[connection signal="pressed" from="Control/CloseButtonUnfinineshed" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="button_submit" to="." method="_on_button_submit_pressed"]
+[connection signal="pressed" from="TaskFineshed/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TaskRetry/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]
+[connection signal="pressed" from="TaskRetry/Close Button" to="." method="_on_Close_Button_pressed"]
