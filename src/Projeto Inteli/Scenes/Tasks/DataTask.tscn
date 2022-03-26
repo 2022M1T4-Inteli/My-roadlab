@@ -1,0 +1,314 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/Data Task/Background.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/TryAgainButton.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Data Task/SelectButton.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Data Task/ArchiveTransfer.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/DataTask.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/SatelliteTask/TASKCOMPLETA.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.388235, 0.670588, 0.247059, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="DataTask" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TransferButton" type="Button" parent="Control"]
+margin_left = 284.0
+margin_top = 276.0
+margin_right = 356.0
+margin_bottom = 308.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskButtonClose" type="Button" parent="Control"]
+margin_left = 476.0
+margin_top = 58.0
+margin_right = 500.0
+margin_bottom = 82.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Control"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 2 )
+
+[node name="TransferButtonText" type="Label" parent="Control"]
+margin_left = 292.0
+margin_top = 286.0
+margin_right = 348.0
+margin_bottom = 308.0
+rect_pivot_offset = Vector2( 151, 105 )
+custom_fonts/font = SubResource( 1 )
+text = "Transferir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChallengeTitle" type="Label" parent="Control"]
+margin_left = 179.0
+margin_top = 75.0
+margin_right = 460.0
+margin_bottom = 97.0
+rect_pivot_offset = Vector2( 67, 133 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectButton1" type="Button" parent="Control"]
+margin_left = 151.0
+margin_top = 118.0
+margin_right = 489.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectButtonSprite1" type="Sprite" parent="Control/SelectButton1"]
+position = Vector2( 169, 21 )
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="SelectButton1Text" type="Label" parent="Control/SelectButton1"]
+margin_left = 31.0
+margin_top = 11.0
+margin_right = 312.0
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 67, 133 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectButton2" type="Button" parent="Control"]
+margin_left = 151.0
+margin_top = 170.0
+margin_right = 489.0
+margin_bottom = 212.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectButtonSprite2" type="Sprite" parent="Control/SelectButton2"]
+position = Vector2( 169, 21 )
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="SelectButton2Text" type="Label" parent="Control/SelectButton2"]
+margin_left = 31.0
+margin_top = 11.0
+margin_right = 312.0
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 67, 133 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectButton3" type="Button" parent="Control"]
+margin_left = 151.0
+margin_top = 222.0
+margin_right = 489.0
+margin_bottom = 264.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectButtonSprite3" type="Sprite" parent="Control/SelectButton3"]
+position = Vector2( 169, 21 )
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="SelectButton3Text" type="Label" parent="Control/SelectButton3"]
+margin_left = 31.0
+margin_top = 11.0
+margin_right = 312.0
+margin_bottom = 33.0
+rect_pivot_offset = Vector2( 67, 133 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArchiveTransfer" type="Sprite" parent="Control"]
+visible = false
+position = Vector2( 320, 180 )
+texture = ExtResource( 5 )
+
+[node name="LoadBar" type="Panel" parent="Control/ArchiveTransfer"]
+margin_left = -96.0
+margin_top = 28.0
+margin_right = -96.0
+margin_bottom = 42.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChallengeTitle" type="Label" parent="Control/ArchiveTransfer"]
+margin_left = -33.0
+margin_top = 49.0
+margin_right = 34.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 151, 105 )
+custom_fonts/font = SubResource( 1 )
+text = "Transferindo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskRetry" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TaskRetry"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="TaskRetry"]
+margin_left = 276.0
+margin_top = 195.0
+margin_right = 364.0
+margin_bottom = 209.0
+custom_fonts/font = SubResource( 3 )
+text = "Tentar Novamente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score_congratulations_message" type="RichTextLabel" parent="TaskRetry"]
+margin_left = 204.0
+margin_top = 148.0
+margin_right = 438.0
+margin_bottom = 190.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 1, 0.898039, 0.141176, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "Você falhou. Tente novamente para impedir a
+ invasão e a descriptografia dos dados pelos hackers"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgainButton" type="Button" parent="TaskRetry"]
+show_behind_parent = true
+margin_left = 271.0
+margin_top = 188.0
+margin_right = 369.0
+margin_bottom = 219.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close Button" type="Button" parent="TaskRetry"]
+show_behind_parent = true
+margin_left = 472.0
+margin_top = 136.0
+margin_right = 495.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskFineshed" type="Control" parent="."]
+visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task_finished" type="Sprite" parent="TaskFineshed"]
+position = Vector2( 320, 181 )
+texture = ExtResource( 7 )
+
+[node name="Earned_score" type="RichTextLabel" parent="TaskFineshed"]
+margin_left = 232.0
+margin_top = 201.0
+margin_right = 484.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 0.286275, 0.85098, 0.231373, 1 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "+50 pontos"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score_congratulations_message" type="RichTextLabel" parent="TaskFineshed"]
+margin_left = 232.0
+margin_top = 152.0
+margin_right = 484.0
+margin_bottom = 193.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 1, 0.898039, 0.141176, 1 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "Parabéns! Você completou mais uma tarefa."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskFineshedButton" type="Button" parent="TaskFineshed"]
+show_behind_parent = true
+margin_left = 472.0
+margin_top = 137.0
+margin_right = 496.0
+margin_bottom = 161.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Control/TransferButton" to="." method="_on_TransferButton_pressed"]
+[connection signal="pressed" from="Control/TaskButtonClose" to="." method="_on_TaskButtonClose_pressed"]
+[connection signal="pressed" from="Control/SelectButton1" to="." method="_on_SelectButton1_pressed"]
+[connection signal="pressed" from="Control/SelectButton2" to="." method="_on_SelectButton2_pressed"]
+[connection signal="pressed" from="Control/SelectButton3" to="." method="_on_SelectButton3_pressed"]
+[connection signal="pressed" from="TaskRetry/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]
+[connection signal="pressed" from="TaskRetry/Close Button" to="." method="_on_Close_Button_pressed"]
+[connection signal="pressed" from="TaskFineshed/TaskFineshedButton" to="." method="_on_TaskFineshedButton_pressed"]

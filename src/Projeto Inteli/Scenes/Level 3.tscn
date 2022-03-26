@@ -29,3 +29,5 @@ shape = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 571, 263 )
 canWalk = true
+
+[node name="TasksSpawn" type="Node2D" parent="."]

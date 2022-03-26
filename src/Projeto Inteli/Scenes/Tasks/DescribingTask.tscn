@@ -1054,8 +1054,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Control/CloseButtonUnfinineshed" to="." method="_on_CloseButtonUnfinineshed_pressed"]
 [connection signal="pressed" from="Control/CloseButtonUnfinineshed" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/CloseButtonUnfinineshed" to="." method="_on_CloseButtonUnfinineshed_pressed"]
 [connection signal="pressed" from="button_submit" to="." method="_on_button_submit_pressed"]
 [connection signal="pressed" from="TaskFineshed/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="TaskRetry/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]

@@ -1,47 +1,51 @@
 extends Area2D
 
-# Declaração de variavel
+# Declaring varibles
 var mouse = false
 var move = true
 var onSocket = false
 export var socketName = ""
-export var socketPos = Vector2(0, 0)
-var complete = false
+export var socketPath = ""
 
-export var defaultPosition = Vector2(0, 0)
+onready var defaultPosition = self.position
 
 
 func _ready():
-	# Definindo parametros iniciais
+	# Defining initial parameters
 	input_pickable = true
 
 
 func _physics_process(delta):
 	# Criando movimentação dos objetos por meio do mouse
-	if !complete:
-		if onSocket && !Input.is_mouse_button_pressed(1):
-			move = false
-			Global.totalComputer += 1
-			complete = true
-		if move:
-			if mouse && Input.is_mouse_button_pressed(1):
-				self.position = get_global_mouse_position()
-			else:
-				self.position = defaultPosition
-				pass
+	if onSocket && !Input.is_mouse_button_pressed(1):
+		move = false
+		Global.totalComputer += 1
+	if move:
+		if mouse && Input.is_mouse_button_pressed(1):
+			self.position = get_global_mouse_position()
 		else:
-			self.position = socketPos
+			self.position = defaultPosition
+			pass
+	else:
+		get_node(socketPath + "/InSlot").visible = true
+		$Sprite.visible = false
+		Global.objCatched = false
+		get_node(socketPath + "/SlotIndicator").queue_free()
+		self.queue_free()
+
 
 # Checando se o mouse entrou na área
 func _on_KinematicBody2D_mouse_entered():
-	if !Global.objCatched:
+	if !Global.objCatched && move:
+		$Sprite.frame = 1
 		mouse = true
 		Global.objCatched = true
 
 
 # Checando se o mouse saiu da área
 func _on_KinematicBody2D_mouse_exited():
-	if !Input.is_mouse_button_pressed(1):
+	if !Input.is_mouse_button_pressed(1) && move:
+		$Sprite.frame = 0
 		mouse = false
 		Global.objCatched = false
 

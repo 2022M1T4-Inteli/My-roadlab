@@ -1,44 +1,44 @@
 extends KinematicBody2D
 
-# Declarando variaveis
-#Variavel publica que pode ser acessada em outros scripts
+# Declaring variables
+#Public variable that can be accessed in other scripts
 export var canWalk = false
 
-#Variaveis para movimentação
+# Movement variables
 var speed = 200
 var inGround = false
 
-#Variavel para armazenar todas as sprites de personagem
+#Variable to storege sprites archives
 var charactersSpriteArray = [preload("res://Sprites/Personagens/Personagem.png"), 
 								preload("res://Sprites/Personagens/PersonagemF.png"), 
 								preload("res://Sprites/Personagens/PersonagemP.png"), 
 								preload("res://Sprites/Personagens/PersonagemPF.png")]
 
-#Variavel para armazenar qual sprite será selecionada na array
+#Variable to storege sprite will be selected
 var sprNumber = 0
 
-#Criando variaveis que referenciam a nodes e parametros
+# Creating varaibles that references parameters
 onready var characterSprite = get_node("Sprite")
 onready var animationTree = $AnimationTree
 onready var stateMachine = animationTree.get("parameters/playback")
 
+
 func _ready():
-	#Definindo animação inicial do jogador
+	#Setting first animation
 	stateMachine.travel("idle")
 
 
 func _process(delta):
-	#Definindo qual sprite deve ser utilizada
+	#Defining witch sprite will be used
 	characterSprite.set_texture(charactersSpriteArray[Global.sprNumber])
 
 	if !canWalk:
 		stateMachine.travel("idle")
 
 
-#Função para movimentar o personagem
+# Function to movement the player
 func movement(var vel):
-	# Definindo para qual direção o personagem deve se mover
-	# Definindo também para qual direção a sprite está virada
+	# Defining the direction the character will move and defining the scale of the image
 	if Input.is_action_pressed("ui_A"):
 		vel.x -= speed
 		stateMachine.travel("walk")
@@ -50,15 +50,15 @@ func movement(var vel):
 	else:
 		stateMachine.travel("idle")
 	
-	#Movendo o personagem
+	#Moving character
 	move_and_slide(vel)
 
 
 func _physics_process(delta):
-	#Declaração de variavel interna
+	#Declaring local variable
 	var velocity = Vector2.ZERO
 	
-	# Checando se o jogador está ou não no chão
+	# Checking if the player is in the ground
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
 		if collision.collider.is_in_group("Ground"):
@@ -66,12 +66,12 @@ func _physics_process(delta):
 		else:
 			inGround = false
 	
-	# Gerando gravidade caso jogador n esteja no chão
+	# Creating gravity to keep the player in the ground
 	if inGround == false:
 		velocity.y += 200
 	else:
 		velocity.y = 0
 	
-	# Inciando função de movimentação do personagem
+	# Inicializing movement function
 	if canWalk:
 		movement(velocity)

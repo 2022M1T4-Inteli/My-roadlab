@@ -1,18 +1,15 @@
 extends Node2D
 
-# Declaração de variavel
+# Declaring variable
 var playerSatellite = false
+var playerComputer = false
 var taskSatellite = preload("res://Scenes/Tasks/SatelliteTask.tscn")
+var taskComputer = preload("res://Scenes/Tasks/ComputerTask.tscn")
 var taskOcorring = false
-
-func _ready():
-	# Definindo os parametros inicias
-	$SatelliteTaskArea/Button.visible = false
-	$SatelliteTaskArea/Sprite.frame = 0
 
 
 func _process(delta):
-	# Iniciando a task após a interação por meio do botão "E" e a presença do jogador na área
+	# Starting task after interct with button "E" and the player is in area
 	if playerSatellite && Input.is_action_just_pressed("ui_E") && !taskOcorring && !Global.satelliteTaskComplete:
 		var task = taskSatellite.instance()
 		get_node("/root/Level 2/TasksSpawn").add_child(task)
@@ -20,9 +17,14 @@ func _process(delta):
 		$SatelliteTaskArea/Sprite.frame = 0
 		get_node("/root/Level 2/Player").canWalk = false
 		taskOcorring = true
+	
+	if playerComputer && Input.is_action_just_pressed("ui_E") && !taskOcorring && !Global.computerTaskComplete:
+		var task = taskComputer.instance()
+		get_node("/root/Level 2/TasksSpawn").add_child(task)
+		get_node("/root/Level 2/Player").canWalk = false
+		taskOcorring = true
 
 
-# Função para reiniciar os parametros iniciais da task
 func _restart():
 	get_node("/root/Level 2/Player").canWalk = true
 	$SatelliteTaskArea/Button.visible = true
@@ -30,7 +32,7 @@ func _restart():
 	taskOcorring = false
 
 
-# Checando se o jogador está na área
+# Checking if the player is in area
 func _on_SatelliteTaskArea_body_entered(body):
 	if !Global.satelliteTaskComplete:
 		$SatelliteTaskArea/Button.visible = true
@@ -38,8 +40,17 @@ func _on_SatelliteTaskArea_body_entered(body):
 		playerSatellite = true
 
 
-# Checando se o jogador saiu da área
+# Checking if the player left the area
 func _on_SatelliteTaskArea_body_exited(body):
 	$SatelliteTaskArea/Button.visible = false
 	$SatelliteTaskArea/Sprite.frame = 0
 	playerSatellite = false
+
+
+func _on_ComputerTaskArea_body_entered(body):
+	if !Global.computerTaskComplete:
+		playerComputer = true
+
+
+func _on_ComputerTaskArea_body_exited(body):
+	playerComputer = false

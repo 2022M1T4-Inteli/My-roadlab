@@ -1,15 +1,17 @@
 extends Control
 
-# Declaração de variaveis
+# Declaring variables
 var op1 = false
 var op2 = false
 var op3 = false
 var op4 = false
 
 func _ready():
-	pass
+	if !Global.introduction:
+		get_node("/root/Level/Player/Sprite").scale = Vector2(1, 1)
 
-# Fazendo transição entre as animações
+
+# Making trasintion between animations
 func _process(delta):
 	if Global.introduction:
 		get_node("/root/Level/Manual").queue_free()
@@ -29,7 +31,7 @@ func _process(delta):
 		$Sprite.frame = 0
 
 
-# Definindo qual a sprite do personagem que foi selecionada
+# Defining which sprite the player choosed
 func _on_Op1_pressed():
 	Global.sprNumber = 0
 	get_node("/root/Level/Manual").visible = true
@@ -54,7 +56,7 @@ func _on_Op4_pressed():
 	get_node("/root/Level/Seleção de Personagem").queue_free()
 
 
-# Checando se o mouse está em algum botão para alterar a animação da tela de seleção
+# Checking if the mouse is on top of any button
 func _on_Op1_mouse_entered():
 	op1 = true
 

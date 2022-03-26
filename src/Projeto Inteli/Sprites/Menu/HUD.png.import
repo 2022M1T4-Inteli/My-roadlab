@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/download.png-f8c793d65639fa83900ac69982b8473b.stex"
+path="res://.import/HUD.png-d4f2eb1b831d10ef9d77e8d48f1c01eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/download.png"
-dest_files=[ "res://.import/download.png-f8c793d65639fa83900ac69982b8473b.stex" ]
+source_file="res://Sprites/Menu/HUD.png"
+dest_files=[ "res://.import/HUD.png-d4f2eb1b831d10ef9d77e8d48f1c01eb.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

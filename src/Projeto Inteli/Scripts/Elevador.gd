@@ -1,54 +1,59 @@
 extends Area2D
 
-# Declaração de variaveis
+# Declaring variables
 var player = false
 var floorSelect = false
 var _floor = 0
 
-# Variaveis para ajustar o código de acordo com a fase
+# Variables to adjust the code out the script
 export var playerPath = ""
 export var chooseFloor = [0, 0, 0, 0, 0]
 export var chooseAnim = [0, 0, 0, 0, 0]
 export var animDefault = 0
 
+# Publics variables taken on start of game 
 onready var animationTree = $AnimationTree
 onready var stateMachine = animationTree.get("parameters/playback")
 
+
 func _ready():
-	# Definindo o que deve ser visivel inicialmente
+	# Defining initials parameters
 	$ElevadorInterface0/Botoes.frame = animDefault
 	$ElevadorInterface0.visible = false
 	$Button.visible = false
 
+
 func _process(delta):
-	# Abrindo intereface de seleção de andar e inciando animação do elevador abrir
+	# Oppening floor selection screen and starting elevator animation
 	if player && Input.is_action_pressed("ui_E"):
 		stateMachine.travel("Abrindo")
 		$ElevadorInterface0.visible = true
-		#Acessando variaveis do node "Player", e alterando seus valores
 		get_node(playerPath).canWalk = false
 		floorSelect = true
-	# Fechando inteface de seleção de andar e retornando o elevador a animação padrão
+	# Closing interface of floor selection screen and returning to idle animation
 	if floorSelect && Input.is_action_pressed("ui_cancel"):
-		#Acessando variaveis do node "Player", e alterando seus valores
 		$ElevadorInterface0.visible = false
 		floorSelect = false
+		#Accessing varibles of other node("Player") and changing its values
 		get_node(playerPath).canWalk = true
 		stateMachine.travel("Fechar")
 
+
 func _on_Elevador_body_entered(body):
-	# checando se o jogador entrou na área e alterando animação
+	# Checking if the player is in area
 	stateMachine.travel("Abrir")
 	player = true
 	$Button.visible = true
 
+
 func _on_Elevador_body_exited(body):
-	# checando se o jogador saiu da área e alterando animação
+	# Checking if the player left the area
 	player = false
 	stateMachine.travel("Idle")
 	$Button.visible = false
 
-# Fechando interface do elevador.
+
+# Closing floor selection screen
 func _on_ButtonFechar_pressed():
 	$ElevadorInterface0.visible = false
 	floorSelect = false
@@ -56,7 +61,7 @@ func _on_ButtonFechar_pressed():
 	stateMachine.travel("Fechar")
 
 
-# Checando qual botão foi pressionado, para trocar de andar
+# Checking witch button was pushed and changing level
 func _on_ButtonAndar1_pressed():
 	get_tree().change_scene_to(load("res://Scenes/Level" + str(chooseFloor[0]) + ".tscn"))
 
@@ -73,7 +78,7 @@ func _on_ButtonAndar5_pressed():
 	get_tree().change_scene_to(load("res://Scenes/Level" + str(chooseFloor[4]) + ".tscn"))
 
 
-# Checando em qual botão o mouse está em cima e alterando as animações de acordo
+# Checking witch button mouse cursor is on top
 func _on_ButtonAndar1_mouse_entered():
 	$ElevadorInterface0/Botoes.frame = chooseAnim[0] 
 func _on_ButtonAndar1_mouse_exited():

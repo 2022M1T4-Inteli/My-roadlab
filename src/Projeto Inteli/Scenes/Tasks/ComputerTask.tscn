@@ -1,63 +1,467 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://Scripts/Teste.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/download.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/ComputerTaskComponent.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Computer Task/HD.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Computer Task/Fundo.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Computer Task/Processador.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Computer Task/PlacaVideo.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Computer Task/RAM.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Computer Task/Fonte.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Computer Task/SRAM2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Computer Task/SFonte.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Computer Task/SPlacaVideo.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Computer Task/SProcessador.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Computer Task/SRAM1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Computer Task/SHD.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Computer Task/SPProcessador.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Computer Task/SPRAM2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Computer Task/SPPlacaVideo.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Computer Task/SPHD.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Computer Task/SPRAM1.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Computer Task/SPFonte.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/ComputerTaskSlots.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/ComputerTask.gd" type="Script" id=21]
+[ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://Sprites/SatelliteTask/TASKCOMPLETA.png" type="Texture" id=23]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 18, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 18, 16.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 37, 4 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 37, 4 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 4, 46 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 4, 46 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 45.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 45.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 59, 30 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 59, 30 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 15 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 56.5, 21.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 45, 30 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 9.5, 42 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 9.5, 42 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 52.5, 37.5 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
 
 [node name="Computer Task" type="Node2D"]
+script = ExtResource( 21 )
 
-[node name="KinematicBody2D" type="Area2D" parent="."]
-position = Vector2( 64, 50 )
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 614.0
+margin_top = 3.0
+margin_right = 638.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Computer" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Computer"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 3 )
+
+[node name="ProcessadorSlot" type="KinematicBody2D" parent="Computer" groups=["Processador"]]
+position = Vector2( 118, 101 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Processador" type="Area2D" parent="Computer/ProcessadorSlot" groups=["Processador"]]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/ProcessadorSlot/Processador" groups=["Processador"]]
+position = Vector2( 2, 0 )
+shape = SubResource( 8 )
+
+[node name="InSlot" type="Sprite" parent="Computer/ProcessadorSlot/Processador"]
+visible = false
+position = Vector2( -118, 79 )
+texture = ExtResource( 14 )
+
+[node name="SlotIndicator" type="Sprite" parent="Computer/ProcessadorSlot/Processador"]
+visible = false
+position = Vector2( -118, 79 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/ProcessadorSlot" groups=["Processador"]]
+position = Vector2( 2, 0.5 )
+shape = SubResource( 2 )
+
+[node name="PlacaVideoSlot" type="KinematicBody2D" parent="Computer" groups=["Placa de Video"]]
+position = Vector2( 88, 151 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlacaVideo" type="Area2D" parent="Computer/PlacaVideoSlot" groups=["Processador"]]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/PlacaVideoSlot/PlacaVideo" groups=["Processador"]]
+position = Vector2( 0, 4 )
+shape = SubResource( 9 )
+
+[node name="InSlot" type="Sprite" parent="Computer/PlacaVideoSlot/PlacaVideo"]
+visible = false
+position = Vector2( -88, 29 )
+texture = ExtResource( 16 )
+
+[node name="SlotIndicator" type="Sprite" parent="Computer/PlacaVideoSlot/PlacaVideo"]
+visible = false
+position = Vector2( -88, 29 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/PlacaVideoSlot" groups=["Placa de Video"]]
+position = Vector2( 0, 4 )
+shape = SubResource( 10 )
+
+[node name="RAM1Slot" type="KinematicBody2D" parent="Computer" groups=["RAM1"]]
+position = Vector2( 157, 98 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RAM1" type="Area2D" parent="Computer/RAM1Slot" groups=["Processador"]]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/RAM1Slot/RAM1" groups=["RAM1"]]
+position = Vector2( 0, -3 )
+shape = SubResource( 11 )
+
+[node name="InSlot" type="Sprite" parent="Computer/RAM1Slot/RAM1"]
+visible = false
+position = Vector2( -157, 82 )
+texture = ExtResource( 18 )
+
+[node name="SlotIndicator" type="Sprite" parent="Computer/RAM1Slot/RAM1"]
+visible = false
+position = Vector2( -157, 82 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/RAM1Slot" groups=["Placa de Video"]]
+position = Vector2( 0, -3 )
+shape = SubResource( 12 )
+
+[node name="RAM2Slot" type="KinematicBody2D" parent="Computer" groups=["RAM2"]]
+position = Vector2( 167, 98 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RAM2" type="Area2D" parent="Computer/RAM2Slot"]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/RAM2Slot/RAM2"]
+position = Vector2( 0, -3 )
+shape = SubResource( 11 )
+
+[node name="InSlot" type="Sprite" parent="Computer/RAM2Slot/RAM2"]
+visible = false
+position = Vector2( -167, 82 )
+texture = ExtResource( 15 )
+
+[node name="SlotIndicator" type="Sprite" parent="Computer/RAM2Slot/RAM2"]
+visible = false
+position = Vector2( -167, 82 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/RAM2Slot"]
+position = Vector2( 0, -3 )
+shape = SubResource( 12 )
+
+[node name="HDSlot" type="KinematicBody2D" parent="Computer" groups=["HD"]]
+position = Vector2( 313, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HD" type="Area2D" parent="Computer/HDSlot"]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/HDSlot/HD"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 13 )
+
+[node name="InSlot" type="Sprite" parent="Computer/HDSlot/HD"]
+visible = false
+position = Vector2( -313, -60 )
+texture = ExtResource( 17 )
+
+[node name="SlotIndicator" type="Sprite" parent="Computer/HDSlot/HD"]
+visible = false
+position = Vector2( -313, -60 )
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/HDSlot"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 14 )
+
+[node name="FonteSlot" type="KinematicBody2D" parent="Computer" groups=["Fonte"]]
+position = Vector2( 71, 299 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Fonte" type="Area2D" parent="Computer/FonteSlot"]
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/FonteSlot/Fonte"]
+position = Vector2( 7, -1 )
+shape = SubResource( 15 )
+
+[node name="SlotIndicator" type="Sprite" parent="Computer/FonteSlot/Fonte"]
+visible = false
+position = Vector2( -71, -119 )
+texture = ExtResource( 9 )
+
+[node name="InSlot" type="Sprite" parent="Computer/FonteSlot/Fonte"]
+visible = false
+position = Vector2( -71, -119 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/FonteSlot"]
+position = Vector2( 7, -1 )
+shape = SubResource( 16 )
+
+[node name="Processador" type="Area2D" parent="."]
+position = Vector2( 551, 40 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 socketName = "Processador"
-socketPos = Vector2( 615, 23 )
-defaultPosition = Vector2( 64, 50 )
+socketPath = "/root/Level 2/TasksSpawn/Computer Task/Computer/ProcessadorSlot/Processador"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Processador"]
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-texture = ExtResource( 2 )
+[node name="Sprite" type="Sprite" parent="Processador"]
+texture = ExtResource( 4 )
+hframes = 2
 
-[node name="KinematicBody2D2" type="Area2D" parent="."]
-position = Vector2( 64, 50 )
+[node name="Placa de Video" type="Area2D" parent="."]
+position = Vector2( 518, 109 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-defaultPosition = Vector2( 64, 100 )
+socketName = "Placa de Video"
+socketPath = "/root/Level 2/TasksSpawn/Computer Task/Computer/PlacaVideoSlot/PlacaVideo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placa de Video"]
+position = Vector2( 0.5, 1.5 )
+shape = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="KinematicBody2D2"]
-texture = ExtResource( 2 )
+[node name="Sprite" type="Sprite" parent="Placa de Video"]
+texture = ExtResource( 5 )
+hframes = 2
 
-[node name="Computer" type="Node2D" parent="."]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Computer" groups=["Processador"]]
-position = Vector2( 615, 23 )
+[node name="HD" type="Area2D" parent="."]
+position = Vector2( 520, 211 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+socketName = "HD"
+socketPath = "/root/Level 2/TasksSpawn/Computer Task/Computer/HDSlot/HD"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer/KinematicBody2D" groups=["Processador"]]
-shape = SubResource( 2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HD"]
+shape = SubResource( 4 )
 
-[node name="Components" type="Node2D" parent="."]
+[node name="Sprite" type="Sprite" parent="HD"]
+texture = ExtResource( 2 )
+hframes = 2
 
-[connection signal="body_entered" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_body_entered"]
-[connection signal="body_exited" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_body_exited"]
-[connection signal="mouse_entered" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_mouse_entered"]
-[connection signal="mouse_exited" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_mouse_exited"]
-[connection signal="body_entered" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_body_entered"]
-[connection signal="body_exited" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_body_exited"]
-[connection signal="mouse_entered" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_mouse_entered"]
-[connection signal="mouse_exited" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_mouse_exited"]
+[node name="RAM" type="Area2D" parent="."]
+position = Vector2( 610, 121 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+socketName = "RAM1"
+socketPath = "/root/Level 2/TasksSpawn/Computer Task/Computer/RAM1Slot/RAM1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RAM"]
+position = Vector2( -0.5, 0 )
+shape = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="RAM"]
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="RAM2" type="Area2D" parent="."]
+position = Vector2( 610, 217 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+socketName = "RAM2"
+socketPath = "/root/Level 2/TasksSpawn/Computer Task/Computer/RAM2Slot/RAM2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RAM2"]
+position = Vector2( -0.5, 0 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="RAM2"]
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="Fonte" type="Area2D" parent="."]
+position = Vector2( 521, 314 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+socketName = "Fonte"
+socketPath = "/root/Level 2/TasksSpawn/Computer Task/Computer/FonteSlot/Fonte"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fonte"]
+position = Vector2( 0.5, -0.5 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Fonte"]
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="TaskFineshed" type="Control" parent="."]
+visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task_finished" type="Sprite" parent="TaskFineshed"]
+position = Vector2( 320, 181 )
+texture = ExtResource( 23 )
+
+[node name="Earned_score" type="RichTextLabel" parent="TaskFineshed"]
+margin_left = 232.0
+margin_top = 201.0
+margin_right = 484.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 0.286275, 0.85098, 0.231373, 1 )
+custom_fonts/normal_font = SubResource( 17 )
+text = "+50 pontos"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score_congratulations_message" type="RichTextLabel" parent="TaskFineshed"]
+margin_left = 232.0
+margin_top = 152.0
+margin_right = 484.0
+margin_bottom = 193.0
+rect_pivot_offset = Vector2( -250, -36 )
+custom_colors/default_color = Color( 1, 0.898039, 0.141176, 1 )
+custom_fonts/normal_font = SubResource( 17 )
+text = "Parabéns! Você completou mais uma tarefa."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskFineshedButton" type="Button" parent="TaskFineshed"]
+show_behind_parent = true
+margin_left = 472.0
+margin_top = 137.0
+margin_right = 496.0
+margin_bottom = 161.0
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
+[connection signal="area_shape_entered" from="Computer/ProcessadorSlot/Processador" to="Computer/ProcessadorSlot/Processador" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Computer/ProcessadorSlot/Processador" to="Computer/ProcessadorSlot/Processador" method="_on_Processador_area_shape_exited"]
+[connection signal="area_shape_entered" from="Computer/PlacaVideoSlot/PlacaVideo" to="Computer/PlacaVideoSlot/PlacaVideo" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Computer/PlacaVideoSlot/PlacaVideo" to="Computer/PlacaVideoSlot/PlacaVideo" method="_on_Processador_area_shape_exited"]
+[connection signal="area_shape_entered" from="Computer/RAM1Slot/RAM1" to="Computer/RAM1Slot/RAM1" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Computer/RAM1Slot/RAM1" to="Computer/RAM1Slot/RAM1" method="_on_Processador_area_shape_exited"]
+[connection signal="area_shape_entered" from="Computer/RAM2Slot/RAM2" to="Computer/RAM2Slot/RAM2" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Computer/RAM2Slot/RAM2" to="Computer/RAM2Slot/RAM2" method="_on_Processador_area_shape_exited"]
+[connection signal="area_shape_entered" from="Computer/HDSlot/HD" to="Computer/HDSlot/HD" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Computer/HDSlot/HD" to="Computer/HDSlot/HD" method="_on_Processador_area_shape_exited"]
+[connection signal="area_shape_entered" from="Computer/FonteSlot/Fonte" to="Computer/FonteSlot/Fonte" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Computer/FonteSlot/Fonte" to="Computer/FonteSlot/Fonte" method="_on_Processador_area_shape_exited"]
+[connection signal="body_entered" from="Processador" to="Processador" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="Processador" to="Processador" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="Processador" to="Processador" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="Processador" to="Processador" method="_on_KinematicBody2D_mouse_exited"]
+[connection signal="body_entered" from="Placa de Video" to="Placa de Video" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="Placa de Video" to="Placa de Video" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="Placa de Video" to="Placa de Video" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="Placa de Video" to="Placa de Video" method="_on_KinematicBody2D_mouse_exited"]
+[connection signal="body_entered" from="HD" to="HD" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="HD" to="HD" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="HD" to="HD" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="HD" to="HD" method="_on_KinematicBody2D_mouse_exited"]
+[connection signal="body_entered" from="RAM" to="RAM" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="RAM" to="RAM" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="RAM" to="RAM" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="RAM" to="RAM" method="_on_KinematicBody2D_mouse_exited"]
+[connection signal="body_entered" from="RAM2" to="RAM2" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="RAM2" to="RAM2" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="RAM2" to="RAM2" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="RAM2" to="RAM2" method="_on_KinematicBody2D_mouse_exited"]
+[connection signal="body_entered" from="Fonte" to="Fonte" method="_on_KinematicBody2D_body_entered"]
+[connection signal="body_exited" from="Fonte" to="Fonte" method="_on_KinematicBody2D_body_exited"]
+[connection signal="mouse_entered" from="Fonte" to="Fonte" method="_on_KinematicBody2D_mouse_entered"]
+[connection signal="mouse_exited" from="Fonte" to="Fonte" method="_on_KinematicBody2D_mouse_exited"]
+[connection signal="pressed" from="TaskFineshed/TaskFineshedButton" to="." method="_on_TaskFineshedButton_pressed"]

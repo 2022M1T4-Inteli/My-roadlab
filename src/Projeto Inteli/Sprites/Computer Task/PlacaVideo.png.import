@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HUD.png-17ec687dc62458f98c5adc6e7912dad4.stex"
+path="res://.import/PlacaVideo.png-b2adbc25e463492547ec35a5dbf0dcb7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD.png"
-dest_files=[ "res://.import/HUD.png-17ec687dc62458f98c5adc6e7912dad4.stex" ]
+source_file="res://Sprites/Computer Task/PlacaVideo.png"
+dest_files=[ "res://.import/PlacaVideo.png-b2adbc25e463492547ec35a5dbf0dcb7.stex" ]
 
 [params]
 

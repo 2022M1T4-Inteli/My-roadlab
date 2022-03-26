@@ -1,6 +1,6 @@
 extends Node2D
 
-# Checando o em qual botão o mouse está em cima para atualizar as animações
+# Checking witch buttom the mouse cursor is on top
 func _on_ButtonPlay_mouse_entered():
 	$Control/Sprite.frame = 1
 
@@ -25,7 +25,7 @@ func _on_ButtonQuit_mouse_exited():
 	$Control/Sprite.frame = 0
 
 
-# Programação dos botões, para iniciar o jogo e para fechar o jogo
+# Programming the menu buttons, start button and close button
 func _on_ButtonPlay_pressed():
 	get_tree().change_scene_to(load("res://Scenes/Level.tscn"))
 
