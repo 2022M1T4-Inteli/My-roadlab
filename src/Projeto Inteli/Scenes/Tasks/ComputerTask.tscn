@@ -88,6 +88,7 @@ font_data = ExtResource( 22 )
 font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=21]
+size = 8
 font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=19]
@@ -454,6 +455,7 @@ margin_right = 496.0
 margin_bottom = 161.0
 
 [node name="Explanation" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -581,6 +583,7 @@ __meta__ = {
 }
 
 [node name="ExplanationPopup" type="Sprite" parent="Explanation"]
+visible = false
 position = Vector2( 320, 180 )
 texture = ExtResource( 24 )
 hframes = 5
@@ -596,12 +599,11 @@ __meta__ = {
 }
 
 [node name="TitleLabel" type="Label" parent="Explanation/ExplanationPopup"]
-margin_left = 12.0
-margin_top = -111.0
-margin_right = 144.0
-margin_bottom = -89.0
+margin_left = -38.0
+margin_top = -99.0
+margin_right = 211.0
+margin_bottom = -77.0
 custom_fonts/font = SubResource( 20 )
-text = "Processador"
 align = 1
 valign = 1
 __meta__ = {
@@ -609,15 +611,16 @@ __meta__ = {
 }
 
 [node name="DescriptionLabel" type="Label" parent="Explanation/ExplanationPopup"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = -44.0
+margin_top = -50.0
+margin_right = 253.0
+margin_bottom = 118.0
 custom_fonts/font = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="IntroductionScreen" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
