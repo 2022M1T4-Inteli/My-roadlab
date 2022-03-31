@@ -1,4 +1,6 @@
+# Made by Renato Machado
 extends Node2D
+
 
 # Checking witch buttom the mouse cursor is on top
 func _on_ButtonPlay_mouse_entered():

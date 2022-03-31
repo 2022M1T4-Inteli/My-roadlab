@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sprites/Elevador/04.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Sprites/Elevador/ElevadorAbrindo.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Cenários/Moeda.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Cenários/EngSoft.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/TestAutomationTask/AutomationTaskSprite.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 54.5, 10 )
 
 [sub_resource type="Animation" id=23]
 resource_name = "Abrindo"
@@ -137,14 +141,29 @@ graph_offset = Vector2( -99, -17 )
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 33, 27.5 )
 
-[sub_resource type="RectangleShape2D" id=31]
-
 [node name="Cenário 5" type="Sprite"]
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
+
+[node name="AutomationTesteTaskArea" type="Area2D" parent="."]
+position = Vector2( 64, 97 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutomationTesteTaskArea"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 31 )
+
+[node name="Button" parent="AutomationTesteTaskArea" instance=ExtResource( 2 )]
+position = Vector2( 0, -31 )
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" type="Sprite" parent="AutomationTesteTaskArea"]
+position = Vector2( 0, -26 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+hframes = 2
 
 [node name="Elevador" type="Area2D" parent="."]
 scale = Vector2( 2, 2 )
@@ -265,15 +284,8 @@ margin_top = -180.0
 margin_right = -280.0
 margin_bottom = -140.0
 
-[node name="AutomationTesteTaskArea" type="Area2D" parent="."]
-position = Vector2( 102, 97 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AutomationTesteTaskArea"]
-shape = SubResource( 31 )
-
-[node name="Button" parent="AutomationTesteTaskArea" instance=ExtResource( 2 )]
-scale = Vector2( 2, 2 )
-
+[connection signal="body_entered" from="AutomationTesteTaskArea" to="." method="_on_AutomationTesteTaskArea_body_entered"]
+[connection signal="body_exited" from="AutomationTesteTaskArea" to="." method="_on_AutomationTesteTaskArea_body_exited"]
 [connection signal="body_entered" from="Elevador" to="Elevador" method="_on_Elevador_body_entered"]
 [connection signal="body_exited" from="Elevador" to="Elevador" method="_on_Elevador_body_exited"]
 [connection signal="pressed" from="Elevador/ElevadorInterface0/ButtonFechar" to="Elevador" method="_on_ButtonFechar_pressed"]
@@ -292,5 +304,3 @@ scale = Vector2( 2, 2 )
 [connection signal="mouse_entered" from="Elevador/ElevadorInterface0/ButtonAndar5" to="Elevador" method="_on_ButtonAndar5_mouse_entered"]
 [connection signal="mouse_exited" from="Elevador/ElevadorInterface0/ButtonAndar5" to="Elevador" method="_on_ButtonAndar5_mouse_exited"]
 [connection signal="pressed" from="Elevador/ElevadorInterface0/ButtonAndar5" to="Elevador" method="_on_ButtonAndar5_pressed"]
-[connection signal="body_entered" from="AutomationTesteTaskArea" to="." method="_on_AutomationTesteTaskArea_body_entered"]
-[connection signal="body_exited" from="AutomationTesteTaskArea" to="." method="_on_AutomationTesteTaskArea_body_exited"]

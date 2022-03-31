@@ -53,7 +53,6 @@ var fifthStep = {
 }
 
 func _ready():
-	
 	# Disabling all task buttons.
 	$CloseButton.disabled = true;
 	$CorrectOutputButton.disabled = true;
@@ -72,6 +71,7 @@ func _process(delta):
 			get_node("/root/Level 4/TasksSpawn/Root/TaskFinishedPopup").visible = true;
 			if !Global.automationTestTaskComplete:
 				Global.pontos += 100
+				Global.energy -= 1
 				get_node("/root/Level 4/Player").canWalk = true
 				get_node("/root/Level 4/Cenário 5").taskOcorring = false
 				Global.automationTestTaskComplete = true

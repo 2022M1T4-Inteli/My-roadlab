@@ -149,6 +149,7 @@ func showScoreAndCloseTaskWindow():
 	# Adding points for the player
 	if !Global.satelliteTaskComplete:
 		Global.pontos += 50
+		Global.energy -= 1
 	Global.satelliteTaskComplete = true
 	
 	

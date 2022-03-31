@@ -1,3 +1,4 @@
+# Made by Renato Machado
 extends Control
 
 # Declaring variables

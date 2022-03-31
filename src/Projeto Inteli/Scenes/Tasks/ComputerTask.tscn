@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/ComputerTaskComponent.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Computer Task/HD.png" type="Texture" id=2]
@@ -23,6 +23,9 @@
 [ext_resource path="res://Scripts/ComputerTask.gd" type="Script" id=21]
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Sprites/SatelliteTask/TASKCOMPLETA.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Computer Task/Explicacao/Explicacao.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Computer Task/Explicacao/Fundo.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/IntroductionSprite.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 18, 16 )
@@ -77,6 +80,20 @@ size = 8
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 22 )
 
+[sub_resource type="DynamicFont" id=18]
+size = 8
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=20]
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=21]
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 8
+font_data = ExtResource( 22 )
+
 [node name="Computer Task" type="Node2D"]
 script = ExtResource( 21 )
 
@@ -92,6 +109,15 @@ margin_left = 614.0
 margin_top = 3.0
 margin_right = 638.0
 margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOpenExplanation" type="Button" parent="Control"]
+margin_left = 589.0
+margin_top = 3.0
+margin_right = 604.0
+margin_bottom = 26.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -427,7 +453,210 @@ margin_top = 137.0
 margin_right = 496.0
 margin_bottom = 161.0
 
+[node name="Explanation" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Explanation"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 25 )
+
+[node name="ButtonProcessador" type="Button" parent="Explanation/Background"]
+show_behind_parent = true
+margin_left = -90.0
+margin_top = -68.0
+margin_right = -18.0
+margin_bottom = -36.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonPlacaDeVideo" type="Button" parent="Explanation/Background"]
+show_behind_parent = true
+margin_left = 18.0
+margin_top = -68.0
+margin_right = 90.0
+margin_bottom = -36.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonHD" type="Button" parent="Explanation/Background"]
+show_behind_parent = true
+margin_left = -90.0
+margin_top = -16.0
+margin_right = -18.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtomRAM" type="Button" parent="Explanation/Background"]
+show_behind_parent = true
+margin_left = 18.0
+margin_top = -16.0
+margin_right = 90.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonFonte" type="Button" parent="Explanation/Background"]
+show_behind_parent = true
+margin_left = -36.0
+margin_top = 36.0
+margin_right = 36.0
+margin_bottom = 68.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonCloseExplanation" type="Button" parent="Explanation/Background"]
+show_behind_parent = true
+margin_left = 92.0
+margin_top = -137.0
+margin_right = 116.0
+margin_bottom = -112.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProcessadorText" type="Label" parent="Explanation/Background"]
+margin_left = -86.0
+margin_top = -59.0
+margin_right = -20.0
+margin_bottom = -45.0
+custom_fonts/font = SubResource( 18 )
+text = "Processador"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlacaDeVideoText" type="Label" parent="Explanation/Background"]
+margin_left = 20.0
+margin_top = -59.0
+margin_right = 89.0
+margin_bottom = -34.0
+custom_fonts/font = SubResource( 18 )
+text = "Placa de Video
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HDText" type="Label" parent="Explanation/Background"]
+margin_left = -59.0
+margin_top = -7.0
+margin_right = -47.0
+margin_bottom = 4.0
+custom_fonts/font = SubResource( 18 )
+text = "HD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RAMText" type="Label" parent="Explanation/Background"]
+margin_left = 25.0
+margin_top = -6.0
+margin_right = 83.0
+margin_bottom = 5.0
+custom_fonts/font = SubResource( 18 )
+text = "Memória RAM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FonteText" type="Label" parent="Explanation/Background"]
+margin_left = -13.0
+margin_top = 46.0
+margin_right = 16.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 18 )
+text = "Fonte"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExplanationPopup" type="Sprite" parent="Explanation"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 24 )
+hframes = 5
+
+[node name="ButtonCloseExplanationpopup" type="Button" parent="Explanation/ExplanationPopup"]
+show_behind_parent = true
+margin_left = 220.0
+margin_top = -136.0
+margin_right = 244.0
+margin_bottom = -112.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="Explanation/ExplanationPopup"]
+margin_left = 12.0
+margin_top = -111.0
+margin_right = 144.0
+margin_bottom = -89.0
+custom_fonts/font = SubResource( 20 )
+text = "Processador"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionLabel" type="Label" parent="Explanation/ExplanationPopup"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroductionScreen" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroducionSprite" type="Sprite" parent="IntroductionScreen"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 26 )
+
+[node name="TaskDescription" type="RichTextLabel" parent="IntroductionScreen"]
+anchor_left = 0.521
+anchor_top = 1.0
+anchor_right = 0.523
+anchor_bottom = 1.069
+margin_left = 203.16
+margin_top = 108.0
+margin_right = 452.08
+margin_bottom = 161.24
+custom_fonts/normal_font = SubResource( 19 )
+bbcode_enabled = true
+text = "Engenheiros da computação são focados principalmente na área de hardware. Garanta que as peças do computado sejam posicionadas corretamente."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonCloseIntroduction" type="Button" parent="IntroductionScreen"]
+show_behind_parent = true
+margin_left = 473.0
+margin_top = 137.0
+margin_right = 495.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/ButtonOpenExplanation" to="." method="_on_ButtonOpenExplanation_pressed"]
 [connection signal="area_shape_entered" from="Computer/ProcessadorSlot/Processador" to="Computer/ProcessadorSlot/Processador" method="_on_Area2D_area_shape_entered"]
 [connection signal="area_shape_exited" from="Computer/ProcessadorSlot/Processador" to="Computer/ProcessadorSlot/Processador" method="_on_Processador_area_shape_exited"]
 [connection signal="area_shape_entered" from="Computer/PlacaVideoSlot/PlacaVideo" to="Computer/PlacaVideoSlot/PlacaVideo" method="_on_Area2D_area_shape_entered"]
@@ -465,3 +694,11 @@ margin_bottom = 161.0
 [connection signal="mouse_entered" from="Fonte" to="Fonte" method="_on_KinematicBody2D_mouse_entered"]
 [connection signal="mouse_exited" from="Fonte" to="Fonte" method="_on_KinematicBody2D_mouse_exited"]
 [connection signal="pressed" from="TaskFineshed/TaskFineshedButton" to="." method="_on_TaskFineshedButton_pressed"]
+[connection signal="pressed" from="Explanation/Background/ButtonProcessador" to="." method="_on_ButtonProcessador_pressed"]
+[connection signal="pressed" from="Explanation/Background/ButtonPlacaDeVideo" to="." method="_on_ButtonPlacaDeVideo_pressed"]
+[connection signal="pressed" from="Explanation/Background/ButtonHD" to="." method="_on_ButtonHD_pressed"]
+[connection signal="pressed" from="Explanation/Background/ButtomRAM" to="." method="_on_ButtomRAM_pressed"]
+[connection signal="pressed" from="Explanation/Background/ButtonFonte" to="." method="_on_ButtonFonte_pressed"]
+[connection signal="pressed" from="Explanation/Background/ButtonCloseExplanation" to="." method="_on_ButtonCloseExplanation_pressed"]
+[connection signal="pressed" from="Explanation/ExplanationPopup/ButtonCloseExplanationpopup" to="." method="_on_ButtonCloseExplanationpopup_pressed"]
+[connection signal="pressed" from="IntroductionScreen/ButtonCloseIntroduction" to="." method="_on_ButtonCloseIntroduction_pressed"]

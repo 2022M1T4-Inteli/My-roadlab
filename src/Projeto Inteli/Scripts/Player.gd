@@ -1,3 +1,4 @@
+# Made by Renato Machado
 extends KinematicBody2D
 
 # Declaring variables

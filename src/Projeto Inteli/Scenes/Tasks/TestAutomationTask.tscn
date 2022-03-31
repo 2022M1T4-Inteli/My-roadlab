@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Sprites/TestAutomationTask/Background.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/IntroductionSprite.png" type="Texture" id=1]
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/InfoPopup.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/TestAutomationTask/TaskBackground.png" type="Texture" id=4]

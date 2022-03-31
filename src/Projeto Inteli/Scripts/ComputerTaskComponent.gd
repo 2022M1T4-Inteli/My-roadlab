@@ -1,3 +1,4 @@
+# Made by Renato Machado
 extends Area2D
 
 # Declaring varibles
@@ -25,7 +26,6 @@ func _physics_process(delta):
 			self.position = get_global_mouse_position()
 		else:
 			self.position = defaultPosition
-			pass
 	else:
 		get_node(socketPath + "/InSlot").visible = true
 		$Sprite.visible = false

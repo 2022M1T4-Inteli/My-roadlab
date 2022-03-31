@@ -1,3 +1,4 @@
+# Made by Renato Machado
 # A Global node that the variables are kept even after level change
 extends Node
 
@@ -19,3 +20,5 @@ var dataTaskComplete = false
 var automationTestTaskComplete = false
 
 var objCatched = false
+
+var energy = 3

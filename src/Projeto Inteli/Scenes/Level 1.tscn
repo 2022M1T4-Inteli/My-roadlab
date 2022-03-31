@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Cenários/Cenário 2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sprites/HUDEnergia.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/HudEnergia.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Cafeteira.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Coffee screen.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21.5, 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 4 )
 
 [node name="Level 1" type="Node2D"]
 
@@ -26,8 +39,76 @@ position = Vector2( 175.5, -23 )
 scale = Vector2( 1, 30 )
 shape = SubResource( 1 )
 
+[node name="HudEnergia" type="Sprite" parent="."]
+position = Vector2( 320, 180 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+hframes = 4
+script = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="HudEnergia"]
+position = Vector2( -147.5, 44.5 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HudEnergia/Area2D"]
+position = Vector2( -0.5, 10 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="HudEnergia/Area2D"]
+position = Vector2( 0, 1 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Button" parent="HudEnergia/Area2D" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 1, 15 )
+scale = Vector2( 2, 2 )
+
+[node name="Control" type="Control" parent="HudEnergia"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HudEnergia/Control"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="HudEnergia/Control"]
+margin_left = -20.5
+margin_top = 46.0
+margin_right = 21.5
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 3 )
+text = "Comprar"
+
+[node name="BuyButton" type="Button" parent="HudEnergia/Control"]
+show_behind_parent = true
+margin_left = -19.0
+margin_top = 42.0
+margin_right = 19.0
+margin_bottom = 62.0
+
+[node name="CloseButton" type="Button" parent="HudEnergia/Control"]
+show_behind_parent = true
+margin_left = 46.0
+margin_top = -72.5
+margin_right = 58.0
+margin_bottom = -52.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 571, 264 )
 canWalk = true
 
 [node name="TasksSpawn" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="HudEnergia/Area2D" to="HudEnergia" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="HudEnergia/Area2D" to="HudEnergia" method="_on_Area2D_body_exited"]
+[connection signal="pressed" from="HudEnergia/Control/BuyButton" to="HudEnergia" method="_on_Button_pressed"]
+[connection signal="pressed" from="HudEnergia/Control/CloseButton" to="HudEnergia" method="_on_CloseButton_pressed"]
