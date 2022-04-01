@@ -296,6 +296,7 @@ margin_right = -280.0
 margin_bottom = -140.0
 
 [node name="SabotagemBackground" type="Sprite" parent="."]
+visible = false
 position = Vector2( -240, -145 )
 texture = ExtResource( 10 )
 

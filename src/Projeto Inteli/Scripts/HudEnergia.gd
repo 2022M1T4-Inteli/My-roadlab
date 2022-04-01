@@ -3,9 +3,16 @@ extends Sprite
 
 # Declaring variables
 var player = false
+var advertised = false
 
 
 func _process(delta):
+	# Checking if the energy eneded
+	if Global.energy == 0 && !advertised:
+		get_node("../OutOfEnergy").visible = true
+		advertised = true
+		
+	
 	# Changing sprite frame according the amount of energy
 	match Global.energy:
 		3:
@@ -38,12 +45,25 @@ func _on_Area2D_body_exited(body):
 
 # Buying coffee
 func _on_Button_pressed():
-	if Global.energy < 3:
+	if Global.energy != 3 && Global.pontos >= 50:
 		Global.pontos -= 50
 		Global.energy = 3
+	elif Global.energy == 3:
+		print("energia cheia")
+		$EnergyAdvertise.visible = true
+	elif Global.pontos < 50:
+		print("dinheiro insuficiente")
 
 
 # Closing coffee shop interface
 func _on_CloseButton_pressed():
 	$Control.visible = false
 	get_node("../Player").canWalk = true
+
+
+func _on_AdvertiseButton_pressed():
+	$EnergyAdvertise.visible = false
+
+
+func _on_OutOfEnergyCloseButton_pressed():
+	get_node("../OutOfEnergy").visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Sprites/Cafeteira.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Sprites/Coffee screen.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/IntroductionToEnergySystemSprite.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/IntroductionToEnergySystem.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 15, 10 )
@@ -27,6 +29,10 @@ font_data = ExtResource( 10 )
 extents = Vector2( 21.5, 8 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 8
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 8
 font_data = ExtResource( 10 )
 
@@ -105,9 +111,6 @@ __meta__ = {
 
 [node name="Moeda" parent="." instance=ExtResource( 11 )]
 
-[node name="Manual" parent="." instance=ExtResource( 7 )]
-visible = false
-
 [node name="HudEnergia" type="Sprite" parent="."]
 position = Vector2( 320, 180 )
 scale = Vector2( 2, 2 )
@@ -171,6 +174,48 @@ margin_bottom = -52.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="IntroductionToEnergySystem" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroductionToEnergySystemSprite" type="Sprite" parent="IntroductionToEnergySystem"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 16 )
+
+[node name="Button" type="Button" parent="IntroductionToEnergySystem"]
+show_behind_parent = true
+margin_left = 541.0
+margin_top = 45.0
+margin_right = 563.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="IntroductionToEnergySystem"]
+margin_left = 174.0
+margin_top = 97.0
+margin_right = 607.0
+margin_bottom = 178.0
+custom_fonts/font = SubResource( 6 )
+text = "Aqui você é muito bem-vindo(a) e muito importante para nós. Sabemos que nossas 
+tarefas são cansativas e precisamos de uma pausa, sinta-se à vontade para 
+recarregar suas energias em nossas máquinas de café com as moedas que você 
+conquistará, nossas máquinas estão distribuídas em todos os andares além do 
+térreo. Fique de olho em sua energia, você pode acompanha-la em sua tela no canto
+superior direito."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Manual" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="Seleção de Personagem" type="Control" parent="."]
 margin_left = 160.0
@@ -240,6 +285,7 @@ __meta__ = {
 [connection signal="body_exited" from="HudEnergia/Area2D" to="HudEnergia" method="_on_Area2D_body_exited"]
 [connection signal="pressed" from="HudEnergia/Control/BuyButton" to="HudEnergia" method="_on_Button_pressed"]
 [connection signal="pressed" from="HudEnergia/Control/CloseButton" to="HudEnergia" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="IntroductionToEnergySystem/Button" to="IntroductionToEnergySystem" method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_entered"]
 [connection signal="mouse_exited" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_exited"]
 [connection signal="pressed" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_pressed"]

@@ -11,25 +11,25 @@ func _process(delta):
 	if playerData && Input.is_action_just_pressed("ui_E") && !taskOcorring && !Global.dataTaskComplete && Global.energy > 0:
 		var task = taskData.instance()
 		get_node("/root/Level 3/TasksSpawn").add_child(task)
-#		$DescribingTask/Button.visible = false
-#		$DescribingTask/Sprite.frame = 0
+		$DataTask/Button.visible = false
+		$DataTask/Sprite.frame = 0
 		get_node("/root/Level 3/Player").canWalk = false
 		taskOcorring = true
-#	if !taskOcorring && playerData && !Global.dataTaskComplete:
-#		$DescribingTask/Sprite.frame = 1
-#		$DescribingTask/Button.visible = true
+	if !taskOcorring && playerData && !Global.dataTaskComplete:
+		$DataTask/Sprite.frame = 1
+		$DataTask/Button.visible = true
 
 
 # Checking if the player left the area
 func _on_DataTask_body_entered(body):
 	if !Global.dataTaskComplete:
 		playerData = true
-#		$DescribingTask/Sprite.frame = 1
-#		$DescribingTask/Button.visible = true
+		$DataTask/Sprite.frame = 1
+		$DataTask/Button.visible = true
 
 # Checking if the player is area
 func _on_DataTask_body_exited(body):
 	playerData = false
-#	$DescribingTask/Sprite.frame = 0
-#	$DescribingTask/Button.visible = false
+	$DataTask/Sprite.frame = 0
+	$DataTask/Button.visible = false
 

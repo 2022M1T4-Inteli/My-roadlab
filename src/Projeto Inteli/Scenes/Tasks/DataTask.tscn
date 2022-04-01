@@ -92,6 +92,7 @@ rect_pivot_offset = Vector2( 67, 133 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -119,6 +120,7 @@ rect_pivot_offset = Vector2( 67, 133 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,6 +148,7 @@ rect_pivot_offset = Vector2( 67, 133 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -173,6 +176,7 @@ rect_pivot_offset = Vector2( 67, 133 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -312,13 +316,14 @@ texture = ExtResource( 7 )
 
 [node name="Earned_score" type="RichTextLabel" parent="TaskFineshed"]
 margin_left = 232.0
-margin_top = 201.0
+margin_top = 191.0
 margin_right = 484.0
 margin_bottom = 216.0
 rect_pivot_offset = Vector2( -250, -36 )
 custom_colors/default_color = Color( 0.286275, 0.85098, 0.231373, 1 )
 custom_fonts/normal_font = SubResource( 5 )
-text = "+50 pontos"
+text = "+50 pontos
++5 moedas"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -365,12 +370,12 @@ anchor_top = 1.0
 anchor_right = 0.523
 anchor_bottom = 1.069
 margin_left = 203.16
-margin_top = 123.0
-margin_right = 452.08
-margin_bottom = 147.24
+margin_top = 106.0
+margin_right = 451.08
+margin_bottom = 173.24
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
-text = "Selecione todos os dados corretamente seguindo as instruções."
+text = "Profissionais formados em sistema de informação podem trabalhar com dados,  princiapalmente no seu gerenciamento/organização. Portanto, selecione todos os dados corretamente seguindo as instruções."
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/DescribingTask.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Sprites/TryAgainButton.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Cenário/task_moldura.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Cenário/task2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/IntroductionSprite.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=6]
 size = 8
@@ -28,6 +29,10 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=8]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
 size = 8
 font_data = ExtResource( 1 )
 
@@ -961,13 +966,14 @@ texture = ExtResource( 3 )
 
 [node name="Earned_score" type="RichTextLabel" parent="TaskFineshed"]
 margin_left = 229.0
-margin_top = 203.0
+margin_top = 194.0
 margin_right = 481.0
 margin_bottom = 218.0
 rect_pivot_offset = Vector2( -250, -36 )
 custom_colors/default_color = Color( 0.286275, 0.85098, 0.231373, 1 )
 custom_fonts/normal_font = SubResource( 7 )
 text = "+100 pontos
++10 moedas
 "
 scroll_active = false
 __meta__ = {
@@ -1054,9 +1060,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="IntroductionScreen" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroducionSprite" type="Sprite" parent="IntroductionScreen"]
+position = Vector2( 320, 180 )
+texture = ExtResource( 7 )
+
+[node name="TaskDescription" type="RichTextLabel" parent="IntroductionScreen"]
+anchor_left = 0.521
+anchor_top = 1.0
+anchor_right = 0.523
+anchor_bottom = 1.069
+margin_left = 203.16
+margin_top = 97.0
+margin_right = 452.08
+margin_bottom = 208.24
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+text = "Profissionais de Ciência da Computação tem
+amplo conhecimento sobre algoritmos. Nessa tarefa
+ajude a solucionar os problemas de algoritmo de 
+codificação do sistema. Sempre escolha três
+ combinações possíveis.
+Tome cuidado, pois você só terá 2 tentativas por 
+desafio."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonCloseIntroduction" type="Button" parent="IntroductionScreen"]
+show_behind_parent = true
+margin_left = 473.0
+margin_top = 137.0
+margin_right = 495.0
+margin_bottom = 159.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Control/CloseButtonUnfinineshed" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/CloseButtonUnfinineshed" to="." method="_on_CloseButtonUnfinineshed_pressed"]
 [connection signal="pressed" from="button_submit" to="." method="_on_button_submit_pressed"]
 [connection signal="pressed" from="TaskFineshed/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="TaskRetry/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]
 [connection signal="pressed" from="TaskRetry/Close Button" to="." method="_on_Close_Button_pressed"]
+[connection signal="pressed" from="IntroductionScreen/ButtonCloseIntroduction" to="." method="_on_ButtonCloseIntroduction_pressed"]

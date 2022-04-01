@@ -361,14 +361,15 @@ anchor_top = 1.0
 anchor_right = 0.523
 anchor_bottom = 1.069
 margin_left = -100.44
-margin_top = -150.0
+margin_top = -154.0
 margin_right = -1.72
-margin_bottom = -158.84
+margin_bottom = -155.84
 rect_pivot_offset = Vector2( 41, 41 )
 custom_colors/default_color = Color( 0.588235, 0.976471, 0.458824, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-text = "Score: +100 pontos!"
+text = "+100 pontos
++10 moeadas"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

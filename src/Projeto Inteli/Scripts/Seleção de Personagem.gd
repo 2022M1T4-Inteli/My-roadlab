@@ -16,6 +16,7 @@ func _ready():
 func _process(delta):
 	if Global.introduction:
 		get_node("/root/Level/Manual").queue_free()
+		get_node("/root/Level/IntroductionToEnergySystem").queue_free()
 		get_node("/root/Level/Player").canWalk = true
 		get_node("/root/Level/Player").position = Vector2(573, 263)
 		queue_free()

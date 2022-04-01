@@ -4,35 +4,40 @@ extends Node2D
 # Declaring Variables
 var buttonSelecteds = [0, 0, 0]
 var correctAnswers = 0
-var textTitleIndex = ["Desafio1", "Desafio2", "Desafio3", "Desafio4", "Desafio5", "Desafio6"]
+var textTitleIndex = ["Dentre as placas abaixo, selecione aquelas onde a soma de seus números é igual a 12.", 
+				"Dentre as pessoas abaixo, selecione aquelas que possuem idade maior que 19 e menor que 37.", 
+				"Dentre os produtos abaixo, selecione aqueles com desconto maior que 30%.", 
+				"Dentre os produtos abaixo, selecione aqueles com mais de 1000 unidades vendidas ou com menos de 10 unidades vendidas.", 
+				"Dentre os animais abaixo, selecione aqueles que são quadrúpedes.", 
+				"Dentre as peças de computador abaixo, selecione aquelas cujo preço é maior ou igual a R$350 e menor ou igual a R$700."]
 var textOptionIndex = [{
-	"select1": "Desafio1",
-	"select2": "Desafio11",
-	"select3": "Desafio111"},
+	"select1": "BRA2E19",
+	"select2": "ARG5B25",
+	"select3": "INT3L18"},
 	{
-	"select1": "Desafio2",
-	"select2": "Desafio22",
-	"select3": "Desafio222"
+	"select1": "João Carvalho Araujo, 19 anos",
+	"select2": "Mariana de Souza Filho, 37 anos",
+	"select3": "Filipe Montenegro Ferreira, 27 anos"
 	},
 	{
-	"select1": "Desafio3",
-	"select2": "Desafio33",
-	"select3": "Desafio333"
+	"select1": "Camiseta, preço sem desconto R$100, preço com desconto R$70.",
+	"select2": "Calça jeans, preço sem desconto R$200, preço com desconto R$140.",
+	"select3": "Tênis, preço sem desconto R$1000, preço com desconto R$500."
 	},
 	{
-	"select1": "Desafio4",
-	"select2": "Desafio44",
-	"select3": "Desafio444"
+	"select1": "Laptop, 1000 unidades vendidas.",
+	"select2": "Smartphone, 5020 unidades vendidas.",
+	"select3": "Televisão, 10 unidades vendidas."
 	},
 	{
-	"select1": "Desafio5",
-	"select2": "Desafio55",
-	"select3": "Desafio555"
+	"select1": "Penguins",
+	"select2": "Gatos",
+	"select3": "Cães"
 	},
 	{
-	"select1": "Desafio6",
-	"select2": "Desafio66",
-	"select3": "Desafio666"
+	"select1": "Processador - R$700,00",
+	"select2": "Memória - R$350,00",
+	"select3": "Placa gráfica - R$349,99"
 	}]
 var taskChallenge = 0
 var transfering = false
@@ -73,7 +78,7 @@ func _CheckingAnswers(var index, var answer):
 func _NextChallenge():
 	match taskChallenge:
 		0:
-			if buttonSelecteds[0] == 1 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 0:
+			if buttonSelecteds[0] == 1 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 1:
 				correctAnswers += 1
 				_CheckingAnswers("1", 1)
 				print("certo")
@@ -91,7 +96,7 @@ func _NextChallenge():
 				print("errado")
 			_ResetingValues(2)
 		2:
-			if buttonSelecteds[0] == 1 && buttonSelecteds[1] == 0 && buttonSelecteds[2] == 1:
+			if buttonSelecteds[0] == 0 && buttonSelecteds[1] == 0 && buttonSelecteds[2] == 1:
 				correctAnswers += 1
 				_CheckingAnswers("3", 1)
 				print("certo")
@@ -100,7 +105,7 @@ func _NextChallenge():
 				print("errado")
 			_ResetingValues(3)
 		3:
-			if buttonSelecteds[0] == 1 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 0:
+			if buttonSelecteds[0] == 0 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 0:
 				correctAnswers += 1
 				_CheckingAnswers("4", 1)
 				print("certo")
@@ -109,7 +114,7 @@ func _NextChallenge():
 				print("errado")
 			_ResetingValues(4)
 		4:
-			if buttonSelecteds[0] == 1 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 0:
+			if buttonSelecteds[0] == 0 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 1:
 				correctAnswers += 1
 				_CheckingAnswers("5", 1)
 				print("certo")

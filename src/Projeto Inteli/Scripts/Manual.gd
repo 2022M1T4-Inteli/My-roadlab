@@ -12,7 +12,7 @@ func _ready():
 func _on_CloseBtn_pressed():
 	# Closing window when close button was clicked.
 	Global.introduction = true
-	get_node("/root/Level/Player").canWalk = true
+	get_node("/root/Level/IntroductionToEnergySystem").visible = true
 	queue_free()
 
 func animateText(object : Object, time : int):

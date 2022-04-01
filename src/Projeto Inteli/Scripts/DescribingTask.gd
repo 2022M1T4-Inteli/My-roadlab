@@ -2,10 +2,10 @@ extends Node2D
 
 
 var tips = [
-"A codificação contem numeros primos e as letras nao podem se repetir",
-"Sequência codifidicada contendo so numeros pares e possui apenas consoantes.",
-"Letras em ordem alfabetica com numeros na ordem inversa, sequencial, sem repertir letra ou numero.",
-"Sequencia que para cada letra, os numeros nao podem se repetir, apenas numeros pares e depois para cada letra numeros impares, nesses passos. (3 conjuntos de letras e numeros impares e pares)"
+"Selecione três números primos e não repita as letras (obs: Não considere o número 1 como número primo).",
+"Selecione três números pares combinado com consoantes diferentes.",
+"Selecione três letras em ordem crescente com números decrescentes, cuidado para que não haja repetições.",
+"Selecione três números pares com letras diferentes e três números ímpares também com letras diferentes."
 ]
 var code: String = ""
 var challenge: int = -1
@@ -215,3 +215,7 @@ func _on_CloseButtonUnfinineshed_pressed():
 	get_node("/root/Level 1/Player").canWalk = true
 	get_node("/root/Level 1/Cenário 2").taskOcorring = false
 	queue_free()
+
+
+func _on_ButtonCloseIntroduction_pressed():
+	$IntroductionScreen.queue_free()

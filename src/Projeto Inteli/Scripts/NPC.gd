@@ -7,7 +7,9 @@ var fineshed = true
 var dialogIndex = -1
 
 #Public variable that can be accessed out of script
-export var dialog = ['Olá, seja bem-vindo(a) ao mundo das Indústrias Sun. Dirija-se aos andares\n 1 e 2 e realize os minijogos de Ciência da Computação e Engenharia de Computação, respectivamente.']
+var dialog = ["Seja bem-vindo(a) a nossa indústria, hoje você irá começar como nosso\n estagiário em tecnologia. Atualmente, possuímos quatro setores divididos em andares, sendo eles:",
+				"1º Andar - Ciência da computação\n2º Andar - Engenharia da Computação\n3º Andar - Sistema da Informação\n4º Andar - Engenharia de Software",
+				"Ande pelos andares explorando as atividades que nossos desenvolvedores\ntêm trabalhado e auxilie-os em suas tarefas diárias. Em cada tarefa você\nreceberá uma quantidade de moeda referente ao serviço prestado."]
 
 
 func _ready():
