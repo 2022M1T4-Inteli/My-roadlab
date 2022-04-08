@@ -1,4 +1,4 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends Control
 
 # Declaring variables
@@ -33,29 +33,27 @@ func _process(delta):
 		$Sprite.frame = 0
 
 
-# Defining which sprite the player choosed
-func _on_Op1_pressed():
-	Global.sprNumber = 0
+func _CharacterSelected(var index):
+	Global.sprNumber = index
 	get_node("/root/Level/Manual").visible = true
 	get_node("/root/Level/Seleção de Personagem").queue_free()
+
+
+# Defining which sprite the player choosed
+func _on_Op1_pressed():
+	_CharacterSelected(0)
 
 
 func _on_Op2_pressed():
-	Global.sprNumber = 1
-	get_node("/root/Level/Manual").visible = true
-	get_node("/root/Level/Seleção de Personagem").queue_free()
+	_CharacterSelected(1)
 
 
 func _on_Op3_pressed():
-	Global.sprNumber = 2
-	get_node("/root/Level/Manual").visible = true
-	get_node("/root/Level/Seleção de Personagem").queue_free()
+	_CharacterSelected(2)
 
 
 func _on_Op4_pressed():
-	Global.sprNumber = 3
-	get_node("/root/Level/Manual").visible = true
-	get_node("/root/Level/Seleção de Personagem").queue_free()
+	_CharacterSelected(3)
 
 
 # Checking if the mouse is on top of any button

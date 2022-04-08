@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TryAgainButton.png-94eb9ca3ddd39663d60f226ce6d6c5c6.stex"
+path="res://.import/IntroductionToEnergySystemSprite.png-668c498633df440615aa489647bd8ebf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TryAgainButton.png"
-dest_files=[ "res://.import/TryAgainButton.png-94eb9ca3ddd39663d60f226ce6d6c5c6.stex" ]
+source_file="res://Sprites/Outros/IntroductionToEnergySystemSprite.png"
+dest_files=[ "res://.import/IntroductionToEnergySystemSprite.png-668c498633df440615aa489647bd8ebf.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Sprites/Botao.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Outros/Botao.png" type="Texture" id=1]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Botao"

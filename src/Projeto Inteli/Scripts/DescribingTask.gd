@@ -2,10 +2,10 @@ extends Node2D
 
 
 var tips = [
-"Selecione três números primos e não repita as letras (obs: Não considere o número 1 como número primo).",
-"Selecione três números pares combinado com consoantes diferentes.",
-"Selecione três letras em ordem crescente com números decrescentes, cuidado para que não haja repetições.",
-"Selecione três números pares com letras diferentes e três números ímpares também com letras diferentes."
+"Combine três números primos com letras diferentes entre si. Atenção: não considere o número um como um número primo.",
+"Combine três números pares com consoantes diferentes entre si.",
+"Combine três letras diferentes em ordem alfabética crescente com números em ordem númerica descrescente. Atenção: cuidado para que não hajam repetições.",
+"Combine três números pares com letras diferentes entre si e três números ímpares também com letras diferentes entre si."
 ]
 var code: String = ""
 var challenge: int = -1
@@ -69,7 +69,7 @@ func taskFineshed():
 	if hits >= 3:
 		if !Global.describingTaskComplete:
 			$TaskFineshed.visible = true
-			Global.pontos += 100
+			Global.describingTaskPoints[0] += 100
 			Global.energy -= 1
 			get_node("/root/Level 1/Player").canWalk = true
 			get_node("/root/Level 1/Cenário 2").taskOcorring = false
@@ -196,7 +196,8 @@ func checkFourthRule():
 
 
 func _on_Button_pressed():
-	queue_free()
+	$Star.visible = true
+	$TaskFineshed.visible = false
 
 
 func _on_Close_Button_pressed():

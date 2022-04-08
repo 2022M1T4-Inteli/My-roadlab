@@ -1,4 +1,4 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends Node2D
 
 # Declaring Variables
@@ -81,55 +81,43 @@ func _NextChallenge():
 			if buttonSelecteds[0] == 1 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 1:
 				correctAnswers += 1
 				_CheckingAnswers("1", 1)
-				print("certo")
 			else:
 				_CheckingAnswers("1", 0)
-				print("errado")
 			_ResetingValues(1)
 		1:
 			if buttonSelecteds[0] == 0 && buttonSelecteds[1] == 0 && buttonSelecteds[2] == 1:
 				correctAnswers += 1
 				_CheckingAnswers("2", 1)
-				print("certo")
 			else:
 				_CheckingAnswers("2", 0)
-				print("errado")
 			_ResetingValues(2)
 		2:
 			if buttonSelecteds[0] == 0 && buttonSelecteds[1] == 0 && buttonSelecteds[2] == 1:
 				correctAnswers += 1
 				_CheckingAnswers("3", 1)
-				print("certo")
 			else:
 				_CheckingAnswers("3", 0)
-				print("errado")
 			_ResetingValues(3)
 		3:
 			if buttonSelecteds[0] == 0 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 0:
 				correctAnswers += 1
 				_CheckingAnswers("4", 1)
-				print("certo")
 			else:
 				_CheckingAnswers("4", 0)
-				print("errado")
 			_ResetingValues(4)
 		4:
 			if buttonSelecteds[0] == 0 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 1:
 				correctAnswers += 1
 				_CheckingAnswers("5", 1)
-				print("certo")
 			else:
 				_CheckingAnswers("5", 0)
-				print("errado")
 			_ResetingValues(5)
 		5:
 			if buttonSelecteds[0] == 1 && buttonSelecteds[1] == 1 && buttonSelecteds[2] == 0:
 				correctAnswers += 1
 				_CheckingAnswers("6", 1)
-				print("certo")
 			else:
 				_CheckingAnswers("6", 0)
-				print("errado")
 			
 			_FineshedAllSteps()
 			pass
@@ -213,11 +201,10 @@ func _on_TryAgainButton_pressed():
 # Closing task after completed
 func _on_TaskFineshedButton_pressed():
 	if !Global.dataTaskComplete:
-			Global.pontos += 50
+			Global.dataTaskPoints[0] += 100
 			Global.energy -= 1
-			get_node("/root/Level 3/Player").canWalk = true
-			get_node("/root/Level 3/Cenário 4").taskOcorring = false
-			queue_free()
+			$Star.visible = true
+			$TaskFineshed.visible = false
 			Global.dataTaskComplete = true
 
 

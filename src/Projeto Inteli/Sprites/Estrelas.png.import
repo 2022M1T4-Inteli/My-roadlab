@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Botao.png-f618eb5ec1b881d4301000424159961b.stex"
+path="res://.import/Estrelas.png-afbb795076bfb9190d95fc804e06b1c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Botao.png"
-dest_files=[ "res://.import/Botao.png-f618eb5ec1b881d4301000424159961b.stex" ]
+source_file="res://Sprites/Estrelas.png"
+dest_files=[ "res://.import/Estrelas.png-afbb795076bfb9190d95fc804e06b1c7.stex" ]
 
 [params]
 

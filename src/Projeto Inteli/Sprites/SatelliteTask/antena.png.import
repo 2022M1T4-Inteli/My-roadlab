@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OutOfEnergyAdvertise.png-b7807b06e055d4d09c14316b844cddca.stex"
+path="res://.import/antena.png-25473405c86df5217c685c8e1769643c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/OutOfEnergyAdvertise.png"
-dest_files=[ "res://.import/OutOfEnergyAdvertise.png-b7807b06e055d4d09c14316b844cddca.stex" ]
+source_file="res://Sprites/SatelliteTask/antena.png"
+dest_files=[ "res://.import/antena.png-25473405c86df5217c685c8e1769643c.stex" ]
 
 [params]
 

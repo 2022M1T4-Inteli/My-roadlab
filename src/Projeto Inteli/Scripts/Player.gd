@@ -1,4 +1,4 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends KinematicBody2D
 
 # Declaring variables
@@ -22,6 +22,7 @@ var sprNumber = 0
 onready var characterSprite = get_node("Sprite")
 onready var animationTree = $AnimationTree
 onready var stateMachine = animationTree.get("parameters/playback")
+onready var spritePosition = $Sprite.position
 
 
 func _ready():
@@ -31,6 +32,8 @@ func _ready():
 
 func _process(delta):
 	#Defining witch sprite will be used
+	if Global.sprNumber == 3:
+		$Sprite.position = spritePosition + Vector2(0, -0.5)
 	characterSprite.set_texture(charactersSpriteArray[Global.sprNumber])
 
 	if !canWalk:

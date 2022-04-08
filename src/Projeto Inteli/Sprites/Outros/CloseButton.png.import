@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OlhoParadoInRange.png-9fcbb911cebc120f2761bab672acd83c.stex"
+path="res://.import/CloseButton.png-e2877006b2d22e655dc097016503003a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/NPC's/OlhoParadoInRange.png"
-dest_files=[ "res://.import/OlhoParadoInRange.png-9fcbb911cebc120f2761bab672acd83c.stex" ]
+source_file="res://Sprites/Outros/CloseButton.png"
+dest_files=[ "res://.import/CloseButton.png-e2877006b2d22e655dc097016503003a.stex" ]
 
 [params]
 

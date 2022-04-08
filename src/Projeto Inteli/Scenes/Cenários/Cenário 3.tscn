@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Elevador.gd" type="Script" id=2]
@@ -7,9 +7,11 @@
 [ext_resource path="res://Sprites/Elevador/ElevadorAbrindo.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Elevador/02.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/CompEng.gd" type="Script" id=7]
-[ext_resource path="res://Sprites/antena.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/SatelliteTask/antena.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Cenários/Moeda.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sprites/Computer Task/GabineteTaskSprite.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/NPC/NPC.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/HudEnergy.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 45.5, 31.5 )
@@ -153,7 +155,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
 [node name="SatelliteTaskArea" type="Area2D" parent="."]
-position = Vector2( 87, 75 )
+position = Vector2( -49, 75 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SatelliteTaskArea"]
 position = Vector2( 12.5, 0 )
@@ -167,10 +169,11 @@ hframes = 2
 
 [node name="Button" parent="SatelliteTaskArea" instance=ExtResource( 1 )]
 visible = false
+position = Vector2( 0, -53 )
 scale = Vector2( 2, 2 )
 
 [node name="ComputerTaskArea" type="Area2D" parent="."]
-position = Vector2( -36, 97 )
+position = Vector2( -172, 97 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComputerTaskArea"]
 position = Vector2( 0, 2.5 )
@@ -185,6 +188,15 @@ hframes = 2
 [node name="Button" parent="ComputerTaskArea" instance=ExtResource( 1 )]
 visible = false
 scale = Vector2( 2, 2 )
+
+[node name="NPC" parent="." instance=ExtResource( 11 )]
+position = Vector2( 136, 82 )
+spriteType = 1
+level = "Level 2"
+
+[node name="HudEenrgia" parent="." instance=ExtResource( 12 )]
+position = Vector2( -321, -180 )
+level = "Level 2"
 
 [node name="Elevador" type="Area2D" parent="."]
 scale = Vector2( 2, 2 )

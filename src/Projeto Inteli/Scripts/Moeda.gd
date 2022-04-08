@@ -1,7 +1,7 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends Control
 
 
 func _process(delta):
 	# Uptading coins values
-	$Label.text = str(Global.pontos/10)
+	$Label.text = str(Global.points/10)

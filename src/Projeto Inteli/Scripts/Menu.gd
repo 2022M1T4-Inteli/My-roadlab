@@ -1,4 +1,4 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends Node2D
 
 

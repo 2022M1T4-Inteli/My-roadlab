@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Sprites/IntroductionSprite.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Outros/IntroductionSprite.png" type="Texture" id=1]
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/InfoPopup.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/TestAutomationTask/TaskBackground.png" type="Texture" id=4]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Sprites/TestAutomationTask/TryAgainButton2.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/TestAutomationTask/taskfinished.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/TestAutomationTask/task (2).png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Estrelas.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Star.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/TaskStar.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
@@ -259,9 +262,6 @@ custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 text = "Engenheiros de software são responsáveis pela construção de testes automatizados e pelo controle de qualidade de programas. Garanta que todos os testes estejam logicamente corretos respondendo se estão certos ou errados com base nas entradas e o resultado esperado disponibilizados."
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CloseButton" type="Button" parent="InfoPopup"]
 show_behind_parent = true
@@ -369,7 +369,7 @@ custom_colors/default_color = Color( 0.588235, 0.976471, 0.458824, 1 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 text = "+100 pontos
-+10 moeadas"
++10 moedas"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -403,6 +403,67 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Star" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 11 )
+taskName = "Root"
+levelNumber = 4
+taskIndex = 5
+
+[node name="StarSlotSprite" type="Sprite" parent="Star"]
+position = Vector2( 320, 180 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="Estrelas" type="Sprite" parent="Star"]
+position = Vector2( 323, 190 )
+texture = ExtResource( 10 )
+hframes = 6
+
+[node name="OkButton" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 302.0
+margin_top = 216.0
+margin_right = 342.0
+margin_bottom = 238.0
+
+[node name="StarButton1" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 254.0
+margin_top = 176.0
+margin_right = 281.0
+margin_bottom = 204.0
+
+[node name="StarButton2" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 281.0
+margin_top = 176.0
+margin_right = 309.0
+margin_bottom = 204.0
+
+[node name="StarButton3" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 309.0
+margin_top = 176.0
+margin_right = 337.0
+margin_bottom = 204.0
+
+[node name="StarButton4" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 337.0
+margin_top = 176.0
+margin_right = 365.0
+margin_bottom = 204.0
+
+[node name="StarButton5" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 365.0
+margin_top = 176.0
+margin_right = 392.0
+margin_bottom = 204.0
+
 [connection signal="pressed" from="Task/CloseButton" to="Task" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="Task/CorrectOutputButton" to="Task" method="_on_CorrectOutputButton_pressed"]
 [connection signal="pressed" from="Task/IncorrectOutputButton" to="Task" method="_on_IncorrectOutputButton_pressed"]
@@ -410,3 +471,19 @@ __meta__ = {
 [connection signal="pressed" from="TryAgainPopup/TryAgainButton" to="Task" method="_on_TryAgainButton_pressed"]
 [connection signal="pressed" from="TryAgainPopup/CloseButton" to="Task" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="TaskFinishedPopup/CloseButton" to="Task" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Star/OkButton" to="Star" method="_on_OkButton_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton1" to="Star" method="_on_StarButton1_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton1" to="Star" method="_on_StarButton1_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton1" to="Star" method="_on_StarButton1_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton2" to="Star" method="_on_StarButton2_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton2" to="Star" method="_on_StarButton2_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton2" to="Star" method="_on_StarButton2_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton3" to="Star" method="_on_StarButton3_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton3" to="Star" method="_on_StarButton3_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton3" to="Star" method="_on_StarButton3_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton4" to="Star" method="_on_StarButton4_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton4" to="Star" method="_on_StarButton4_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton4" to="Star" method="_on_StarButton4_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton5" to="Star" method="_on_StarButton5_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton5" to="Star" method="_on_StarButton5_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton5" to="Star" method="_on_StarButton5_pressed"]

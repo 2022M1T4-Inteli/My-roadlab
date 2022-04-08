@@ -148,7 +148,7 @@ func _on_Start_transmission_button_pressed():
 func showScoreAndCloseTaskWindow():
 	# Adding points for the player
 	if !Global.satelliteTaskComplete:
-		Global.pontos += 50
+		Global.satelliteTaskPoints[0] += 50
 		Global.energy -= 1
 	Global.satelliteTaskComplete = true
 	
@@ -171,9 +171,12 @@ func _on_Close_button_pressed():
 	_close()
 	
 func _on_Task_finished_close_button_pressed():
-	get_node("/root/Level 2/Player").canWalk = true
-	get_node("/root/Level 2/Cenário 3").taskOcorring = false
-	queue_free()
+	$Star.visible = true
+	$Earned_score.visible = false
+	$Task_finished.visible = false
+	$Task_finished_close_button.visible = false
+	$Task_finished_close_button.disabled = true
+	$Score_congratulations_message.visible = false
 
 
 func _close():

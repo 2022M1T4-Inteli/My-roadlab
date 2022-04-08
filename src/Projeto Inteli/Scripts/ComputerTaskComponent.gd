@@ -1,4 +1,4 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends Area2D
 
 # Declaring varibles
@@ -17,7 +17,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	# Criando movimentação dos objetos por meio do mouse
+	# Creating movement for object according to mouse position
 	if onSocket && !Input.is_mouse_button_pressed(1):
 		move = false
 		Global.totalComputer += 1
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		self.queue_free()
 
 
-# Checando se o mouse entrou na área
+# Checking if the mouse entered area
 func _on_KinematicBody2D_mouse_entered():
 	if !Global.objCatched && move:
 		$Sprite.frame = 1
@@ -42,7 +42,7 @@ func _on_KinematicBody2D_mouse_entered():
 		Global.objCatched = true
 
 
-# Checando se o mouse saiu da área
+# Checking if the mouse left area
 func _on_KinematicBody2D_mouse_exited():
 	if !Input.is_mouse_button_pressed(1) && move:
 		$Sprite.frame = 0
@@ -50,13 +50,13 @@ func _on_KinematicBody2D_mouse_exited():
 		Global.objCatched = false
 
 
-# Checando se o objeto entrou no local alvo
+# Checking if the mouse entered the correct socket area
 func _on_KinematicBody2D_body_entered(body):
 	if body.is_in_group(socketName):
 		onSocket = true
 
 
-# Checando se o objeto saiu do local alvo
+# Checking if the mouse left the correct socket area
 func _on_KinematicBody2D_body_exited(body):
 	if body.is_in_group(socketName):
 		onSocket = false

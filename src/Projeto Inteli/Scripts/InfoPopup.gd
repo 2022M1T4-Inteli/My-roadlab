@@ -1,4 +1,4 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends Control
 
 func _on_CloseButton_pressed():

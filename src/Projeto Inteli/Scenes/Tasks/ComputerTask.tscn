@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scripts/ComputerTaskComponent.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Computer Task/HD.png" type="Texture" id=2]
@@ -25,7 +25,10 @@
 [ext_resource path="res://Sprites/SatelliteTask/TASKCOMPLETA.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/Computer Task/Explicacao/Explicacao.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/Computer Task/Explicacao/Fundo.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/IntroductionSprite.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Outros/IntroductionSprite.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/TaskStar.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Estrelas.png" type="Texture" id=28]
+[ext_resource path="res://Scripts/Star.gd" type="Script" id=29]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 18, 16 )
@@ -110,9 +113,6 @@ margin_left = 614.0
 margin_top = 3.0
 margin_right = 638.0
 margin_bottom = 27.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ButtonOpenExplanation" type="Button" parent="Control"]
 margin_left = 589.0
@@ -612,21 +612,16 @@ __meta__ = {
 }
 
 [node name="DescriptionLabel" type="Label" parent="Explanation/ExplanationPopup"]
-margin_left = -44.0
-margin_top = -50.0
-margin_right = 253.0
-margin_bottom = 118.0
+margin_left = -53.0
+margin_top = -51.0
+margin_right = 241.0
+margin_bottom = 117.0
 custom_fonts/font = SubResource( 21 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+autowrap = true
 
 [node name="IntroductionScreen" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="IntroducionSprite" type="Sprite" parent="IntroductionScreen"]
 position = Vector2( 320, 180 )
@@ -637,17 +632,14 @@ anchor_left = 0.521
 anchor_top = 1.0
 anchor_right = 0.523
 anchor_bottom = 1.069
-margin_left = 203.16
-margin_top = 108.0
-margin_right = 452.08
-margin_bottom = 161.24
+margin_left = 198.16
+margin_top = 91.0
+margin_right = 468.08
+margin_bottom = 185.24
 custom_fonts/normal_font = SubResource( 19 )
 bbcode_enabled = true
-text = "Engenheiros da computação são focados principalmente na área de hardware. Garanta que as peças do computado sejam posicionadas corretamente."
+text = "Engenheiros da computação, além do conhecimento sobre a criação de programas, trabalham, frequentemente, com hardware. Nesta tarefa, garanta que as peças do computador sejam posicionadas corretamente. Se sentir necessidade, utilize o ponto de interrogação no canto superior direito para obter ajuda."
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ButtonCloseIntroduction" type="Button" parent="IntroductionScreen"]
 show_behind_parent = true
@@ -658,6 +650,67 @@ margin_bottom = 159.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Star" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 29 )
+taskName = "Computer Task"
+levelNumber = 2
+taskIndex = 3
+
+[node name="StarSlotSprite" type="Sprite" parent="Star"]
+position = Vector2( 320, 180 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 27 )
+
+[node name="Estrelas" type="Sprite" parent="Star"]
+position = Vector2( 323, 190 )
+texture = ExtResource( 28 )
+hframes = 6
+
+[node name="OkButton" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 302.0
+margin_top = 216.0
+margin_right = 342.0
+margin_bottom = 238.0
+
+[node name="StarButton1" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 254.0
+margin_top = 176.0
+margin_right = 281.0
+margin_bottom = 204.0
+
+[node name="StarButton2" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 281.0
+margin_top = 176.0
+margin_right = 309.0
+margin_bottom = 204.0
+
+[node name="StarButton3" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 309.0
+margin_top = 176.0
+margin_right = 337.0
+margin_bottom = 204.0
+
+[node name="StarButton4" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 337.0
+margin_top = 176.0
+margin_right = 365.0
+margin_bottom = 204.0
+
+[node name="StarButton5" type="Button" parent="Star"]
+show_behind_parent = true
+margin_left = 365.0
+margin_top = 176.0
+margin_right = 392.0
+margin_bottom = 204.0
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/ButtonOpenExplanation" to="." method="_on_ButtonOpenExplanation_pressed"]
@@ -706,3 +759,19 @@ __meta__ = {
 [connection signal="pressed" from="Explanation/Background/ButtonCloseExplanation" to="." method="_on_ButtonCloseExplanation_pressed"]
 [connection signal="pressed" from="Explanation/ExplanationPopup/ButtonCloseExplanationpopup" to="." method="_on_ButtonCloseExplanationpopup_pressed"]
 [connection signal="pressed" from="IntroductionScreen/ButtonCloseIntroduction" to="." method="_on_ButtonCloseIntroduction_pressed"]
+[connection signal="pressed" from="Star/OkButton" to="Star" method="_on_OkButton_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton1" to="Star" method="_on_StarButton1_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton1" to="Star" method="_on_StarButton1_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton1" to="Star" method="_on_StarButton1_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton2" to="Star" method="_on_StarButton2_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton2" to="Star" method="_on_StarButton2_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton2" to="Star" method="_on_StarButton2_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton3" to="Star" method="_on_StarButton3_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton3" to="Star" method="_on_StarButton3_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton3" to="Star" method="_on_StarButton3_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton4" to="Star" method="_on_StarButton4_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton4" to="Star" method="_on_StarButton4_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton4" to="Star" method="_on_StarButton4_pressed"]
+[connection signal="mouse_entered" from="Star/StarButton5" to="Star" method="_on_StarButton5_mouse_entered"]
+[connection signal="mouse_exited" from="Star/StarButton5" to="Star" method="_on_StarButton5_mouse_exited"]
+[connection signal="pressed" from="Star/StarButton5" to="Star" method="_on_StarButton5_pressed"]

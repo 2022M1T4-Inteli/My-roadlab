@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dialogo.png-f3f2551b5f217e4c99932e22624f2f83.stex"
+path="res://.import/SabotagemBackground.png-4a921caf4affaa27042edc0627422bce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/NPC's/Dialogo.png"
-dest_files=[ "res://.import/Dialogo.png-f3f2551b5f217e4c99932e22624f2f83.stex" ]
+source_file="res://Sprites/Outros/SabotagemBackground.png"
+dest_files=[ "res://.import/SabotagemBackground.png-4a921caf4affaa27042edc0627422bce.stex" ]
 
 [params]
 

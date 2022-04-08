@@ -1,31 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Cenários/Cenário 5.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Sprites/HUDEnergia.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/HudEnergia.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/Cafeteira.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Coffee screen.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/OutOfEnergyAdvertise.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/NPC/Dialogo2.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 10 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 21.5, 8 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 8
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 8
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=9]
 size = 8
 font_data = ExtResource( 4 )
 
@@ -48,146 +32,51 @@ position = Vector2( 175.5, -59 )
 scale = Vector2( 1, 30 )
 shape = SubResource( 1 )
 
-[node name="HudEnergia" type="Sprite" parent="."]
-position = Vector2( 320, 180 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
-hframes = 4
-script = ExtResource( 6 )
-
-[node name="Area2D" type="Area2D" parent="HudEnergia"]
-position = Vector2( -147.5, 44.5 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HudEnergia/Area2D"]
-position = Vector2( -0.5, 10 )
-shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="HudEnergia/Area2D"]
-position = Vector2( 0, 1 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-hframes = 2
-
-[node name="Button" parent="HudEnergia/Area2D" instance=ExtResource( 7 )]
-visible = false
-position = Vector2( 1, 15 )
-scale = Vector2( 2, 2 )
-
-[node name="Control" type="Control" parent="HudEnergia"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="HudEnergia/Control"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 9 )
-
-[node name="Label" type="Label" parent="HudEnergia/Control"]
-margin_left = -20.5
-margin_top = 46.0
-margin_right = 21.5
-margin_bottom = 60.0
-custom_fonts/font = SubResource( 3 )
-text = "Comprar"
-
-[node name="BuyButton" type="Button" parent="HudEnergia/Control"]
-show_behind_parent = true
-margin_left = -19.0
-margin_top = 42.0
-margin_right = 19.0
-margin_bottom = 62.0
-
-[node name="CloseButton" type="Button" parent="HudEnergia/Control"]
-show_behind_parent = true
-margin_left = 46.0
-margin_top = -72.5
-margin_right = 58.0
-margin_bottom = -52.5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="EnergyAdvertise" type="Control" parent="HudEnergia"]
-visible = false
-margin_right = 20.0
-margin_bottom = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="HudEnergia/EnergyAdvertise"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 10 )
-
-[node name="AdvertiseButton" type="Button" parent="HudEnergia/EnergyAdvertise"]
-show_behind_parent = true
-margin_left = 65.0
-margin_top = 3.0
-margin_right = 85.0
-margin_bottom = 23.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HudEnergia/EnergyAdvertise"]
-margin_left = -45.5
-margin_top = -7.5
-margin_right = 80.5
-margin_bottom = 6.5
-custom_fonts/font = SubResource( 4 )
-text = "Sua energia já está cheia."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OutOfEnergy" type="Control" parent="."]
-visible = false
-margin_left = 320.0
-margin_top = 180.0
-margin_right = 360.0
-margin_bottom = 220.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OutOfEnergyAdvertise" type="Sprite" parent="OutOfEnergy"]
-texture = ExtResource( 10 )
-
-[node name="OutOfEnergyCloseButton" type="Button" parent="OutOfEnergy"]
-show_behind_parent = true
-margin_left = 131.0
-margin_top = 16.0
-margin_right = 170.0
-margin_bottom = 37.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="OutOfEnergy"]
-margin_left = -95.0
-margin_top = -20.0
-margin_right = 175.0
-margin_bottom = 5.0
-custom_fonts/font = SubResource( 5 )
-text = "Sua enegia acabou. A recarregue em uma máquina de 
-café."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 571, 263 )
 canWalk = true
 
 [node name="TasksSpawn" type="Node2D" parent="."]
 
-[connection signal="body_entered" from="HudEnergia/Area2D" to="HudEnergia" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="HudEnergia/Area2D" to="HudEnergia" method="_on_Area2D_body_exited"]
-[connection signal="pressed" from="HudEnergia/Control/BuyButton" to="HudEnergia" method="_on_Button_pressed"]
-[connection signal="pressed" from="HudEnergia/Control/CloseButton" to="HudEnergia" method="_on_CloseButton_pressed"]
-[connection signal="pressed" from="HudEnergia/EnergyAdvertise/AdvertiseButton" to="HudEnergia" method="_on_AdvertiseButton_pressed"]
-[connection signal="pressed" from="OutOfEnergy/OutOfEnergyCloseButton" to="HudEnergia" method="_on_OutOfEnergyCloseButton_pressed"]
+[node name="DialogueBox" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="DialogueBox"]
+position = Vector2( 320, 179 )
+texture = ExtResource( 5 )
+hframes = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueBox"]
+anchor_left = 0.521
+anchor_top = 1.0
+anchor_right = 0.523
+anchor_bottom = 1.069
+margin_left = -165.44
+margin_top = -59.0
+margin_right = 202.28
+margin_bottom = -36.84
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 9 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox"]
+anchor_left = 0.5
+anchor_top = 1.381
+anchor_right = 0.5
+anchor_bottom = 1.381
+margin_left = -153.0
+margin_top = -197.16
+margin_right = 217.0
+margin_bottom = -149.16
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

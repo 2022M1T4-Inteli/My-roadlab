@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Sprites/Frame.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Outros/Frame.png" type="Texture" id=1]
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/Botao.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/NPC's/OlhoParadoInRange.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Outros/Botao.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/NPC/OlhoParadoInRange.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Manual.gd" type="Script" id=5]
-[ext_resource path="res://Sprites/D.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/A.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Outros/D.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Outros/A.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8

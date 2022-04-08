@@ -1,34 +1,22 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Cenários/Cenário 1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Seleção de Personagem/selecao.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Seleção de Personagem.gd" type="Script" id=5]
-[ext_resource path="res://Sprites/NPC's/Dialogo.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/NPC/Dialogo.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Cenários/Manual.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/HUDEnergia.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=9]
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/Cenários/Moeda.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scripts/HudEnergia.gd" type="Script" id=12]
-[ext_resource path="res://Sprites/Cafeteira.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/ButtonIndicator/Button.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Sprites/Coffee screen.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/IntroductionToEnergySystemSprite.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Outros/IntroductionToEnergySystemSprite.png" type="Texture" id=16]
 [ext_resource path="res://Scripts/IntroductionToEnergySystem.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 15, 10 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 8
-font_data = ExtResource( 10 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 21.5, 8 )
-
-[sub_resource type="DynamicFont" id=5]
 size = 8
 font_data = ExtResource( 10 )
 
@@ -91,9 +79,6 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="DialogueBox"]
 anchor_left = 0.5
@@ -110,70 +95,6 @@ __meta__ = {
 }
 
 [node name="Moeda" parent="." instance=ExtResource( 11 )]
-
-[node name="HudEnergia" type="Sprite" parent="."]
-position = Vector2( 320, 180 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
-hframes = 4
-script = ExtResource( 12 )
-
-[node name="Area2D" type="Area2D" parent="HudEnergia"]
-visible = false
-position = Vector2( -147.5, 45 )
-scale = Vector2( 0.5, 0.5 )
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HudEnergia/Area2D"]
-position = Vector2( -0.5, 10 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="HudEnergia/Area2D"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 13 )
-hframes = 2
-
-[node name="Button" parent="HudEnergia/Area2D" instance=ExtResource( 14 )]
-visible = false
-position = Vector2( 1, 15 )
-scale = Vector2( 2, 2 )
-
-[node name="Control" type="Control" parent="HudEnergia"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="HudEnergia/Control"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 15 )
-
-[node name="Label" type="Label" parent="HudEnergia/Control"]
-margin_left = -20.5
-margin_top = 46.0
-margin_right = 21.5
-margin_bottom = 60.0
-custom_fonts/font = SubResource( 5 )
-text = "Comprar"
-
-[node name="BuyButton" type="Button" parent="HudEnergia/Control"]
-show_behind_parent = true
-margin_left = -19.0
-margin_top = 42.0
-margin_right = 19.0
-margin_bottom = 62.0
-
-[node name="CloseButton" type="Button" parent="HudEnergia/Control"]
-show_behind_parent = true
-margin_left = 46.0
-margin_top = -72.5
-margin_right = 58.0
-margin_bottom = -52.5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="IntroductionToEnergySystem" type="Control" parent="."]
 visible = false
@@ -201,18 +122,11 @@ __meta__ = {
 [node name="Label" type="Label" parent="IntroductionToEnergySystem"]
 margin_left = 174.0
 margin_top = 97.0
-margin_right = 607.0
-margin_bottom = 178.0
+margin_right = 545.0
+margin_bottom = 216.0
 custom_fonts/font = SubResource( 6 )
-text = "Aqui você é muito bem-vindo(a) e muito importante para nós. Sabemos que nossas 
-tarefas são cansativas e precisamos de uma pausa, sinta-se à vontade para 
-recarregar suas energias em nossas máquinas de café com as moedas que você 
-conquistará, nossas máquinas estão distribuídas em todos os andares além do 
-térreo. Fique de olho em sua energia, você pode acompanha-la em sua tela no canto
-superior direito."
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Aqui você é muito bem-vindo(a) e importante para nós. Sabemos que nossas tarefas são cansativas e às vezes precisamos de uma pausa. Sinta-se à vontade para recarregar as suas energias em nossas máquinas de café com as moedas que você conquistará durante a jogatina. Nossas máquinas estão distribuídas em todos os andares, inclusive no térreo. Fique de olho em sua energia: você pode acompanhá-la no canto superior direito de sua tela. Atenção: um café restaura a sua energia por completo, então garanta que esteja inteiramente cansado para economizar moedas."
+autowrap = true
 
 [node name="Manual" parent="." instance=ExtResource( 7 )]
 visible = false
@@ -281,10 +195,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="body_entered" from="HudEnergia/Area2D" to="HudEnergia" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="HudEnergia/Area2D" to="HudEnergia" method="_on_Area2D_body_exited"]
-[connection signal="pressed" from="HudEnergia/Control/BuyButton" to="HudEnergia" method="_on_Button_pressed"]
-[connection signal="pressed" from="HudEnergia/Control/CloseButton" to="HudEnergia" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="IntroductionToEnergySystem/Button" to="IntroductionToEnergySystem" method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_entered"]
 [connection signal="mouse_exited" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_exited"]

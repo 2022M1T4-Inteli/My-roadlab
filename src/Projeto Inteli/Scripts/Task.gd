@@ -70,7 +70,7 @@ func _process(delta):
 		else:
 			get_node("/root/Level 4/TasksSpawn/Root/TaskFinishedPopup").visible = true;
 			if !Global.automationTestTaskComplete:
-				Global.pontos += 100
+				Global.automationTestTaskPoints[0] += 100
 				Global.energy -= 1
 				get_node("/root/Level 4/Player").canWalk = true
 				get_node("/root/Level 4/Cenário 5").taskOcorring = false
@@ -162,9 +162,9 @@ func stepValidator(isCorrect, step):
 
 # Closing scene when the close button was pressed.
 func _on_CloseButton_pressed():
-	get_node("/root/Level 4/Player").canWalk = true
-	get_node("/root/Level 4/Cenário 5").taskOcorring = false
-	get_node("/root/Level 4/TasksSpawn/Root").queue_free();
+	get_node("/root/Level 4/TasksSpawn/Root/Star").visible = true
+	get_node("/root/Level 4/TasksSpawn/Root/TaskFinishedPopup").visible = false
+	
 
 # Restarting the task when the try again button was pressed.
 func _on_TryAgainButton_pressed():

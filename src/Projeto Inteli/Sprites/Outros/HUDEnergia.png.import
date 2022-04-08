@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cafeteira.png-5f8465781e0192bb1da3444a892b5d0e.stex"
+path="res://.import/HUDEnergia.png-3d44e7acbd85048fbff3b86daf9ea971.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cafeteira.png"
-dest_files=[ "res://.import/Cafeteira.png-5f8465781e0192bb1da3444a892b5d0e.stex" ]
+source_file="res://Sprites/Outros/HUDEnergia.png"
+dest_files=[ "res://.import/HUDEnergia.png-3d44e7acbd85048fbff3b86daf9ea971.stex" ]
 
 [params]
 

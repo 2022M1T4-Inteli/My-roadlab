@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/A.png-4f0f87b25cba16904ed5ce08ca230758.stex"
+path="res://.import/Coffee screen.png-e259fcca51cf5f4634901832ef3a09ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/A.png"
-dest_files=[ "res://.import/A.png-4f0f87b25cba16904ed5ce08ca230758.stex" ]
+source_file="res://Sprites/Outros/Coffee screen.png"
+dest_files=[ "res://.import/Coffee screen.png-e259fcca51cf5f4634901832ef3a09ed.stex" ]
 
 [params]
 

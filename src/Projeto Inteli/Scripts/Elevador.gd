@@ -1,4 +1,4 @@
-# Made by Renato Machado
+# Writed by Renato Machado
 extends Area2D
 
 # Declaring variables
@@ -74,33 +74,48 @@ func _on_ButtonAndar3_pressed():
 
 func _on_ButtonAndar4_pressed():
 	get_tree().change_scene_to(load("res://Scenes/Level" + str(chooseFloor[3]) + ".tscn"))
-
+ 
 func _on_ButtonAndar5_pressed():
-	get_tree().change_scene_to(load("res://Scenes/Level" + str(chooseFloor[4]) + ".tscn"))
+	if Global.dataTaskComplete && Global.describingTaskComplete && Global.automationTestTaskComplete && Global.satelliteTaskComplete && Global.computerTaskComplete:
+		get_tree().change_scene_to(load("res://Scenes/Level" + str(chooseFloor[4]) + ".tscn"))
 
 
 # Checking witch button mouse cursor is on top
 func _on_ButtonAndar1_mouse_entered():
-	$ElevadorInterface0/Botoes.frame = chooseAnim[0] 
+	$ElevadorInterface0/Botoes.frame = chooseAnim[0]
+
+
 func _on_ButtonAndar1_mouse_exited():
 	$ElevadorInterface0/Botoes.frame = animDefault
 
+
 func _on_ButtonAndar2_mouse_entered():
 	$ElevadorInterface0/Botoes.frame = chooseAnim[1]
+
+
 func _on_ButtonAndar2_mouse_exited():
 	$ElevadorInterface0/Botoes.frame = animDefault
 
+
 func _on_ButtonAndar3_mouse_entered():
 	$ElevadorInterface0/Botoes.frame = chooseAnim[2]
+
+
 func _on_ButtonAndar3_mouse_exited():
 	$ElevadorInterface0/Botoes.frame = animDefault
 
+
 func _on_ButtonAndar4_mouse_entered():
 	$ElevadorInterface0/Botoes.frame = chooseAnim[3]
+
+
 func _on_ButtonAndar4_mouse_exited():
 	$ElevadorInterface0/Botoes.frame = animDefault
 
+
 func _on_ButtonAndar5_mouse_entered():
 	$ElevadorInterface0/Botoes.frame = chooseAnim[4]
+
+
 func _on_ButtonAndar5_mouse_exited():
 	$ElevadorInterface0/Botoes.frame = animDefault

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SabotagemBackground.png-c3e358536806ceaf00f5720d8050a1fd.stex"
+path="res://.import/OlhoParado.png-89326163217521f7d350437d581a1e79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SabotagemBackground.png"
-dest_files=[ "res://.import/SabotagemBackground.png-c3e358536806ceaf00f5720d8050a1fd.stex" ]
+source_file="res://Sprites/NPC/OlhoParado.png"
+dest_files=[ "res://.import/OlhoParado.png-89326163217521f7d350437d581a1e79.stex" ]
 
 [params]
 
