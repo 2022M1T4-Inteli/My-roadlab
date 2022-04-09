@@ -7,7 +7,7 @@ func _on_CloseButton_pressed():
 	self.visible = false;
 	
 	# Enabling all task buttons.
-	get_node("/root/Level 4/TasksSpawn/Root/Task/CloseButton").disabled = false;
+	get_node("/root/Level 4/TasksSpawn/Root/Task/CloseTaskButton").disabled = false;
 	get_node("/root/Level 4/TasksSpawn/Root/Task/CorrectOutputButton").disabled = false;
 	get_node("/root/Level 4/TasksSpawn/Root/Task/IncorrectOutputButton").disabled = false;
 	

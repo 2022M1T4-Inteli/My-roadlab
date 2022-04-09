@@ -13,9 +13,6 @@
 [ext_resource path="res://Sprites/Outros/IntroductionToEnergySystemSprite.png" type="Texture" id=16]
 [ext_resource path="res://Scripts/IntroductionToEnergySystem.gd" type="Script" id=17]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 15, 10 )
-
 [sub_resource type="DynamicFont" id=2]
 size = 8
 font_data = ExtResource( 10 )
@@ -28,6 +25,9 @@ font_data = ExtResource( 10 )
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 15, 10 )
+
 [node name="Level" type="Node2D"]
 
 [node name="Global" type="Node" parent="."]
@@ -35,20 +35,6 @@ script = ExtResource( 9 )
 
 [node name="Cenário 1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320, 180 )
-
-[node name="Ground" parent="." instance=ExtResource( 1 )]
-position = Vector2( 319, 298 )
-scale = Vector2( 2, 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" groups=["Ground"]]
-position = Vector2( -174.5, -49 )
-scale = Vector2( 1, 30 )
-shape = SubResource( 3 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=["Ground"]]
-position = Vector2( 175.5, -41 )
-scale = Vector2( 1, 30 )
-shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 21, 262 )
@@ -194,6 +180,20 @@ margin_bottom = 151.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Ground" parent="." instance=ExtResource( 1 )]
+position = Vector2( 319, 298 )
+scale = Vector2( 2, 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" groups=["Ground"]]
+position = Vector2( -174.5, -49 )
+scale = Vector2( 1, 30 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" groups=["Ground"]]
+position = Vector2( 175.5, -41 )
+scale = Vector2( 1, 30 )
+shape = SubResource( 3 )
 
 [connection signal="pressed" from="IntroductionToEnergySystem/Button" to="IntroductionToEnergySystem" method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_entered"]

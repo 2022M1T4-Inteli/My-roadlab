@@ -44,7 +44,7 @@ visible = false
 position = Vector2( 320, 180 )
 texture = ExtResource( 4 )
 
-[node name="CloseButton" type="Button" parent="Task"]
+[node name="CloseTaskButton" type="Button" parent="Task"]
 show_behind_parent = true
 margin_left = 395.0
 margin_top = 38.0
@@ -464,7 +464,7 @@ margin_top = 176.0
 margin_right = 392.0
 margin_bottom = 204.0
 
-[connection signal="pressed" from="Task/CloseButton" to="Task" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="Task/CloseTaskButton" to="Task" method="_on_CloseTaskButton_pressed"]
 [connection signal="pressed" from="Task/CorrectOutputButton" to="Task" method="_on_CorrectOutputButton_pressed"]
 [connection signal="pressed" from="Task/IncorrectOutputButton" to="Task" method="_on_IncorrectOutputButton_pressed"]
 [connection signal="pressed" from="InfoPopup/CloseButton" to="InfoPopup" method="_on_CloseButton_pressed"]

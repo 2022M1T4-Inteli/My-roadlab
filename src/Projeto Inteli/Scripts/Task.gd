@@ -54,7 +54,7 @@ var fifthStep = {
 
 func _ready():
 	# Disabling all task buttons.
-	$CloseButton.disabled = true;
+	$CloseTaskButton.disabled = true;
 	$CorrectOutputButton.disabled = true;
 	$IncorrectOutputButton.disabled = true;
 	
@@ -204,3 +204,9 @@ func startReduceTimeBar():
 	while(isTimeCountRunning && !isScoreCalculated):
 		yield(get_tree().create_timer(0.01), "timeout");
 		$TimeBar.rect_size.x -= 0.07; 
+
+
+func _on_CloseTaskButton_pressed():
+	get_node("/root/Level 4/Player").canWalk = true
+	get_node("/root/Level 4/Cenário 5").taskOcorring = false
+	get_node("/root/Level 4/TasksSpawn/Root").queue_free()
