@@ -26,6 +26,8 @@ var computerTaskComplete = false
 var dataTaskComplete = false
 var automationTestTaskComplete = false
 
+var ePressed = false
+
 var objCatched = false
 
 var energy = 3

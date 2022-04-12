@@ -25,7 +25,7 @@ func _process(delta):
 			$HudEnergia.frame = 3
 	
 	# Openimg coffee shop interface
-	if player && Input.is_action_just_pressed("ui_E"):
+	if player && Input.is_action_just_pressed("ui_E") || player && Global.ePressed:
 		$Control.visible = true
 		get_node("/root/" + level + "/Player").canWalk = false
 		get_node("/root/" + level + "/Player/Sprite").visible = false

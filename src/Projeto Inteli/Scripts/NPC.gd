@@ -10,6 +10,7 @@ var dialog = []
 # Publics variables that can be accessed out of script
 export var spriteType = 0
 export var level = ""
+export var finalNPC = false
 
 var npcSpriteArray = [preload("res://Sprites/Npc/OlhoParado.png"), 
 								preload("res://Sprites/Npc/OlhoParadoInRange.png"), 
@@ -56,10 +57,16 @@ func _ChooseDiologueIndex():
 		"Level 4":
 			_ChooseSprite()
 			dialog = ["Você está no setor de Engenharia de Software (4º andar). Aqui utilizamos as \nferramentas desenvolvidas pelos outros setores e criamos ambientes \nde trabalho que viabilizam a criação e gestão de novas tecnologias."]
+		"Level 5":
+			dialog = ["Parabéns! Você finalizou todas as tarefas atribuídas a você.  Suas horas \nde estágio foram completadas e o seu trabalho aqui acabou por \nenquanto.",
+					"Agora você está pronto para receber grau e apto para ingressar no \nensino superior. \nEsperamos que sua experiência aqui tenha sido útil. Até breve! :-) "]
 
 
 func _ready():
 	# Defining what can be visible when the game start
+	if level == "Level 5":
+		$Sprite.visible = false
+		$SpriteProx.visible = false
 	_ChooseDiologueIndex()
 	$Button.visible = false
 	get_node("/root/" + level + "/DialogueBox").visible = false
@@ -69,7 +76,7 @@ func _ready():
 
 func _process(delta):
 	# Calling the function to start the dialog box if all the cases are true
-	if get_node("/root/" + level + "/DialogueBox").visible && Input.is_action_just_pressed("ui_E") && dialogIndex < dialog.size() + 1 && fineshed:
+	if get_node("/root/" + level + "/DialogueBox").visible && Input.is_action_just_pressed("ui_E") && dialogIndex < dialog.size() + 1 && fineshed || get_node("/root/" + level + "/DialogueBox").visible && Global.ePressed && dialogIndex < dialog.size() + 1 && fineshed:
 		load_dialog()
 		get_node("/root/" + level + "/DialogueBox/Sprite").frame = 0
 		fineshed = false
@@ -88,15 +95,19 @@ func load_dialog():
 		dialogIndex = 0
 		get_node("/root/" + level + "/DialogueBox/RichTextLabel").bbcode_text = dialog[dialogIndex]
 		# Accessing variable of other node("Player") and changing its values
-		get_node("/root/" + level + "/Player").canWalk = true
-		$Button.visible = true
 		get_node("/root/" + level + "/DialogueBox").visible = false
+		
+		if finalNPC:
+			get_node("/root/" + level + "/FeedbackScreen").visible = true
+		else:
+			get_node("/root/" + level + "/Player").canWalk = true
+			$Button.visible = true
 
 
 func _physics_process(delta):
 	# Defining when the trasition will occur between the button and the dialog box
 	# Starting dialog box
-	if Input.is_action_just_pressed("ui_E") && player && !get_node("/root/" + level + "/DialogueBox").visible:
+	if Input.is_action_just_pressed("ui_E") && player && !get_node("/root/" + level + "/DialogueBox").visible || Global.ePressed && player && !get_node("/root/" + level + "/DialogueBox").visible:
 		if $Button.visible == true:
 			$Button.visible = false
 			get_node("/root/" + level + "/DialogueBox").visible = true
@@ -108,16 +119,24 @@ func _physics_process(delta):
 
 # Checking if the player is in area
 func _on_NPC_body_entered(body):
-	$Sprite.visible = false
-	$SpriteProx.visible = true
+	if level == "Level 5":
+		get_node("/root/Level 5/Cenário 6/Chefe/ChefeParado").visible = false
+		get_node("/root/Level 5/Cenário 6/Chefe/ChefeParadoInRange").visible = true
+	else:
+		$Sprite.visible = false
+		$SpriteProx.visible = true
 	$Button.visible = true
 	player = true
 
 # Checking if the player left the area
 func _on_NPC_body_exited(body):
+	if level == "Level 5":
+		get_node("/root/Level 5/Cenário 6/Chefe/ChefeParado").visible = true
+		get_node("/root/Level 5/Cenário 6/Chefe/ChefeParadoInRange").visible = false
+	else:
+		$Sprite.visible = true
+		$SpriteProx.visible = false
 	$Button.visible = false
-	$Sprite.visible = true
-	$SpriteProx.visible = false
 	player = false
 
 # Changing dialog box's sprite frame

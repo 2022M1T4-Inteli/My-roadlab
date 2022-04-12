@@ -144,7 +144,7 @@ func _Transfer():
 	$Control/ArchiveTransfer.visible = true
 	
 	while $Control/ArchiveTransfer/LoadBar.rect_size.x < 192:
-		yield(get_tree().create_timer(0.01), "timeout");
+		yield(get_tree().create_timer(0.01), "timeout")
 		$Control/ArchiveTransfer/LoadBar.rect_size.x += 2
 	
 	$Control/ArchiveTransfer.visible = false
@@ -193,9 +193,9 @@ func _on_Close_Button_pressed():
 
 # Buttom to restart the task after failled
 func _on_TryAgainButton_pressed():
+	queue_free()
 	var task = Global.taskData.instance()
 	get_node("/root/Level 3/TasksSpawn").add_child(task)
-	queue_free()
 
 
 # Closing task after completed

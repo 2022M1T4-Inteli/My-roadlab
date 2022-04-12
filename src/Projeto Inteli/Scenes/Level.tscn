@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,9 +7,12 @@
 [ext_resource path="res://Scripts/Seleção de Personagem.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/NPC/Dialogo.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Cenários/Manual.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Outros/D.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Global.gd" type="Script" id=9]
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/Cenários/Moeda.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Sprites/Outros/A.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Outros/Botao.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Outros/IntroductionToEnergySystemSprite.png" type="Texture" id=16]
 [ext_resource path="res://Scripts/IntroductionToEnergySystem.gd" type="Script" id=17]
 
@@ -82,6 +85,57 @@ __meta__ = {
 
 [node name="Moeda" parent="." instance=ExtResource( 11 )]
 
+[node name="A" type="Sprite" parent="."]
+position = Vector2( 26, 322 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+hframes = 2
+
+[node name="D" type="Sprite" parent="."]
+position = Vector2( 75, 322 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="E" type="Sprite" parent="."]
+position = Vector2( 594, 321 )
+scale = Vector2( 3.9, 3.9 )
+texture = ExtResource( 13 )
+hframes = 2
+
+[node name="MobileMovement" type="Control" parent="."]
+show_behind_parent = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonA" type="Button" parent="MobileMovement"]
+margin_left = 6.0
+margin_top = 306.0
+margin_right = 42.0
+margin_bottom = 341.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonD" type="Button" parent="MobileMovement"]
+margin_left = 55.0
+margin_top = 306.0
+margin_right = 91.0
+margin_bottom = 341.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonE" type="Button" parent="MobileMovement"]
+margin_left = 574.0
+margin_top = 305.0
+margin_right = 610.0
+margin_bottom = 340.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="IntroductionToEnergySystem" type="Control" parent="."]
 visible = false
 margin_right = 40.0
@@ -106,13 +160,17 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="IntroductionToEnergySystem"]
-margin_left = 174.0
-margin_top = 97.0
-margin_right = 545.0
-margin_bottom = 216.0
+margin_left = 211.0
+margin_top = 113.0
+margin_right = 531.0
+margin_bottom = 258.0
 custom_fonts/font = SubResource( 6 )
 text = "Aqui você é muito bem-vindo(a) e importante para nós. Sabemos que nossas tarefas são cansativas e às vezes precisamos de uma pausa. Sinta-se à vontade para recarregar as suas energias em nossas máquinas de café com as moedas que você conquistará durante a jogatina. Nossas máquinas estão distribuídas em todos os andares, inclusive no térreo. Fique de olho em sua energia: você pode acompanhá-la no canto superior direito de sua tela. Atenção: um café restaura a sua energia por completo, então garanta que esteja inteiramente cansado para economizar moedas."
+align = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Manual" parent="." instance=ExtResource( 7 )]
 visible = false
@@ -195,6 +253,11 @@ position = Vector2( 175.5, -41 )
 scale = Vector2( 1, 30 )
 shape = SubResource( 3 )
 
+[connection signal="button_down" from="MobileMovement/ButtonA" to="Player" method="_on_ButtonA_button_down"]
+[connection signal="button_up" from="MobileMovement/ButtonA" to="Player" method="_on_ButtonA_button_up"]
+[connection signal="button_down" from="MobileMovement/ButtonD" to="Player" method="_on_ButtonD_button_down"]
+[connection signal="button_up" from="MobileMovement/ButtonD" to="Player" method="_on_ButtonD_button_up"]
+[connection signal="pressed" from="MobileMovement/ButtonE" to="Player" method="_on_ButtonE_pressed"]
 [connection signal="pressed" from="IntroductionToEnergySystem/Button" to="IntroductionToEnergySystem" method="_on_Button_pressed"]
 [connection signal="mouse_entered" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_entered"]
 [connection signal="mouse_exited" from="Seleção de Personagem/Op1" to="Seleção de Personagem" method="_on_Op1_mouse_exited"]

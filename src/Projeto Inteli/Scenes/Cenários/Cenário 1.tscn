@@ -146,7 +146,6 @@ texture = ExtResource( 7 )
 
 [node name="NPC" parent="." instance=ExtResource( 2 )]
 position = Vector2( 94, 82 )
-spritePath = "res://Sprites/Npc/OlhoParado"
 level = "Level"
 
 [node name="CenarioBancada" type="Sprite" parent="."]

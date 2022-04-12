@@ -199,6 +199,7 @@ func startTaskTimer():
 		# Showing the task try again popup.
 		get_node("/root/Level 4/TasksSpawn/Root/Task/TryAgainPopup").visible = true;
 
+
 func startReduceTimeBar():
 	
 	while(isTimeCountRunning && !isScoreCalculated):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fontes/Minecraftia-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/Estrelas.png" type="Texture" id=2]
@@ -13,6 +13,10 @@ size = 8
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 8
 font_data = ExtResource( 1 )
 
@@ -185,3 +189,26 @@ text = "Nivel de satisfação:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PlayAgainLabel" type="Label" parent="FinalFeedbackScreen"]
+margin_left = 146.0
+margin_top = 124.0
+margin_right = 230.0
+margin_bottom = 138.0
+custom_fonts/font = SubResource( 4 )
+text = "Jogar Novamente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgainButton" type="Button" parent="FinalFeedbackScreen"]
+show_behind_parent = true
+margin_left = 140.0
+margin_top = 118.0
+margin_right = 234.0
+margin_bottom = 141.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="FinalFeedbackScreen/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]

@@ -1,6 +1,30 @@
 # Writed by Renato Machado
 extends Node2D
 
+# Restarting game global variables
+func _ready():
+	Global.sprNumber = 0
+	Global.satelliteTaskPoints = [0, 0]
+	Global.describingTaskPoints = [0, 0]
+	Global.computerTaskPoints = [0, 0]
+	Global.dataTaskPoints = [0, 0]
+	Global.automationTestTaskPoints = [0, 0]
+	Global.points = 0
+	Global.introduction = false
+
+	Global.moneySpend = 0
+
+	Global.totalComputer = 0
+
+	Global.satelliteTaskComplete = false
+	Global.describingTaskComplete = false
+	Global.computerTaskComplete = false
+	Global.dataTaskComplete = false
+	Global.automationTestTaskComplete = false
+
+	Global.objCatched = false
+
+	Global.energy = 3
 
 # Checking witch buttom the mouse cursor is on top
 func _on_ButtonPlay_mouse_entered():
@@ -34,3 +58,11 @@ func _on_ButtonPlay_pressed():
 
 func _on_ButtonQuit_pressed():
 	get_tree().quit()
+
+
+func _on_ButtonCredit_pressed():
+	$Credit.visible = true
+
+
+func _on_Button_pressed():
+	$Credit.visible = false

@@ -372,14 +372,17 @@ anchor_left = 0.521
 anchor_top = 1.0
 anchor_right = 0.523
 anchor_bottom = 1.069
-margin_left = 203.16
-margin_top = 106.0
-margin_right = 451.08
-margin_bottom = 173.24
+margin_left = 192.16
+margin_top = 99.0
+margin_right = 473.08
+margin_bottom = 202.24
 custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
-text = "Profissionais formados em sistema de informação podem trabalhar com dados,  princiapalmente no seu gerenciamento/organização. Portanto, selecione todos os dados corretamente seguindo as instruções."
+text = "Profissionais formados em Sistemas de Informação frequentemente lidam com dados, principalmente no que diz respeito ao seu gerenciamento e organização. Nesta tarefa, selecione todos os dados corretamente seguindo as instruções dos enunciados. Atenção: você pode selecionar mais de uma alternativa em cada questão."
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonCloseIntroduction" type="Button" parent="IntroductionScreen"]
 show_behind_parent = true

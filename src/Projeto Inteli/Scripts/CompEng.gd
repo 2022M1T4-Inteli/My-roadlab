@@ -11,7 +11,7 @@ var taskOcorring = false
 
 func _process(delta):
 	# Starting satellite task after interct with button "E" and the player is in area
-	if playerSatellite && Input.is_action_just_pressed("ui_E") && !taskOcorring && !Global.satelliteTaskComplete && Global.energy > 0:
+	if playerSatellite && Input.is_action_just_pressed("ui_E") && !taskOcorring && !Global.satelliteTaskComplete && Global.energy > 0 || playerSatellite && Global.ePressed && !taskOcorring && !Global.satelliteTaskComplete && Global.energy > 0:
 		var task = taskSatellite.instance()
 		get_node("/root/Level 2/TasksSpawn").add_child(task)
 		$SatelliteTaskArea/Button.visible = false
@@ -20,7 +20,7 @@ func _process(delta):
 		taskOcorring = true
 	
 	# Starting computer task after interct with button "E" and the player is in area
-	if playerComputer && Input.is_action_just_pressed("ui_E") && !taskOcorring && !Global.computerTaskComplete && Global.energy > 0:
+	if playerComputer && Input.is_action_just_pressed("ui_E") && !taskOcorring && !Global.computerTaskComplete && Global.energy > 0 || playerComputer && Global.ePressed && !taskOcorring && !Global.computerTaskComplete && Global.energy > 0:
 		var task = taskComputer.instance()
 		get_node("/root/Level 2/TasksSpawn").add_child(task)
 		$ComputerTaskArea/Button.visible = false

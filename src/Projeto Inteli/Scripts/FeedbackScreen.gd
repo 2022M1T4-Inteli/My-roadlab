@@ -1,6 +1,9 @@
 # Writed by Renato Machado
 extends Node2D
 
+# Declaring variables
+var counter = 0
+
 
 func _ready():
 	# Setting initial parameters
@@ -18,3 +21,11 @@ func _ready():
 	$FinalFeedbackScreen/SistemaDeInformacao/ScoreFinal.text = "Score final: " + str(Global.dataTaskPoints[0]) + " pontos"
 	$FinalFeedbackScreen/CienciaDaComputacao/ScoreFinal.text = "Score final: " + str(Global.describingTaskPoints[0]) + " pontos"
 	$FinalFeedbackScreen/EngenhariaDaComputacao/ScoreFinal.text = "Score final: " + str(Global.satelliteTaskPoints[0] + Global.computerTaskPoints[0]) + " pontos"
+
+
+func _process(delta):
+	pass
+
+
+func _on_PlayAgainButton_pressed():
+	get_tree().change_scene_to(load("res://Scenes/Cenários/Menu.tscn"))

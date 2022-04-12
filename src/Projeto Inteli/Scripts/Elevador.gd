@@ -26,7 +26,7 @@ func _ready():
 
 func _process(delta):
 	# Oppening floor selection screen and starting elevator animation
-	if player && Input.is_action_pressed("ui_E"):
+	if player && Input.is_action_pressed("ui_E") || player && Global.ePressed:
 		stateMachine.travel("Abrindo")
 		$ElevadorInterface0.visible = true
 		get_node(playerPath).canWalk = false
