@@ -8,7 +8,7 @@
 
 ## gamethinkers
 
-## Integrantes: <a href="https://www.linkedin.com/in/dayllan-souza-0a0592124/">Dayllan Alho</a>, <a href="https://www.linkedin.com/in/eliasbiondo/">Elias Biondo</a>, <a href="https://www.linkedin.com/in/gabriel-rocha-113385231/">Gabriel Rocha</a>, <a href="https://www.linkedin.com/in/jackson-aguiar/">Jackson Aguiar</a>, <a href="#">Matheus Fidelis</a>, <a href="https://www.linkedin.com/in/renato-silva-machado-28530a231/">Renato Machado </a>, <a href="#">Theo Tosto</a>
+## Integrantes: <a href="https://www.linkedin.com/in/dayllan-souza-0a0592124/">Dayllan Alho</a>, <a href="https://www.linkedin.com/in/eliasbiondo/">Elias Biondo</a>, <a href="https://www.linkedin.com/in/gabriel-rocha-113385231/">Gabriel Rocha</a>, <a href="https://www.linkedin.com/in/jackson-aguiar/">Jackson Aguiar</a>, <a href="https://www.linkedin.com/in/matheus-fidelis-680520232/">Matheus Fidelis</a>, <a href="https://www.linkedin.com/in/renato-silva-machado-28530a231/">Renato Machado </a>, <a href="#">Theo Tosto</a>
 
 ## Descrição
 
