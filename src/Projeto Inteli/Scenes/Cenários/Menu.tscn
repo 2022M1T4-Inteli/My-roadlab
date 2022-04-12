@@ -67,18 +67,21 @@ position = Vector2( 320, 181 )
 texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Credit"]
-margin_left = 244.0
-margin_top = 84.0
-margin_right = 424.0
-margin_bottom = 256.0
+margin_left = 230.0
+margin_top = 66.0
+margin_right = 410.0
+margin_bottom = 288.0
 custom_fonts/font = SubResource( 1 )
-text = "Elias Biondo
-Dayllan Alho
-Renato Machado
-Theo Tosto
+text = "Dayllan Alho
+Elias Biondo
+Gabriel Rocha
 Jackson Aguiar
 Matheus Fidelis
-Gabriel Rocha"
+Renato Machado
+Theo Tosto
+
+CC BY 2022"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

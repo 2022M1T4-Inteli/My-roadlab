@@ -7,6 +7,8 @@ var counter = 0
 
 func _ready():
 	# Setting initial parameters
+	$PlayerSprite.set_texture(get_node("/root/Level 5/Player").charactersSpriteArray[Global.sprNumber])
+	
 	$FinalFeedbackScreen/Star1.frame = Global.automationTestTaskPoints[1]
 	$FinalFeedbackScreen/Star2.frame = Global.dataTaskPoints[1]
 	$FinalFeedbackScreen/Star3.frame = Global.describingTaskPoints[1]
@@ -21,10 +23,6 @@ func _ready():
 	$FinalFeedbackScreen/SistemaDeInformacao/ScoreFinal.text = "Score final: " + str(Global.dataTaskPoints[0]) + " pontos"
 	$FinalFeedbackScreen/CienciaDaComputacao/ScoreFinal.text = "Score final: " + str(Global.describingTaskPoints[0]) + " pontos"
 	$FinalFeedbackScreen/EngenhariaDaComputacao/ScoreFinal.text = "Score final: " + str(Global.satelliteTaskPoints[0] + Global.computerTaskPoints[0]) + " pontos"
-
-
-func _process(delta):
-	pass
 
 
 func _on_PlayAgainButton_pressed():

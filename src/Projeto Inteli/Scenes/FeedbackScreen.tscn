@@ -58,6 +58,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Indicator" type="Label" parent="FinalFeedbackScreen"]
+margin_left = 110.0
+margin_top = 42.0
+margin_right = 267.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 2 )
+text = "Caso veja necessidade, jogue novamente para explorar novos caminhos e melhorar seus pontos e habilidades em cada uma das trilhas"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="EngenhariaDeSoftware" type="Label" parent="FinalFeedbackScreen"]
 margin_left = -223.0
 margin_top = -42.0
@@ -210,5 +223,24 @@ margin_bottom = 141.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PointsTitle" type="Label" parent="FinalFeedbackScreen"]
+margin_left = -219.0
+margin_top = -76.0
+margin_right = 5.0
+margin_bottom = -42.0
+custom_fonts/font = SubResource( 2 )
+text = "Relatório final de desempenho e interesses."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerSprite" type="Sprite" parent="."]
+position = Vector2( 508, 157 )
+scale = Vector2( -4, 4 )
+hframes = 15
+vframes = 2
 
 [connection signal="pressed" from="FinalFeedbackScreen/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]

@@ -140,48 +140,6 @@ graph_offset = Vector2( -99, -17 )
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 33, 27.5 )
 
-[sub_resource type="Animation" id=31]
-resource_name = "Idle"
-length = 1.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-
-[sub_resource type="Animation" id=32]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="AnimationNodeAnimation" id=33]
-animation = "Idle"
-
-[sub_resource type="AnimationNodeStateMachine" id=34]
-states/Idle/node = SubResource( 33 )
-states/Idle/position = Vector2( 452.333, 68.3333 )
-start_node = "Idle"
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
-
 [sub_resource type="Animation" id=36]
 resource_name = "Idle"
 length = 1.2
@@ -223,6 +181,48 @@ states/Idle/position = Vector2( 471, 115 )
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=40]
+
+[sub_resource type="Animation" id=31]
+resource_name = "Idle"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=32]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeStateMachine" id=34]
+states/Idle/node = SubResource( 33 )
+states/Idle/position = Vector2( 452.333, 68.3333 )
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
 
 [node name="Cenário 6" type="Sprite"]
 
@@ -360,22 +360,6 @@ margin_bottom = -140.0
 
 [node name="Chefe" type="Node2D" parent="."]
 
-[node name="ChefeParado" type="Sprite" parent="Chefe"]
-position = Vector2( -254, 83 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 10 )
-hframes = 5
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Chefe/ChefeParado"]
-anims/Idle = SubResource( 31 )
-anims/RESET = SubResource( 32 )
-
-[node name="AnimationTree" type="AnimationTree" parent="Chefe/ChefeParado"]
-tree_root = SubResource( 34 )
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 35 )
-
 [node name="ChefeParadoInRange" type="Sprite" parent="Chefe"]
 visible = false
 position = Vector2( -253, 83 )
@@ -392,6 +376,22 @@ tree_root = SubResource( 39 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 40 )
+
+[node name="ChefeParado" type="Sprite" parent="Chefe"]
+position = Vector2( -253, 83 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Chefe/ChefeParado"]
+anims/Idle = SubResource( 31 )
+anims/RESET = SubResource( 32 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Chefe/ChefeParado"]
+tree_root = SubResource( 34 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 35 )
 
 [connection signal="body_entered" from="Elevador" to="Elevador" method="_on_Elevador_body_entered"]
 [connection signal="body_exited" from="Elevador" to="Elevador" method="_on_Elevador_body_exited"]

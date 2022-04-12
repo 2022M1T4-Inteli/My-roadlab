@@ -57,39 +57,6 @@ scale = Vector2( 3.9, 3.9 )
 texture = ExtResource( 7 )
 hframes = 2
 
-[node name="MobileMovement" type="Control" parent="."]
-show_behind_parent = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ButtonA" type="Button" parent="MobileMovement"]
-margin_left = 6.0
-margin_top = 306.0
-margin_right = 42.0
-margin_bottom = 341.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ButtonD" type="Button" parent="MobileMovement"]
-margin_left = 55.0
-margin_top = 306.0
-margin_right = 91.0
-margin_bottom = 341.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ButtonE" type="Button" parent="MobileMovement"]
-margin_left = 574.0
-margin_top = 305.0
-margin_right = 610.0
-margin_bottom = 340.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="DialogueBox" type="Control" parent="."]
 margin_right = 640.0
 margin_bottom = 360.0
@@ -130,6 +97,39 @@ margin_top = -197.16
 margin_right = 217.0
 margin_bottom = -149.16
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MobileMovement" type="Control" parent="."]
+show_behind_parent = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonA" type="Button" parent="MobileMovement"]
+margin_left = 6.0
+margin_top = 306.0
+margin_right = 42.0
+margin_bottom = 341.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonD" type="Button" parent="MobileMovement"]
+margin_left = 55.0
+margin_top = 306.0
+margin_right = 91.0
+margin_bottom = 341.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonE" type="Button" parent="MobileMovement"]
+margin_left = 574.0
+margin_top = 305.0
+margin_right = 610.0
+margin_bottom = 340.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
