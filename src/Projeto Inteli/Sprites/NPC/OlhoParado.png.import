@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OlhoParado.png-89326163217521f7d350437d581a1e79.stex"
+path="res://.import/OlhoParado.png-ea2c725630f879d2528245eb8b772772.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/NPC/OlhoParado.png"
-dest_files=[ "res://.import/OlhoParado.png-89326163217521f7d350437d581a1e79.stex" ]
+source_file="res://Sprites/Npc/OlhoParado.png"
+dest_files=[ "res://.import/OlhoParado.png-ea2c725630f879d2528245eb8b772772.stex" ]
 
 [params]
 

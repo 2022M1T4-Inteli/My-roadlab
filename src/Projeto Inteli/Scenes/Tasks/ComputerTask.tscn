@@ -643,6 +643,9 @@ custom_fonts/normal_font = SubResource( 19 )
 bbcode_enabled = true
 text = "Engenheiros da computação, além do conhecimento sobre a criação de programas, trabalham, frequentemente, com hardware. Nesta tarefa, garanta que as peças do computador sejam posicionadas corretamente. Se sentir necessidade, utilize o ponto de interrogação no canto superior direito para obter ajuda."
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonCloseIntroduction" type="Button" parent="IntroductionScreen"]
 show_behind_parent = true

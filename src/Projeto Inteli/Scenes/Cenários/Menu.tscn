@@ -68,9 +68,9 @@ texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Credit"]
 margin_left = 230.0
-margin_top = 66.0
+margin_top = 52.0
 margin_right = 410.0
-margin_bottom = 288.0
+margin_bottom = 299.0
 custom_fonts/font = SubResource( 1 )
 text = "Dayllan Alho
 Elias Biondo
@@ -80,7 +80,8 @@ Matheus Fidelis
 Renato Machado
 Theo Tosto
 
-CC BY 2022"
+1º Turma - Ateliê 4
+CC BY 4.0 2022"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

@@ -45,10 +45,10 @@ var fourthStep = {
 }
 
 var fifthStep = {
-	expectedInputText = "Receber função f",
-	expectedOutputText = "Retornar a derivada de f em relação a variável x",
-	inputValues = "f(x) = 3 . x^3",
-	outputValue = "f'(x) = 9 . x^2",
+	expectedInputText = "Receber número x",
+	expectedOutputText = "Retornar x elevado a 4",
+	inputValues = "3",
+	outputValue = "81",
 	isCorrect = true,
 }
 

@@ -103,4 +103,5 @@ func _on_ButtonOpenExplanation_pressed():
 
 # Closing introduction screen
 func _on_ButtonCloseIntroduction_pressed():
+	$Explanation.visible = true
 	$IntroductionScreen.queue_free()

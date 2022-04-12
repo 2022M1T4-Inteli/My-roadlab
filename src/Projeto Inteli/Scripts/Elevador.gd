@@ -78,6 +78,8 @@ func _on_ButtonAndar4_pressed():
 func _on_ButtonAndar5_pressed():
 	if Global.dataTaskComplete && Global.describingTaskComplete && Global.automationTestTaskComplete && Global.satelliteTaskComplete && Global.computerTaskComplete:
 		get_tree().change_scene_to(load("res://Scenes/Level" + str(chooseFloor[4]) + ".tscn"))
+	else:
+		$Advertise.visible = true
 
 
 # Checking witch button mouse cursor is on top
@@ -119,3 +121,7 @@ func _on_ButtonAndar5_mouse_entered():
 
 func _on_ButtonAndar5_mouse_exited():
 	$ElevadorInterface0/Botoes.frame = animDefault
+
+
+func _on_Button_pressed():
+	$Advertise.visible = false

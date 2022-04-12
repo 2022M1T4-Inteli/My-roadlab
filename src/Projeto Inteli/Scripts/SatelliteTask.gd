@@ -25,7 +25,7 @@ func _process(delta):
 	# Freeing the transmission button when all satellites was connected.
 	if (isFirstSatelliteConnected && isSecondSatelliteConnected && isThirdSatelliteConnected && isFourthSatelliteConnected):
 		$Waiting_transmission_message.visible = true
-		$Waiting_transmission_message.text = "Aguardando transmissão..."
+		$Waiting_transmission_message.text = "Aguardando transmissão...\nPressione o satélite para iniciar a transmissão."
 		$Control/Start_transmission_button.disabled = false
 		$Control/Start_transmission_button.visible = true
 	else:

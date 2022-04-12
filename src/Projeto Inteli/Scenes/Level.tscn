@@ -161,11 +161,15 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="IntroductionToEnergySystem"]
 margin_left = 211.0
-margin_top = 113.0
+margin_top = 89.0
 margin_right = 531.0
-margin_bottom = 258.0
+margin_bottom = 268.0
 custom_fonts/font = SubResource( 6 )
-text = "Aqui você é muito bem-vindo(a) e importante para nós. Sabemos que nossas tarefas são cansativas e às vezes precisamos de uma pausa. Sinta-se à vontade para recarregar as suas energias em nossas máquinas de café com as moedas que você conquistará durante a jogatina. Nossas máquinas estão distribuídas em todos os andares, inclusive no térreo. Fique de olho em sua energia: você pode acompanhá-la no canto superior direito de sua tela. Atenção: um café restaura a sua energia por completo, então garanta que esteja inteiramente cansado para economizar moedas."
+text = "Aqui você é muito bem-vindo(a) e importante para nós. Sabemos que nossas tarefas são cansativas e às vezes precisamos de uma pausa. Sinta-se à vontade para recarregar as suas energias em nossas máquinas de café com as moedas que você conquistará durante a jogatina. 
+
+Nossas máquinas estão distribuídas em todos os andares, inclusive no térreo. Fique de olho em sua energia: você pode acompanhá-la no canto superior direito de sua tela. 
+
+Atenção: um café restaura a sua energia por completo, então garanta que esteja inteiramente cansado para economizar moedas."
 align = 1
 autowrap = true
 __meta__ = {
