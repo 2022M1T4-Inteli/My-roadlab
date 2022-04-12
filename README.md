@@ -17,8 +17,14 @@
 💡 Nosso projeto ajuda estudantes a decidirem os seus cursos de graduação com base nos seus interesses, habilidades e aptidões.
 
 <p align="center">
-<a href= "https://github.com/2022M1T4/Projeto3"><img src="https://github.com/2022M1T4/Projeto3/blob/main/imagens/game_prototype.png?raw=true" alt="inteli roadlab" border="0"></a>
-<p align="center">inteli roadlab - protótipo inicial</p>
+<a href= "https://github.com/2022M1T4/Projeto3"><img src="https://i.imgur.com/3VvRvRV.png" alt="inteli roadlab" border="0"></a>
+<p align="center">inteli roadlab - menu</p>
+</p>
+<BR>
+
+<p align="center">
+<a href= "https://github.com/2022M1T4/Projeto3"><img src="https://i.imgur.com/oXR9ZNg.png" alt="inteli roadlab" border="0"></a>
+<p align="center">inteli roadlab -   terreo</p>
 </p>
 
 ## 🛠 Estrutura de pastas
