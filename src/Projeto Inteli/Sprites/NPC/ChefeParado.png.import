@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ChefeParado.png-cdf41e8650d14983ae8ad381f3303971.stex"
+path="res://.import/ChefeParado.png-fd4e62a8cedeefadec06a41ab238ee4b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Npc/ChefeParado.png"
-dest_files=[ "res://.import/ChefeParado.png-cdf41e8650d14983ae8ad381f3303971.stex" ]
+source_file="res://Sprites/NPC/ChefeParado.png"
+dest_files=[ "res://.import/ChefeParado.png-fd4e62a8cedeefadec06a41ab238ee4b.stex" ]
 
 [params]
 

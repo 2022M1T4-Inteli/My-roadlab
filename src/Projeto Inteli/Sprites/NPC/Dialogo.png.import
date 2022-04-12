@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dialogo.png-46d64b376842067cc0df3d0530330c82.stex"
+path="res://.import/Dialogo.png-487524e4f43388b87e86ef61343667b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Npc/Dialogo.png"
-dest_files=[ "res://.import/Dialogo.png-46d64b376842067cc0df3d0530330c82.stex" ]
+source_file="res://Sprites/NPC/Dialogo.png"
+dest_files=[ "res://.import/Dialogo.png-487524e4f43388b87e86ef61343667b0.stex" ]
 
 [params]
 

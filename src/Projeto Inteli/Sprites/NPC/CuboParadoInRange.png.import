@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CuboParadoInRange.png-6d6a2a09df805cc70a0bd84578a206e9.stex"
+path="res://.import/CuboParadoInRange.png-cd1a754b622ef58a180752065f322d44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Npc/CuboParadoInRange.png"
-dest_files=[ "res://.import/CuboParadoInRange.png-6d6a2a09df805cc70a0bd84578a206e9.stex" ]
+source_file="res://Sprites/NPC/CuboParadoInRange.png"
+dest_files=[ "res://.import/CuboParadoInRange.png-cd1a754b622ef58a180752065f322d44.stex" ]
 
 [params]
 
