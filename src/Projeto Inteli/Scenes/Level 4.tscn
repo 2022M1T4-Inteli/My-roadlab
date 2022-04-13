@@ -36,7 +36,7 @@ scale = Vector2( 1, 30 )
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 571, 263 )
+position = Vector2( 571, 264 )
 canWalk = true
 
 [node name="DialogueBox" type="Control" parent="."]

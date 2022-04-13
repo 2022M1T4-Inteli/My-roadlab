@@ -18,7 +18,7 @@ func _process(delta):
 		get_node("/root/Level/Manual").queue_free()
 		get_node("/root/Level/IntroductionToEnergySystem").queue_free()
 		get_node("/root/Level/Player").canWalk = true
-		get_node("/root/Level/Player").position = Vector2(573, 263)
+		get_node("/root/Level/Player").position = Vector2(573, 264)
 		queue_free()
 	
 	if op1:

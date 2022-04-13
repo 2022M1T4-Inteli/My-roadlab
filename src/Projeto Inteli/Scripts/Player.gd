@@ -7,7 +7,6 @@ export var canWalk = false
 
 # Movement variables
 var speed = 200
-var inGround = false
 var aPressed = false
 var dPressed = false
 
@@ -66,20 +65,6 @@ func movement(var vel):
 func _physics_process(delta):
 	#Declaring local variable
 	var velocity = Vector2.ZERO
-	
-	# Checking if the player is in the ground
-	for index in get_slide_count():
-		var collision = get_slide_collision(index)
-		if collision.collider.is_in_group("Ground"):
-			inGround = true
-		else:
-			inGround = false
-	
-	# Creating gravity to keep the player in the ground
-	if inGround == false:
-		velocity.y += 200
-	else:
-		velocity.y = 0
 	
 	# Inicializing movement function
 	if canWalk:

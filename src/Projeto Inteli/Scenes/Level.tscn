@@ -40,7 +40,7 @@ script = ExtResource( 9 )
 position = Vector2( 320, 180 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 21, 262 )
+position = Vector2( 21, 264 )
 
 [node name="DialogueBox" type="Control" parent="."]
 margin_right = 640.0

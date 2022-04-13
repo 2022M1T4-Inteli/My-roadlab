@@ -42,7 +42,7 @@ func _ChooseDiologueIndex():
 					"Um momento... Estou verificando a sua identidade para prosseguirmos.",
 					"Você foi contratado como estagiário e o seu objetivo é receber as horas \nnecessárias para graduar-se em seu curso técnico e iniciar sua \nfaculdade. Não se preocupe: assim que cumprir suas obrigações e \ntarefas aqui, você terá uma boa ideia do que cursar no ensino superior.",
 					"Atualmente, possuímos quatro setores divididos em andares, sendo eles:",
-					"1º Andar - Ciência da computação\n2º Andar - Engenharia da Computação\n3º Andar - Sistema da Informação\n4º Andar - Engenharia de Software",
+					"1º Andar - Ciência da computação\n2º Andar - Engenharia da Computação\n3º Andar - Sistema de Informação\n4º Andar - Engenharia de Software",
 					"Ande pelos andares explorando as atividades que nossos desenvolvedores\ntêm trabalhado e auxilie-os em suas tarefas diárias. Em cada tarefa você\nreceberá uma quantidade de moeda referente ao serviço prestado.",
 					"Boa sorte e muito sucesso, até mais! :-)"]
 		"Level 1":
