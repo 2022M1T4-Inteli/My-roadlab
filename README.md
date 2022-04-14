@@ -12,7 +12,7 @@
 
 ## Descrição
 
-📜 My Roadlab (até então) é um projeto de jogo indie que simula um ambiente virtual para a apresentação dos cursos da grande área da computação, disponibilizados pelo Instituto de Tecnologia e Liderança (Inteli), bem como suas áreas de atuação. O jogo visa direcionar novos alunos e estudantes do primeiro ano da instituição para uma escolha consciente de curso com base no entendimento dos termos atuais do mercado e perfil de trabalho.
+📜 Inteli Roadlab é um projeto de jogo indie que simula um ambiente virtual para a apresentação dos cursos da grande área da computação, disponibilizados pelo Instituto de Tecnologia e Liderança (Inteli), bem como suas áreas de atuação. O jogo visa direcionar futuros alunos e estudantes do primeiro ano da instituição para uma escolha consciente de curso com base no entendimento dos termos atuais do mercado e perfil de trabalho.
 
 💡 Nosso projeto ajuda estudantes a decidirem os seus cursos de graduação com base nos seus interesses, habilidades e aptidões.
 
@@ -20,23 +20,32 @@
 <a href= "https://github.com/2022M1T4/Projeto3"><img src="https://i.imgur.com/3VvRvRV.png" alt="inteli roadlab" border="0"></a>
 <p align="center">inteli roadlab - menu</p>
 </p>
-<BR>
 
+
+```
+Para iniciar o jogo, instale-o e/ou execute-o conforme exigido pela pla-
+taforma desejada (windows, android ou html) e clique no botão "Jogar". 
+```
+<br>
 <p align="center">
 <a href= "https://github.com/2022M1T4/Projeto3"><img src="https://i.imgur.com/oXR9ZNg.png" alt="inteli roadlab" border="0"></a>
-<p align="center">inteli roadlab -   terreo</p>
+<p align="center">inteli roadlab -   térreo (cenário inicial)</p>
 </p>
+
+```
+Siga as instruções presentes no jogo para progredir e passar de fase. 
+```
 
 ## 🛠 Estrutura de pastas
 
 - Raiz<br><br>
 | --> documentos<br>
   &emsp;| --> antigos<br>
-  &emsp;| GDD.docx ou Documentação.docx<br>
+  &emsp;|  GDD_T4_M1_G3_Game_thinkers_Projeto_Inteli_ROADLAB_v_1_0.PDF<br>
 | --> executáveis<br>
   &emsp;| --> windows<br>
   &emsp;| --> android<br>
-  &emsp;| --> HTML<br>
+  &emsp;| --> html<br>
 | --> imagens<br>
 | --> src<br>
 | readme.md<br>
@@ -47,30 +56,28 @@ A pasta raiz contém um arquivo principal:
 
 E, também, 4 subpastas que se organizam da seguinte forma:
 
-- <b>documentos</b>, ondem encontram-se todos os documentos relacionados ao projeto, sobretudo o Game Design Document (GDD) e Documentação do Sistema, com uma subpasta <b>antigos</b> que armazena versões anteriores dos mesmos.
+- <b>documentos</b>, ondem encontram-se todos os documentos relacionados ao projeto, sobretudo o Game Design Document (GDD), com uma subpasta <b>antigos</b> que armazena versões anteriores dos mesmos.
 
-- <b>executáveis</b>, ondem encontram-se todos os executáveis do jogo, prontos para rodar, com, no mínimo, 3 pastas: uma para binários windows, uma para binários android e uma para a web.
+- <b>executáveis</b>, ondem encontram-se todos os executáveis do jogo, prontos para rodar, com 3 pastas: uma para binários windows, uma para binários android e uma para a web.
 
 - <b>imagens</b>, ondem encontram-se algumas imagens relacionadas ao jogo, sistema e logos, prontos para serem utilizados e visualizados.
 
-- <b>src</b>, ondem encontram-se todo o código fonte do jogo/sistema, pronto para para ser baixado e modificado.
+- <b>src</b>, onde encontra-se todo o código fonte do jogo/sistema, pronto para para ser baixado e modificado.
 
 ## 🛠 Instalação
 
-<b>Android (não disponível):</b>
+<b>Android:</b>
 
-Faça o download do arquivo "inteli_roadlab.apk" no seu celular, execute o arquivo e siga as instruções de seu telefone.
-
-```sh
-Assim que disponível, os binários serão disponibilizados nesse mesmo repositório.
-```
+Faça o download do arquivo "app.apk" disponível em https://github.com/2022M1T4/Projeto3/tree/main/execut%C3%A1veis/Android no seu celular, execute o arquivo e siga as instruções de seu telefone.
 
 <b>Windows:</b>
 
 Não há instalação, apenas executável. Baixe os arquivos disponíveis em https://github.com/2022M1T4/Projeto3/tree/main/execut%C3%A1veis/Windows e execute "ProjetoInteli.exe" como qualquer outro programa.
 
-```sh
-Observe que é necessário que o arquivo "ProjetoInteli.pck" esteja no mesmo diretório que "ProjetoInteli.exe".
+```
+Observe que é necessário que o arquivo "ProjetoInteli.pck" esteja
+no mesmo diretório que "ProjetoInteli.exe" para que o jogo inicie
+corretamente.
 ```
 
 <b>HTML:</b>
@@ -78,39 +85,43 @@ Observe que é necessário que o arquivo "ProjetoInteli.pck" esteja no mesmo dir
 Não há instalação! Baixe os arquivos disponíveis em https://github.com/2022M1T4/Projeto3/tree/main/execut%C3%A1veis/HTML e execute-o como uma página da web (através de algum navegador).
 
 ```sh
-Dependendo de suas configurações de firewall, talvez seja necessário instaurar um web service como xampp ou wampp para que o jogo rode localmente.
+Dependendo de suas configurações de firewall, talvez seja necessário
+instaurar um web service como xampp ou wampp para que o jogo rode lo-
+calmente.
 ```
 
-## 📈 Exemplo de uso
-
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado.
-
-Adicione blocos de códigos e, se necessário, screenshots.
-
-Este modelo pode ser copiado e utilizado à vontade.
-
-Através da cópia/clone/ download do repositório, altere os dados do readme.md e carregue os arquivos de seu projeto.
-
-## 💻 Configuração para Desenvolvimento
-
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+## 💻 Configuração para desenvolvimento
 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
--<a href="https://godotengine.org/download"> GODOT</a>
+-<a href="https://godotengine.org/download"> Godot</a>
 
-```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+Instruções para a configuração do ambiente de desenvolvimento:
+```
+
+1) Clone o repositório.
+2) Abra a engine de desenvolvimento (godot).
+3) No gerenciador de projetos inicial, clique no botão "importar" e, em seguida, no botão "navegar".
+4) Navegue até o repositório clonado e abra a pasta "src".
+5) Selecione o arquivo "project.godot" e em seguida clique no botão "abrir".
+6) Pronto. O seu ambiente de desenvolvimento está configurado.
+
 ```
 
 ## 🗃 Histórico de lançamentos
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.0.1-alpha - 19/02/2022
-    * Lançamento da primeira versão do jogo.
+* 0.1-alpha - 19/02/2022
+    * Lançamento da primeira versão do jogo. Primeiros executáveis. Cenário inicial e física do personagem principal.
+ * 0.2-alpha - 04/03/2022
+	 *  Seleção de personagens e caixas de diálogo. Atualização do cenário. Introdução à NPCs e versão inicial do sistema de elevador.
+ * 0.3-alpha - 18/03/2022
+	 * Transição de cenários com elevador e andares diferentes para cada curso de graduação. Minijogos de ciência da computação e engenharia de software. Versão inicial do sistema de moedas.
+ * 0.4-alpha - 01/04/2022
+	 * Minijogos de engenharia da computação, sistemas de informação e engenharia de software. Correção de bugs e desenvolvimento do sistema de energia.
+ * 0.5-alpha - 14/04/2022
+	* Sistema de avaliação de minijogos. NPCs instrutores por andares. Refatoramento dos textos. Correção de bugs e usabilidade mobile.
 
 ## 📋 Licença/License
 
@@ -121,6 +132,16 @@ A cada atualização os detalhes devem ser lançados aqui.
 
 Aqui estão as referências usadas no projeto.
 
-1. <https://github.com/iuricode/readme-template>
-2. <https://github.com/gabrieldejesus/readme-model>
-3. <https://creativecommons.org/share-your-work/>
+1. https://docs.godotengine.org/pt_BR/stable/tutorials/scripting/gdscript/gdscript_styleguide.html
+2. http://demoiselle.sourceforge.net/process/ds/1.2.3-BETA1/ProcessoDemoisellePlugin/workproducts/casoDeTeste_24F453B9.html
+3. https://www.khanacademy.org/computing/computer-programming/programming/good-practices/a/planning-a-programming-project
+4. https://docs.godotengine.org/pt_BR/latest/tutorials/scripting/gdscript/gdscript_basics.html?highlight=booleana#statements-and-control-flow
+5. http://wiki.icmc.usp.br/images/7/7d/Aula_5_-_StateMachine.pdf
+6. https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209
+7. https://integrada.minhabiblioteca.com.br/reader/books/9788521630937/epubcfi/6/22[%3Bvnd.vst.idref%3Dchapter02]!/4
+8. https://www.treinaweb.com.br/blog/o-que-e-e-como-funciona-a-estrutura-de-dados-lista
+9. https://www.youtube.com/watch?v=dG7LlYne2VA
+10. https://docs.godotengine.org/pt_BR/latest/tutorials/best_practices/what_are_godot_classes.html?highlight=objetos%20geom%C3%A9tricos#applying-object-oriented-principles-in-godot
+11. https://docs.godotengine.org/pt_BR/latest/tutorials/best_practices/what_are_godot_classes.html?highlight=Scripts#how-scripts-work-in-the-engine
+12. https://docs.godotengine.org/pt_BR/latest/tutorials/best_practices/what_are_godot_classes.html?highlight=objetos%20geom%C3%A9tricos#scenes
+13. https://integrada.minhabiblioteca.com.br/reader/books/9788521630937/epubcfi/6/20[%3Bvnd.vst.idref%3Dchapter01]!/4/162[ch1lev4]/4
