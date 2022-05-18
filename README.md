@@ -8,7 +8,15 @@
 
 ## gamethinkers
 
-## Integrantes: <a href="https://www.linkedin.com/in/dayllan-souza-0a0592124/">Dayllan Alho</a>, <a href="https://www.linkedin.com/in/eliasbiondo/">Elias Biondo</a>, <a href="https://www.linkedin.com/in/gabriel-rocha-113385231/">Gabriel Rocha</a>, <a href="https://www.linkedin.com/in/jackson-aguiar/">Jackson Aguiar</a>, <a href="https://www.linkedin.com/in/matheus-fidelis-680520232/">Matheus Fidelis</a>, <a href="https://www.linkedin.com/in/renato-silva-machado-28530a231/">Renato Machado </a>, <a href="#">Theo Tosto</a>
+## Integrantes: 
+
+- <a href="https://www.linkedin.com/in/dayllan-souza-0a0592124/">Dayllan Alho</a>
+- <a href="https://www.linkedin.com/in/eliasbiondo/">Elias Biondo</a>
+- <a href="https://www.linkedin.com/in/gabriel-rocha-113385231/">Gabriel Rocha</a>
+- <a href="https://www.linkedin.com/in/jackson-aguiar/">Jackson Aguiar</a>
+- <a href="https://www.linkedin.com/in/matheus-fidelis-680520232/">Matheus Fidelis</a>
+- <a href="https://www.linkedin.com/in/renato-silva-machado-28530a231/">Renato Machado </a>
+- <a href="#">Theo Tosto</a>
 
 ## Descrição
 
@@ -44,7 +52,6 @@ Siga as instruções presentes no jogo para progredir e passar de fase.
   &emsp;|  GDD_T4_M1_G3_Game_thinkers_Projeto_Inteli_ROADLAB_v_1_0.PDF<br>
 | --> executáveis<br>
   &emsp;| --> windows<br>
-  &emsp;| --> android<br>
   &emsp;| --> html<br>
 | --> imagens<br>
 | --> src<br>
@@ -58,17 +65,13 @@ E, também, 4 subpastas que se organizam da seguinte forma:
 
 - <b>documentos</b>, ondem encontram-se todos os documentos relacionados ao projeto, sobretudo o Game Design Document (GDD), com uma subpasta <b>antigos</b> que armazena versões anteriores dos mesmos.
 
-- <b>executáveis</b>, ondem encontram-se todos os executáveis do jogo, prontos para rodar, com 3 pastas: uma para binários windows, uma para binários android e uma para a web.
+- <b>executáveis</b>, ondem encontram-se todos os executáveis do jogo, prontos para rodar, com 2 pastas: uma para binários windows e uma para a web.
 
 - <b>imagens</b>, ondem encontram-se algumas imagens relacionadas ao jogo, sistema e logos, prontos para serem utilizados e visualizados.
 
 - <b>src</b>, onde encontra-se todo o código fonte do jogo/sistema, pronto para para ser baixado e modificado.
 
 ## 🛠 Instalação
-
-<b>Android:</b>
-
-Faça o download do arquivo "app.apk" disponível em https://github.com/2022M1T4/Projeto3/tree/main/execut%C3%A1veis/Android no seu celular, execute o arquivo e siga as instruções de seu telefone.
 
 <b>Windows:</b>
 
@@ -126,7 +129,7 @@ A cada atualização os detalhes devem ser lançados aqui.
 ## 📋 Licença/License
 
 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"> <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/eliasbiondo/inteli-game/">My Roadlab</a> by <span property="cc:attributionName">Dayllan Alho, Elias Biondo, Gabriel Rocha, Jackson Aguiar, Matheus Fidelis, Renato Machado , Theo Tosto</span> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0</a></p>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/eliasbiondo/inteli-game/">My Roadlab</a> by <span property="cc:attributionName">Inteli, Dayllan Alho, Elias Biondo, Gabriel Rocha, Jackson Aguiar, Matheus Fidelis, Renato Machado , Theo Tosto</span> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0</a></p>
 
 ## 🎓 Referências
 
