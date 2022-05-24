@@ -1,4 +1,4 @@
-# Writed by Renato Machado
+# Writtem by Renato Machado
 extends Node2D
 
 # Declaring variables
