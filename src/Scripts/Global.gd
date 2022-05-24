@@ -1,4 +1,4 @@
-# Writed by Renato Machado
+# Writtem by Renato Machado
 # A Global node that the variables are kept even after level change
 extends Node
 
